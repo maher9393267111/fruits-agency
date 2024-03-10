@@ -36,9 +36,10 @@ const UpdateProductMain = ({ product }) => {
         (image) => !values.images.includes(image)
       );
       await deleteImages(imagesToDelete);
+      let data = {...values ,videourl:values.videourl === undefined ? '' : values.videourl}
       const newImagesUploaded = await uploadImages(files);
       values.images = [...values.images, ...newImagesUploaded];
-      await updateDoc(doc(db, "products", id), values);
+      await updateDoc(doc(db, "products", id), data);
 
       message.success("Product Updated Successfully");
       // router.push("/admin?tab=1");

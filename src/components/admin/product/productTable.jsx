@@ -16,23 +16,10 @@ const ProductTable = ({ products }) => {
     setFilteredInfo(filters);
     setSortedInfo(sorter);
   };
-  const clearFilters = () => {
-    setFilteredInfo({});
-  };
-  const clearAll = () => {
-    setFilteredInfo({});
-    setSortedInfo({});
-  };
-  const setAgeSort = () => {
-    setSortedInfo({
-      order: "descend",
-      columnKey: "age",
-    });
-  };
 
   const columns = [
     {
-      title: "Products",
+      title: "Title",
       // same name from database   // category={title ,....}
       dataIndex: "title",
 

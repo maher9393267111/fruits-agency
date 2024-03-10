@@ -27,7 +27,17 @@ const AddProductMain = ({  products }) => {
 
     /////urls [array of images]
     values.images = await uploadImages(files);
+
+// if(values.videourl === undefined){
+//   console.log("vNOOOOOOOOOOOOOOOOers-->", );
     
+//   values.videourl === 'no'
+// }
+    
+
+let data = {...values ,videourl:values.videourl === undefined ? '' : values.videourl}
+
+console.log("value afters-->", data);
     
     if (videoFile) {
       values.video = await uploadImages(videoFile,true)
@@ -37,7 +47,7 @@ const AddProductMain = ({  products }) => {
     values.timeStamp = serverTimestamp()
 
 
-    await addDoc(collection(db, "products"), values);
+    await addDoc(collection(db, "products"), data);
 
 
     message.success(`Product Uploaded Successfully`);

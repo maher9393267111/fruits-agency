@@ -12,7 +12,7 @@ import {
   Select,
   Switch,
   InputNumber,
-  Checkbox
+  Checkbox,
 } from "antd";
 const { TextArea } = Input;
 
@@ -59,21 +59,14 @@ const ProductForm = ({
     initialValues?.ismedia || false
   );
 
-
-
-
   const onChange = (checked) => {
     setOfferToggle(checked);
   };
 
-
-
-
   const onChangeMedia = (checked) => {
-    console.log("checked" ,checked.target.checked)
+    console.log("checked", checked.target.checked);
     setMediaToggle(checked.target.checked);
   };
-
 
   const ReactQuill = useMemo(
     () => dynamic(() => import("react-quill"), { ssr: false }),
@@ -89,33 +82,71 @@ const ProductForm = ({
           onFinish={(values) =>
             // name of our function
             onFinish({
+              ismedia:mediaToggle,
               ...values,
               images,
               video,
             })
           }
-          initialValues={initialValues}
-  
+          initialValues={{
+            title: initialValues?.title || "",
+            titlear: initialValues?.titlear || "",
+            titleen: initialValues?.titletr || "",
+            desc: initialValues?.desc || "",
+            descar: initialValues?.descar || "",
+            desctr: initialValues?.desctr || "",
+            ismedia: initialValues?.ismedia || false,
+            video: initialValues?.video || "",
+            videourl: initialValues?.videourl|| "",
+
+          }
+          }
         >
-
-
-<Form.Item className=" " name="ismedia" valuePropName="checked">
-            <Checkbox  checked={mediaToggle}
-                  // defaultChecked
-                  className="  "
-                  onChange={onChangeMedia}>Is Media {mediaToggle ? 'true' :'false'}</Checkbox>
+          <Form.Item className=" " name="ismedia" valuePropName="checked">
+            <Checkbox
+              checked={mediaToggle}
+              // defaultChecked
+              className="  "
+              onChange={onChangeMedia}
+            >
+              Is Media {mediaToggle ? "true" : "false"}
+            </Checkbox>
           </Form.Item>
 
-
-          <Form.Item name="title" label="Title english">
+          <Form.Item 
+             rules={[
+              {
+                required: true,
+                message: "Please input your title",
+              },
+            ]}
+          
+          name="title" label="Title english">
             <Input className="py-2" />
           </Form.Item>
 
-          <Form.Item name="titlear" label="Title arabic">
+
+
+
+          <Form.Item
+             rules={[
+              {
+                required: true,
+                message: "Please input your title",
+              },
+            ]}
+          name="titlear" label="Title arabic">
             <Input className="py-2" />
           </Form.Item>
 
-          <Form.Item name="titletr" label="Title turkish">
+          <Form.Item
+             rules={[
+              {
+                required: true,
+                message: "Please input your title",
+              },
+            ]}
+          name="titletr" label="Title turkish">
             <Input className="py-2" />
           </Form.Item>
 
@@ -123,78 +154,68 @@ const ProductForm = ({
             <div className=" flex  md:col-span-2 gap-2 items-center justify-center md:justify-start"></div>
           </div>
 
+          {!mediaToggle && (
+            <div>
+              <Form.Item
+                label="Description"
+                name="desc"
+                rules={[
+                  {
+                    required: true,
+                    message: "Please input your description!",
+                  },
+                ]}
+              >
+                {/* <textarea rows={5}></textarea> */}
 
-{!mediaToggle &&
+                <ReactQuill
+                  modules={modules}
+                  theme="snow"
+                  className=" pb-[10px] border-[2.5px] text-black font-medium rounded-md border-teal-400 hover:border-blue-600"
+                />
+              </Form.Item>
 
+              <Form.Item
+                label="Description arabic"
+                name="descar"
+                rules={[
+                  {
+                    required: true,
+                    message: "Please input your description!",
+                  },
+                ]}
+              >
+                {/* <textarea rows={5}></textarea> */}
 
-<div>
+                <ReactQuill
+                  modules={modules}
+                  theme="snow"
+                  className=" ql-editor-rt pb-[10px] border-[2.5px] text-black font-medium rounded-md border-teal-400 hover:border-blue-600"
+                />
+              </Form.Item>
 
+              <Form.Item
+                label="Description turkish"
+                name="desctr"
+                rules={[
+                  {
+                    required: true,
+                    message: "Please input your description!",
+                  },
+                ]}
+              >
+                {/* <textarea rows={5}></textarea> */}
 
-
-          <Form.Item
-            label="Description"
-            name="desc"
-            rules={[
-              {
-                required: true,
-                message: "Please input your description!",
-              },
-            ]}
-          >
-            {/* <textarea rows={5}></textarea> */}
-
-            <ReactQuill
-              modules={modules}
-              theme="snow"
-              className=" pb-[10px] border-[2.5px] text-black font-medium rounded-md border-teal-400 hover:border-blue-600"
-            />
-          </Form.Item>
-
-          <Form.Item
-            label="Description arabic"
-            name="descar"
-            rules={[
-              {
-                required: true,
-                message: "Please input your description!",
-              },
-            ]}
-          >
-            {/* <textarea rows={5}></textarea> */}
-
-            <ReactQuill
-              modules={modules}
-              theme="snow"
-              className=" ql-editor-rt pb-[10px] border-[2.5px] text-black font-medium rounded-md border-teal-400 hover:border-blue-600"
-            />
-          </Form.Item>
-
-          <Form.Item
-            label="Description turkish"
-            name="desctr"
-            rules={[
-              {
-                required: true,
-                message: "Please input your description!",
-              },
-            ]}
-          >
-            {/* <textarea rows={5}></textarea> */}
-
-            <ReactQuill
-              modules={modules}
-              theme="snow"
-              className={`
+                <ReactQuill
+                  modules={modules}
+                  theme="snow"
+                  className={`
             
             pb-[10px] border-[2.5px] text-black font-medium rounded-md border-teal-400 hover:border-blue-600`}
-            />
-          </Form.Item>
-
-
-
-
-          </div>
-}
+                />
+              </Form.Item>
+            </div>
+          )}
 
           {/* -----images upload----- */}
 
@@ -220,7 +241,7 @@ const ProductForm = ({
                 console.log("files", files);
               }}
             >
-              Upload Images 
+              Upload Images
             </Upload>
           </div>
 
@@ -253,32 +274,29 @@ const ProductForm = ({
           {/* -----Video upload----- */}
 
           <div className=" flex flex-col mt-2   gap-12">
-
-<div  className="w-[20%]">
-
-            <Upload
-              accept="video/*"
-              maxCount={1}
-              // file is data of image will be uploaded to firebase/storage
-              beforeUpload={(file) => {
-                setVideoFile(file);
-                // setFiles((prev) => [...prev, file]);
-                return false;
-              }}
-              listType="picture-card"
-              onRemove={() => setVideoFile("")}
-            >
-              Upload Video
-            </Upload>
+            <div className="w-[20%]">
+              <Upload
+                accept="video/*"
+                maxCount={1}
+                // file is data of image will be uploaded to firebase/storage
+                beforeUpload={(file) => {
+                  setVideoFile(file);
+                  // setFiles((prev) => [...prev, file]);
+                  return false;
+                }}
+                listType="picture-card"
+                onRemove={() => setVideoFile("")}
+              >
+                Upload Video
+              </Upload>
             </div>
 
 
-{mediaToggle &&
-
-<Form.Item name="videourl" label="Video url">
-            <Input className="py-2" />
-          </Form.Item>
-}
+            {mediaToggle && (
+              <Form.Item  name="videourl" label="Video url">
+                <Input value={'url'} className="py-2" />
+              </Form.Item>
+            )}
 
           </div>
 
