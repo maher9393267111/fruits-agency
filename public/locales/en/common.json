@@ -3,5 +3,12 @@
   "description": "Do you like to unleash some super powers to have all side optimized translations?",
   "Free Express Shipping": "Free Express Shipping",
   "Free": "Frrrrrrrrrrrrrrrrrrr",
-  "name":"English"
+  "name":"English",
+  "navbar":{
+    "home":"Home",
+    "contact":"Contact",
+    "orders":"Orders",
+    "partner":"Partner"
+  }
+
 }

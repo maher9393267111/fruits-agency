@@ -9,7 +9,7 @@ import BazaarMenu from "components/BazaarMenu";
 import { layoutConstant } from "utils/constants";
 import { useRouter } from "next/router";
 import { useTranslation } from "react-i18next";
-
+import useSettings from "hooks/useSettings";
 // styled component
 const TopbarWrapper = styled(Box, {
   shouldForwardProp: props => props !== "bgColor"
@@ -80,6 +80,11 @@ const Topbar = ({
   const {
     t
   } = useTranslation("common");
+
+
+
+
+
   const {
     pathname,
     asPath,
@@ -87,8 +92,22 @@ const Topbar = ({
   } = router;
   const [expand, setExpand] = useState(false);
   const [language, setLanguage] = useState(router.locale);
+  const {settings ,updateSettings } = useSettings();  
   const handleLanguageClick = lang => () => {
     setLanguage(lang);
+
+    if(lang === 'ar'){
+      updateSettings({direction: "rtl"  }) 
+    }
+
+
+    else {
+      updateSettings({direction: "ltr"  }) 
+    }
+
+
+
+
     router.push({
       pathname,
       query
@@ -120,7 +139,7 @@ const Topbar = ({
         <FlexBox className="topbarRight" alignItems="center">
           <BazaarMenu handler={<TouchRipple className="handler marginRight">
                 <Span className="menuTitle">
-                  {language === "en" ? "EN" : "DE"}
+                  {language === "en" ? "EN" : language === 'ar' ? 'Ar' : 'Tr'}
                 </Span>
                 <ExpandMore fontSize="inherit" />
               </TouchRipple>}>
@@ -165,7 +184,13 @@ const languageList = [{
   title: "EN",
   value: "en"
 }, {
-  title: "DE",
-  value: "de"
-}];
+  title: "Ar",
+  value: "ar"
+}
+, {
+  title: "Tr",
+  value: "tr"
+}
+
+];
 export default Topbar;

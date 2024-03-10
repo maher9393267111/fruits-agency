@@ -86,6 +86,7 @@ const Setting = () => {
   const [showBody, setShowBody] = useState(false);
   return <ClickAwayListener onClickAway={() => setShowBody(false)}>
       <MainContainer>
+        
         <Tooltip title="Settings & Demos" placement="left">
           <StyledIconButton onClick={() => setShowBody(state => !state)}>
             {!showBody && <Settings />}
@@ -95,9 +96,11 @@ const Setting = () => {
 
         <BodyWrapper showBody={showBody ? 1 : 0}>
           <FlexBox gap={2}>
-            <Button fullWidth onClick={() => updateSettings({
-            direction: "rtl"
-          })} color={settings.direction === "rtl" ? "primary" : "secondary"} variant={settings.direction === "rtl" ? "contained" : "outlined"}>
+            <Button fullWidth onClick={() =>
+             updateSettings({direction: "rtl"  })
+            
+            }
+           color={settings.direction === "rtl" ? "primary" : "secondary"} variant={settings.direction === "rtl" ? "contained" : "outlined"}>
               RTL
             </Button>
 
@@ -116,9 +119,9 @@ const Setting = () => {
             Bazaar Demos
           </H6>
 
-          <FlexBox gap={2} flexWrap="wrap">
+          {/* <FlexBox gap={2} flexWrap="wrap">
             {demos.map(demo => <StyledAvatar key={demo.id} src={demo.img} onClick={() => push(demo.path)} />)}
-          </FlexBox>
+          </FlexBox> */}
         </BodyWrapper>
       </MainContainer>
     </ClickAwayListener>;

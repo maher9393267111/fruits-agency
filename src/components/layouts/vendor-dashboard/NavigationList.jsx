@@ -11,14 +11,16 @@ export const navigations = [{
   icon: duotone.Products,
   children: [{
     name: "Product List",
-    path: "/admin/products"
+    path: "/admin/product/all"
   }, {
     name: "Create Product",
-    path: "/admin/products/create"
-  }, {
-    name: "Review",
-    path: "/admin/product-reviews"
-  }]
+    path: "/admin/products/add"
+  }
+  // , {
+  //   name: "Review",
+  //   path: "/admin/product-reviews"
+  // }
+]
 }, {
   name: "Categories",
   icon: duotone.Accounts,

@@ -23,6 +23,9 @@ import { useTranslation } from "next-i18next";
 const GadgetShop = props => {
   return <ShopLayout1>
       <SEO title="Gadget shop template" />
+      <h1 className="text-xl font-bold underline bg-green-400">
+      Hello world!
+    </h1>
       {/* MAIN PRODUCT CAROUSEL AND TOP PICK PRODUCTS AREA */}
       <Section1 mainCarousel={props.mainCarouselData} topPickList={props.topPickList} />
 
@@ -51,9 +54,10 @@ const GadgetShop = props => {
       <Setting />
     </ShopLayout1>;
 };
+
+
+
 export const getStaticProps = async ({locale}) => {
-
-
 
 
 

@@ -7,6 +7,8 @@ import Navbar from "components/navbar/Navbar";
 import { MobileNavigationBar } from "components/mobile-navigation";
 import SearchInputWithCategory from "components/search-box/SearchInputWithCategory";
 
+import NavbarMain from "components/ProjectComponents/navbar";
+
 /**
  *  Used in:
  *  1. market-1, matket-2, gadget-shop,
@@ -37,11 +39,17 @@ const ShopLayout1 = ({
       {/* HEADER */}
       <Sticky fixedOn={0} onSticky={toggleIsFixed} scrollDistance={300}>
         <Header isFixed={isFixed} searchInput={<SearchInputWithCategory />} />
+
       </Sticky>
+
+
+
 
       <div className="section-after-sticky">
         {/* NAVIGATION BAR */}
-        {showNavbar && <Navbar elevation={0} border={1} />}
+
+        <NavbarMain/>
+        {/* {showNavbar && <Navbar elevation={0} border={1} />} */}
 
         {/* BODY CONTENT */}
         {children}

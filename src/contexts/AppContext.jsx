@@ -27,10 +27,11 @@ const INITIAL_CART = [{
   imgUrl: "/assets/images/products/Fashion/Clothes/4.DenimBlueJeans.png"
 }];
 const INITIAL_STATE = {
-  cart: INITIAL_CART
+  cart: typeof window !== 'undefined' && JSON.parse(localStorage.getItem('cart')) || []
 };
 const AppContext = createContext({
   state: INITIAL_STATE,
+  //INITIAL_STATE,
   dispatch: () => {}
 });
 const reducer = (state, action) => {
@@ -41,6 +42,8 @@ const reducer = (state, action) => {
       let exist = cartList.find(item => item.id === cartItem.id);
       if (cartItem.qty < 1) {
         const filteredCart = cartList.filter(item => item.id !== cartItem.id);
+        localStorage.setItem('cart', JSON.stringify(filteredCart))
+
         return {
           ...state,
           cart: filteredCart
@@ -53,15 +56,25 @@ const reducer = (state, action) => {
           ...item,
           qty: cartItem.qty
         } : item);
+
+        localStorage.setItem('cart', JSON.stringify(newCart))
+
         return {
           ...state,
           cart: newCart
         };
       }
+
+   //  else {
+      
+      localStorage.setItem('cart', JSON.stringify([...cartList, cartItem]))
       return {
         ...state,
         cart: [...cartList, cartItem]
       };
+   // }
+
+
     default:
       {
         return state;

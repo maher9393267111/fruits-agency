@@ -9,10 +9,16 @@ import OpenGraphTags from "utils/OpenGraphTags";
 import { AppProvider } from "contexts/AppContext";
 import SettingsProvider from "contexts/SettingContext";
 import SnackbarProvider from "components/SnackbarProvider";
+import { ToastContainer,toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
+
+import { StateContextProvider } from '../src/functions/contextproject/index'
 import nextI18NextConfig from "../next-i18next.config";
 import "nprogress/nprogress.css";
 import "simplebar/dist/simplebar.min.css";
 import "../src/__server__";
+import '../styles/globals.css'
+
 //Binding events.
 Router.events.on("routeChangeStart", () => nProgress.start());
 Router.events.on("routeChangeComplete", () => nProgress.done());
@@ -37,6 +43,9 @@ const App = ({
         <title>Bazaar - Next.js Ecommerce Template</title>
       </Head>
 
+<StateContextProvider>
+
+
       <SettingsProvider>
         <AppProvider>
           <MuiTheme>
@@ -44,8 +53,12 @@ const App = ({
               <RTL>{getLayout(<AnyComponent {...pageProps} />)}</RTL>
             </SnackbarProvider>
           </MuiTheme>
+          <ToastContainer />
         </AppProvider>
       </SettingsProvider>
+
+      </StateContextProvider>
+
     </Fragment>;
 };
 
