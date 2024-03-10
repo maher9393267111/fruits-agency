@@ -149,7 +149,7 @@ export const StateContextProvider = ({ children }) => {
 
     try {
       if (profile) {
-        console.log("profileeee=>",profile)
+        //console.log("profileeee=>",profile)
         // specefic user cart get
         const updateCartList = doc(db, "cart", profile?.uid);
 
