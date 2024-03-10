@@ -11,7 +11,7 @@ const EditSubPage = ({  }) => {
   //const product = await getDocument("products", context.query.id);
 
   const [product, setProduct] = useState({});
-  const [loacding, setLoading] = useState(true);
+  const [loacding, setLoading] = useState(false);
 
   const router = useRouter();
   const id = router.query.id ;
