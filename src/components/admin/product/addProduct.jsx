@@ -12,7 +12,7 @@ import VendorDashboardLayout from "components/layouts/vendor-dashboard";
 
 
 
-const AddProductMain = ({ cats, subcats, products }) => {
+const AddProductMain = ({  products }) => {
   const [files, setFiles] = useState([]);
   const [videoFile,setVideoFile] = useState("");
   
@@ -48,7 +48,7 @@ const AddProductMain = ({ cats, subcats, products }) => {
     <VendorDashboardLayout>
 
    
-      <ProductForm {...{ cats, subcats, onFinish, files, setFiles,videoFile,setVideoFile }} />
+      <ProductForm {...{  onFinish, files, setFiles,videoFile,setVideoFile }} />
       </VendorDashboardLayout>
   );
 };

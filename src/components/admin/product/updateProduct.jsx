@@ -14,7 +14,7 @@ import {
   deleteImages,
 } from "../../../functions/firebase/getData";
 import VendorDashboardLayout from "components/layouts/vendor-dashboard";
-const UpdateProductMain = ({ product, cats, subcats }) => {
+const UpdateProductMain = ({ product }) => {
   const { query, replace } = useRouter();
   const { id } = query;
   //const [product, setProduct] = useState(null);
@@ -57,8 +57,7 @@ const UpdateProductMain = ({ product, cats, subcats }) => {
       <ProductForm
         {...{
           initialValues,
-          cats,
-          subcats,
+         
           files,
           setFiles,
           isupdate,

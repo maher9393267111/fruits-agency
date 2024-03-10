@@ -14,7 +14,7 @@ export const navigations = [{
     path: "/admin/product/all"
   }, {
     name: "Create Product",
-    path: "/admin/products/add"
+    path: "/admin/product/add"
   }
   // , {
   //   name: "Review",
