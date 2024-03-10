@@ -1,6 +1,10 @@
-import React, { useState } from "react";
+import React, { useState ,useEffect  } from "react";
 import { Avatar, Box, IconButton, Menu, MenuItem, styled } from "@mui/material";
 import { H6, Small } from "components/Typography";
+import { useAuth } from "../../../../functions/contextproject";
+
+import { useRouter } from "next/router";
+import { toast } from "react-toastify";
 
 // styled components
 const Divider = styled(Box)(({
@@ -14,6 +18,25 @@ const AccountPopover = () => {
   const open = Boolean(anchorEl);
   const handleClose = () => setAnchorEl(null);
   const handleClick = event => setAnchorEl(event.currentTarget);
+
+  const { logout} = useAuth();
+  const { replace } = useRouter();
+
+  const signOut = () => {
+    try {
+      // setPageLoading(true);
+      logout();
+      localStorage.removeItem("isLogged");
+      replace("/admin/login");
+      // setPageLoading(false);
+    } catch (error) {
+      console.log(error);
+      toast.error(error?.message);
+    }
+  };
+
+
+
   return <Box>
       <IconButton sx={{
       padding: 0
@@ -68,7 +91,7 @@ const AccountPopover = () => {
         <MenuItem>Settings</MenuItem>
 
         <Divider />
-        <MenuItem>Logout</MenuItem>
+        <MenuItem onClick={signOut}>Logout</MenuItem>
       </Menu>
     </Box>;
 };

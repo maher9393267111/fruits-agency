@@ -1,28 +1,15 @@
-import React from 'react'
-import Navbar from './navbar'
-import Topbar from 'components/Topbar'
+import React from "react";
+import Navbar from "./navbar";
+import Topbar from "components/Topbar";
 
-export default function MainLayout({children}) {
+export default function MainLayout({ children }) {
   return (
-    <div className=''>
-        <Topbar/>
+    <div className="">
+      <Topbar />
 
-<Navbar/>
+      <Navbar />
 
-
-
-<div>
-
-    {children}
-
-</div>
-
-
-
-
-
-
-
+      <div>{children}</div>
     </div>
-  )
+  );
 }

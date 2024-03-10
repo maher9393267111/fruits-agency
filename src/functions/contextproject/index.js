@@ -491,7 +491,7 @@ export const StateContextProvider = ({ children }) => {
       if (user) {
         // set Authuser data in state
         setUserData(user);
-        localStorage.setItem("isLogged", true);
+        localStorage.setItem("isLogged", true ,user?.uid);
         // specify path for get Auth user Data from firestore
         const userRef = doc(db, "users", user?.uid);
         wishListSnapShot(user?.uid);

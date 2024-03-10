@@ -33,21 +33,21 @@ const AdminLayout = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
   const { pathname, replace } = useRouter();
 
-  // useEffect(() => {
-  //   console.log("profile Role: " + user);
+  useEffect(() => {
+    console.log("profile Role: " + user);
 
-  //   if (profile?.role && profile?.role !== "admin") {
-  //     replace("/");
-  //     toast.error("sorry you are not allowed to edit this page");
-  //   }
+    if (profile?.role && profile?.role !== "admin") {
+      replace("/");
+      toast.error("sorry you are not allowed to edit this page");
+    }
 
-  //   const isLoggeed = localStorage.getItem("isLogged");
+    const isLoggeed = localStorage.getItem("isLogged");
 
-  //   console.log("isLogged-->", isLoggeed);
-  //   if (!isLoggeed) {
-  //     replace("/auth/login");
-  //   }
-  // }, [profile]);
+    console.log("isLogged-->", isLoggeed);
+    if (!isLoggeed) {
+      replace("/auth/login");
+    }
+  }, [profile]);
 
 
 
@@ -57,7 +57,7 @@ const AdminLayout = ({ children }) => {
       // setPageLoading(true);
       logout();
       localStorage.removeItem("isLogged");
-      replace("/auth/login");
+      replace("/admin/login");
       // setPageLoading(false);
     } catch (error) {
       console.log(error);
@@ -65,38 +65,38 @@ const AdminLayout = ({ children }) => {
     }
   };
 
-  // if (pageLoading) {
-  //   <div className=" h-[100vh] flex justify-center items-center">
-  //     <div>
-  //       <h1>Please Login First to Access to this page</h1>
-  //       <h2 className=" text-blue-400 text-center text-2xl font-semibold">
-  //         <Link href={"/auth/login"}> Login Page</Link>
-  //       </h2>
-  //       <h2 className=" text-blue-400 text-4xl font-bold text-center mt-12">
-  //         {/* <Spinner size={"xl"} fontSize={"50px"} /> */}
-  //         ....Loading
-  //       </h2>
-  //     </div>
-  //   </div>;
-  // }
+  if (pageLoading) {
+    <div className=" h-[100vh] flex justify-center items-center">
+      <div>
+        <h1>Please Login First to Access to this page</h1>
+        <h2 className=" text-blue-400 text-center text-2xl font-semibold">
+          <Link href={"/auth/login"}> Login Page</Link>
+        </h2>
+        <h2 className=" text-blue-400 text-4xl font-bold text-center mt-12">
+          {/* <Spinner size={"xl"} fontSize={"50px"} /> */}
+          ....Loading
+        </h2>
+      </div>
+    </div>;
+  }
 
-  // if (profile && profile?.role !== "admin") {
-  //   return (
-  //     <div className="bg-blue-200 !h-screen w-full fixed top-0 flex justify-center items-center z-50">
-  //       <h1 className="font-cutiveMono text-3xl">
-  //         Sorry You Are Not Admin {profile?.role}
-  //       </h1>
-  //     </div>
-  //   );
-  // }
+  if (profile && profile?.role !== "admin") {
+    return (
+      <div className="bg-blue-200 !h-screen w-full fixed top-0 flex justify-center items-center z-50">
+        <h1 className="font-cutiveMono text-3xl">
+          Sorry You Are Not Admin {profile?.role}
+        </h1>
+      </div>
+    );
+  }
 
-  // if (profile === null) {
-  //   return (
-  //     <>
-  //       <Loader />
-  //     </>
-  //   );
-  // }
+  if (profile === null) {
+    return (
+      <>
+        <Loader />
+      </>
+    );
+  }
 
   return (
     <>
