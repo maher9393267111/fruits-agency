@@ -41,13 +41,13 @@ const ProductDescription = () => {
   );
 };
 
-export default function  ProductInfo ({})  {
+export default function ProductInfo({}) {
   const [product, setProduct] = useState({});
   console.log("🎭🎭🎭>", product.title);
   const [loacding, setLoading] = useState(false);
 
   const router = useRouter();
-const id = router.query.id;
+  const id = router.query.id;
 
   useEffect(() => {
     const getProduct = async () => {
@@ -144,7 +144,7 @@ const id = router.query.id;
                 <H1 mb={1}>{product?.title}</H1>
 
                 {product?.desc && (
-                  <FlexBox className='mx-4 md:mx-2' alignItems="center" mb={1}>
+                  <FlexBox className="mx-4 md:mx-2" alignItems="center" mb={1}>
                     {parse(product?.desc)}
                   </FlexBox>
                 )}
@@ -188,48 +188,20 @@ const id = router.query.id;
       </Container>
     </MainLayout>
   );
-};
-
+}
 
 export const getStaticPaths = async () => ({
-
-
   // (await getDocuments("products")).map((item,index)=>{return item.id})
- paths: [{ params: { id: '*' } }],
-  fallback: true
-})
+  paths: [{ params: { id: "*" } }],
+  fallback: true,
+});
 
-
-
-export const getStaticProps = async ( ctx ) => {
-  
+export const getStaticProps = async (ctx) => {
   return {
     props: {
       ...(await serverSideTranslations(ctx.locale, ["common"])),
-      
-   
     },
   };
 };
 
-
-
-
-
-
-
-
-
-
-
-
 // export default ProductInfo;
-
-
-
-
-
-
-
-
-
