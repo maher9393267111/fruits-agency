@@ -253,7 +253,7 @@ export async function getStaticPaths({ locales }) {
 
 export const getStaticProps = async (ctx) => {
   return {
-    revalidate: 60,
+    revalidate: 10,
     props: {
       ...(await serverSideTranslations(ctx.locale, ["common"])),
       
