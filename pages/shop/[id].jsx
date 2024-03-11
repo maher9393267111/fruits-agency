@@ -190,36 +190,66 @@ export default function ProductInfo({}) {
   );
 }
 
-// export const getStaticPaths = async () => ({
-//   // (await getDocuments("products")).map((item,index)=>{return item.id})
-//   paths:  [{ params: { id: "*" } }],
-//   fallback: true,
-// });
 
-export async function getStaticPaths() {
+// export async function getStaticPaths() {
 
   
-  const posts = [];
+//   const posts = [];
+//   try {
+//     const postDocs = await getDocuments("products")
+//     postDocs.forEach((doc) => {
+//       posts.push(doc.id);
+//     });
+//   } catch (error) {
+//     console.log(error);
+//   }
+
+//   const paths = posts.map((id) => {
+//     return ['en' , 'tr' ,'ar'].map((locale) => {
+//         return {
+//             params: { id: id },
+//             locale: locale,
+//         };
+//     });
+// });
+
+
+
+//   return {
+//     paths: paths, 
+//     // posts.map((post) => ({
+//     //   params: {
+//     //     id: post,
+//     //   },
+//     // })),
+//     fallback: false,
+//   };
+// }
+
+
+export async function getStaticPaths({ locales }) {
+  let blogs = [];
   try {
-    const postDocs = await getDocuments("products")
-    postDocs.forEach((doc) => {
-      posts.push(doc.id);
-    });
+      blogs = await getDocuments("products");
   } catch (error) {
-    console.log(error);
+      //
   }
-
-  return {
-    paths: posts.map((post) => ({
-      params: {
-        id: post,
-      },
-    })),
+  const paths = [];
+  blogs.forEach((blog) => {
+      locales.forEach((locale) => {
+          const path = {
+              params: {
+                  id: blog.id,
+              },
+              locale: locale,
+          };
+          paths.push(path);
+      });
+  });
+  return {     paths,
     fallback: true,
-  };
+};
 }
-
-
 
 export const getStaticProps = async (ctx) => {
   return {
