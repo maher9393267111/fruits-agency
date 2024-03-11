@@ -19,7 +19,9 @@ const Grocery3 = props => {
 
       <Container sx={{
       mb: 6
-    }}>
+    }}
+    
+    >
         {/* DISCOUNT OFFERS AREA */}
         <Section2 offers={props.offerCards} />
 

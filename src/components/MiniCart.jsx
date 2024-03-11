@@ -35,6 +35,9 @@ const MiniCart = ({
   const getTotalPrice = () => {
     return cartList.reduce((accum, item) => accum + item.price * item.qty, 0);
   };
+
+
+  
   return <Box width="100%" maxWidth={380}>
       <Box overflow="auto" height={`calc(100vh - ${!!cartList.length ? "80px - 3.25rem" : "0px"})`}>
         <FlexBetween mx={3} height={74}>
@@ -122,6 +125,8 @@ const MiniCart = ({
             </IconButton>
           </FlexBox>)}
       </Box>
+
+
 
       {cartList.length > 0 && <Box p={2.5}>
           <Link href="/checkout-alternative" passHref>

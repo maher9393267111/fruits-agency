@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import React,{ Fragment } from "react";
 import Head from "next/head";
 import Router from "next/router";
 import nProgress from "nprogress";
@@ -33,6 +33,18 @@ const App = ({
 }) => {
   const AnyComponent = Component;
   const getLayout = AnyComponent.getLayout ?? (page => page);
+
+  const [hydrated, setHydrated] = React.useState(false);
+  React.useEffect(() => {
+      setHydrated(true);
+  }, []);
+  if (!hydrated) {
+      // Returns null on first render, so the client and server match
+      return null;
+  }
+
+
+
   return <Fragment>
       <Head>
         <meta charSet="utf-8" />
@@ -42,6 +54,7 @@ const App = ({
         <OpenGraphTags />
         <title>Bazaar - Next.js Ecommerce Template</title>
       </Head>
+
 
 <StateContextProvider>
 

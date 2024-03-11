@@ -35,7 +35,7 @@ const AddProductMain = ({  products }) => {
 // }
     
 
-let data = {...values ,videourl:values.videourl === undefined ? '' : values.videourl}
+//let data = {...values ,videourl:values.videourl === undefined ? '' : values.videourl}
 
 console.log("value afters-->", data);
     
@@ -47,7 +47,7 @@ console.log("value afters-->", data);
     values.timeStamp = serverTimestamp()
 
 
-    await addDoc(collection(db, "products"), data);
+    await addDoc(collection(db, "products"), values);
 
 
     message.success(`Product Uploaded Successfully`);

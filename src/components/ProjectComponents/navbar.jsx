@@ -11,6 +11,7 @@ import Image from "next/image";
 //Icons
 import { Icon } from '@iconify/react'
 import menuIcon from '@iconify/icons-mdi/menu'
+
 import closeCircleOutline from '@iconify/icons-mdi/close-circle-outline'
 import accountSchool from '@iconify/icons-mdi/account-school'
 import humanMaleHeight from '@iconify/icons-mdi/human-male-height'
@@ -18,6 +19,7 @@ import foodApple from '@iconify/icons-mdi/food-apple'
 import newspaperVariantOutline from '@iconify/icons-mdi/newspaper-variant-outline'
 import spaIcon from '@iconify/icons-mdi/spa'
 import { useTranslation } from "next-i18next";
+
 
 
 export default function Navbar() {
@@ -62,37 +64,51 @@ export default function Navbar() {
           >
             <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
 
+
+{/* //media  <Icon icon="lucide:monitor-play" /> */}
+
               <li className="nav-item">
-                <Link href="/learn">
+                <Link href="/home">
                 <a className="px-3 py-2 flex items-center text-sm uppercase font-bold leading-snug text-white hover:opacity-75">   
-                  <Icon icon={accountSchool} className="text-lg leading-lg text-white opacity-75"/>  
+                  <Icon  icon="lucide:home" className="text-lg leading-lg text-white opacity-75"/>  
                   <span className="ml-2"> {t("navbar.home")}  </span>
                 </a>
                 </Link>  
               </li>
 
               <li className="nav-item">
-                <Link href="/clinimetric">  
+                <Link href="/shop">  
                 <a className="px-3 py-2 flex items-center text-sm uppercase font-bold leading-snug text-white hover:opacity-75">
-                  <Icon icon={humanMaleHeight} className="text-lg leading-lg text-white opacity-75"/>  
+                  <Icon icon={foodApple} className="text-lg leading-lg text-white opacity-75"/>  
+                  <span className="ml-2">{t("navbar.shop")}  </span>
+                </a>
+                </Link>
+              </li>
+
+
+
+              <li className="nav-item">
+                <Link href="/order">  
+                <a className="px-3 py-2 flex items-center text-sm uppercase font-bold leading-snug text-white hover:opacity-75">
+                  <Icon icon='lucide:shopping-bag' className="text-lg leading-lg text-white opacity-75"/>  
                   <span className="ml-2">{t("navbar.orders")}  </span>
                 </a>
                 </Link>
               </li>
 
               <li className="nav-item">
-                <Link href="/recommendation">  
+                <Link href="/partner">  
                 <a className="px-3 py-2 flex items-center text-sm uppercase font-bold leading-snug text-white hover:opacity-75">
-                  <Icon icon={foodApple} className="text-lg leading-lg text-white opacity-75"/>  
+                  <Icon icon={humanMaleHeight} className="text-lg leading-lg text-white opacity-75"/>  
                   <span className="ml-2"> {t("navbar.partner")}  </span>
                 </a>
                 </Link>
               </li>
 
               <li className="nav-item">
-                <Link href="/news">
+                <Link href="/contact">
                     <a className="px-3 py-2 flex items-center text-sm uppercase font-bold leading-snug text-white hover:opacity-75">
-                    <Icon icon={newspaperVariantOutline} className="text-lg leading-lg text-white opacity-75"/>  
+                    <Icon icon="dashicons:email-alt"  className="text-lg leading-lg text-white opacity-75"/>  
                     <span className="ml-2"> {t("navbar.contact")}  </span>
                     </a>  
                 </Link>  

@@ -88,12 +88,14 @@ else {
   q = query(collection(db, col), orderBy,search);
 }
 
+
   //const q = query(collection(db, cal), orderBy);
   const querySnapshot = await getDocs(q);
   const data = querySnapshot.docs.map((doc) => ({
     id: doc.id,
     ...doc.data(),
   }));
+  console.log('DARA' ,data)
   return data;
 };
 
