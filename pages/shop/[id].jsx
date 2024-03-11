@@ -247,13 +247,13 @@ export async function getStaticPaths({ locales }) {
       });
   });
   return {     paths,
-    fallback: true ,
+    fallback: false ,
 };
 }
 
 export const getStaticProps = async (ctx) => {
   return {
-    revalidate: 10,
+    revalidate: 1,
     props: {
       ...(await serverSideTranslations(ctx.locale, ["common"])),
       
