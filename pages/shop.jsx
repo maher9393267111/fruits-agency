@@ -47,33 +47,15 @@ export default function Shop() {
   );
 }
 
-export async function getServerSideProps({ locale }) {
-  // let products = [];
 
-  // products = await getDocumentsOrder(
-  //   "products",
-  //   orderBy("timeStamp", "asc"),
 
-  //   where("ismeedia", "==", false)
-  // );
 
-  
-  // console.log("products" ,products)
-
+export const getStaticProps = async ({ locale }) => {
+  const allProducts = await api.getAllProducts();
   return {
     props: {
       ...(await serverSideTranslations(locale, ["common"])),
-    //  products:products
+      allProducts,
     },
   };
-}
-
-// export const getStaticProps = async ({ locale }) => {
-//   const allProducts = await api.getAllProducts();
-//   return {
-//     props: {
-//       ...(await serverSideTranslations(locale, ["common"])),
-//       allProducts,
-//     },
-//   };
-// };
+};

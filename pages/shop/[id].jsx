@@ -191,18 +191,36 @@ export default function  ProductInfo ({id})  {
   );
 };
 
-export async function getServerSideProps(context) {
 
-  const id = context.query.id;
 
+ProductInfo.getInitialProps = async(ctx) => {
+  
+  const id = ctx.query.id;
   return {
-    props: {
+    props:{
+
+    ...(await serverSideTranslations(ctx.locale, ["common"])),
+    id:id
+    }
+  };
+};
+
+
+
+
+
+// export async function getServerSideProps(context) {
+
+//   const id = context.query.id;
+
+//   return {
+//     props: {
       
-      ...(await serverSideTranslations(context.locale, ['common'])),
-      id:id
-    },
-  }
-}
+//       ...(await serverSideTranslations(context.locale, ['common'])),
+//       id:id
+//     },
+//   }
+// }
 
 
 
