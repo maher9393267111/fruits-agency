@@ -41,7 +41,7 @@ const ProductDescription = () => {
   );
 };
 
-const ProductInfo = ({}) => {
+export default function  ProductInfo ({})  {
   const [product, setProduct] = useState({});
   console.log("🎭🎭🎭>", product.title);
   const [loacding, setLoading] = useState(false);
@@ -205,7 +205,7 @@ export async function getServerSideProps({
 
 
 
-export default ProductInfo;
+// export default ProductInfo;
 
 
 
