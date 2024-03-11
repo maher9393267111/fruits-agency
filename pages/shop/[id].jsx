@@ -41,13 +41,13 @@ const ProductDescription = () => {
   );
 };
 
-export default function  ProductInfo ({})  {
+export default function  ProductInfo ({id})  {
   const [product, setProduct] = useState({});
   console.log("🎭🎭🎭>", product.title);
   const [loacding, setLoading] = useState(false);
 
   const router = useRouter();
-  const id = router.query.id;
+  //const id = router.query.id;
 
   useEffect(() => {
     const getProduct = async () => {
@@ -59,7 +59,8 @@ export default function  ProductInfo ({})  {
       setLoading(false);
     };
 
-    if (id) getProduct();
+   // if (id) 
+    getProduct();
   }, [id]);
 
   const [selectedImage, setSelectedImage] = useState(0);
@@ -190,14 +191,15 @@ export default function  ProductInfo ({})  {
   );
 };
 
-export async function getServerSideProps({
-  locale,
-  
-}) {
+export async function getServerSideProps(context) {
+
+  const id = context.query.id;
+
   return {
     props: {
       
-      ...(await serverSideTranslations(locale, ['common'])),
+      ...(await serverSideTranslations(context.locale, ['common'])),
+      id:id
     },
   }
 }
