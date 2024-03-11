@@ -37,7 +37,7 @@ const AddProductMain = ({  products }) => {
 
 //let data = {...values ,videourl:values.videourl === undefined ? '' : values.videourl}
 
-console.log("value afters-->", data);
+
     
     if (videoFile) {
       values.video = await uploadImages(videoFile,true)

@@ -29,7 +29,7 @@ const EditSubPage = ({  }) => {
     };
 
     if (id) getProducts();
-  }, []);
+  }, [id]);
 
   return (
     <div>{loacding ? <Loader /> : <UpdateProduct product={product} />}</div>

@@ -91,7 +91,7 @@ const ProductForm = ({
           initialValues={{
             title: initialValues?.title || "",
             titlear: initialValues?.titlear || "",
-            titleen: initialValues?.titletr || "",
+            titletr: initialValues?.titletr || "",
             desc: initialValues?.desc || "",
             descar: initialValues?.descar || "",
             desctr: initialValues?.desctr || "",
