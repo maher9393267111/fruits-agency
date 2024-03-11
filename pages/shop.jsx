@@ -5,7 +5,7 @@ import AllProducts from "components/ProjectComponents/ShopProducts";
 import api from "utils/__api__/grocery3-shop";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
-import { getDocumentsOrder } from "../src/functions/firebase/getData";
+import { getDocuments, getDocumentsOrder } from "../src/functions/firebase/getData";
 import { orderBy, where} from "firebase/firestore";
 export default function Shop() {
 
@@ -49,13 +49,12 @@ export default function Shop() {
 
 
 
-
 export const getStaticProps = async ({ locale }) => {
-  const allProducts = await api.getAllProducts();
+  //const allProducts = await api.getAllProducts();
   return {
     props: {
       ...(await serverSideTranslations(locale, ["common"])),
-      allProducts,
+     // allProducts,
     },
   };
 };

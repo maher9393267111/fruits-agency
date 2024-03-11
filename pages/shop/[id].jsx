@@ -41,13 +41,13 @@ const ProductDescription = () => {
   );
 };
 
-export default function  ProductInfo ({id})  {
+export default function  ProductInfo ({})  {
   const [product, setProduct] = useState({});
   console.log("🎭🎭🎭>", product.title);
   const [loacding, setLoading] = useState(false);
 
   const router = useRouter();
-  //const id = router.query.id;
+const id = router.query.id;
 
   useEffect(() => {
     const getProduct = async () => {
@@ -59,8 +59,7 @@ export default function  ProductInfo ({id})  {
       setLoading(false);
     };
 
-   // if (id) 
-    getProduct();
+    if (id) getProduct();
   }, [id]);
 
   const [selectedImage, setSelectedImage] = useState(0);
@@ -192,16 +191,24 @@ export default function  ProductInfo ({id})  {
 };
 
 
+export const getStaticPaths = async () => ({
 
-ProductInfo.getInitialProps = async(ctx) => {
+
+  // (await getDocuments("products")).map((item,index)=>{return item.id})
+ paths: [{ params: { id: '*' } }],
+  fallback: true
+})
+
+
+
+export const getStaticProps = async ( ctx ) => {
   
-  const id = ctx.query.id;
   return {
-    props:{
-
-    ...(await serverSideTranslations(ctx.locale, ["common"])),
-    id:id
-    }
+    props: {
+      ...(await serverSideTranslations(ctx.locale, ["common"])),
+      
+   
+    },
   };
 };
 
@@ -209,18 +216,9 @@ ProductInfo.getInitialProps = async(ctx) => {
 
 
 
-// export async function getServerSideProps(context) {
 
-//   const id = context.query.id;
 
-//   return {
-//     props: {
-      
-//       ...(await serverSideTranslations(context.locale, ['common'])),
-//       id:id
-//     },
-//   }
-// }
+
 
 
 
