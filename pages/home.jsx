@@ -82,3 +82,4 @@ export const getStaticProps = async ({ locale }) => {
     },
   };
 };
+
