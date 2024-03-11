@@ -190,11 +190,36 @@ export default function ProductInfo({}) {
   );
 }
 
-export const getStaticPaths = async () => ({
-  // (await getDocuments("products")).map((item,index)=>{return item.id})
-  paths: [{ params: { id: "*" } }],
-  fallback: true,
-});
+// export const getStaticPaths = async () => ({
+//   // (await getDocuments("products")).map((item,index)=>{return item.id})
+//   paths:  [{ params: { id: "*" } }],
+//   fallback: true,
+// });
+
+export async function getStaticPaths() {
+
+  
+  const posts = [];
+  try {
+    const postDocs = await getDocuments("products")
+    postDocs.forEach((doc) => {
+      posts.push(doc.id);
+    });
+  } catch (error) {
+    console.log(error);
+  }
+
+  return {
+    paths: posts.map((post) => ({
+      params: {
+        id: post,
+      },
+    })),
+    fallback: true,
+  };
+}
+
+
 
 export const getStaticProps = async (ctx) => {
   return {
@@ -203,5 +228,7 @@ export const getStaticProps = async (ctx) => {
     },
   };
 };
+
+
 
 // export default ProductInfo;
