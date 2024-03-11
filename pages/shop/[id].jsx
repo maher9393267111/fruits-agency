@@ -189,8 +189,6 @@ const ProductInfo = ({}) => {
     </MainLayout>
   );
 };
-export default ProductInfo;
-
 
 export async function getServerSideProps({
   locale,
@@ -203,6 +201,12 @@ export async function getServerSideProps({
     },
   }
 }
+
+
+
+
+export default ProductInfo;
+
 
 
 
