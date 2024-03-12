@@ -201,7 +201,7 @@ const ProductCardMain = ({ ...props }) => {
       ) : (
         <ImageWrapper>
           <ImageBox className="hoverImgBox">
-            <Link href={`/shop/${slug}`}>
+            <Link href={`/shop/single?id=${slug}`}>
               <a>
                 <LazyImage
                   alt={title}
@@ -277,7 +277,7 @@ const ProductCardMain = ({ ...props }) => {
             {title}
           </H3>
           :
-        <Link href={`/shop/${slug}`}>
+        <Link href={`/shop/single?id=${slug}`}>
           <a>
             <H3
               mb={1}

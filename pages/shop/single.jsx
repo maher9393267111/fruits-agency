@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
+ 
 import { useRouter } from "next/router";
 import parse from "html-react-parser";
 import Loader from "../../src/components/admin/common/Loader";
@@ -41,13 +42,16 @@ const ProductDescription = () => {
   );
 };
 
-export default function ProductInfo({}) {
+export default function ProductSingle({}) {
   const [product, setProduct] = useState({});
   console.log("🎭🎭🎭>", product.title);
   const [loacding, setLoading] = useState(false);
 
   const router = useRouter();
   const id = router.query.id;
+
+
+  
 
   useEffect(() => {
     const getProduct = async () => {
@@ -190,59 +194,8 @@ export default function ProductInfo({}) {
   );
 }
 
-// export async function getStaticPaths() {
 
-//   const posts = [];
-//   try {
-//     const postDocs = await getDocuments("products")
-//     postDocs.forEach((doc) => {
-//       posts.push(doc.id);
-//     });
-//   } catch (error) {
-//     console.log(error);
-//   }
 
-//   const paths = posts.map((id) => {
-//     return ['en' , 'tr' ,'ar'].map((locale) => {
-//         return {
-//             params: { id: id },
-//             locale: locale,
-//         };
-//     });
-// });
-
-//   return {
-//     paths: paths,
-//     // posts.map((post) => ({
-//     //   params: {
-//     //     id: post,
-//     //   },
-//     // })),
-//     fallback: false,
-//   };
-// }
-
-export async function getStaticPaths({ locales }) {
-  let blogs = [];
-  try {
-    blogs = await getDocuments("products");
-  } catch (error) {
-    //
-  }
-  const paths = [];
-  blogs.forEach((blog) => {
-    locales.forEach((locale) => {
-      const path = {
-        params: {
-          id: blog.id,
-        },
-        locale: locale,
-      };
-      paths.push(path);
-    });
-  });
-  return { paths, fallback: false };
-}
 
 export const getStaticProps = async (ctx) => {
   return {
