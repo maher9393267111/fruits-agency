@@ -16,6 +16,7 @@ import { useFormik } from "formik";
 import { H1, H6, H5, Paragraph, Tiny } from "components/Typography";
 import BazaarImage from "components/BazaarImage";
 import BazaarTextField from "components/BazaarTextField";
+import BazaarSwitch from "components/BazaarSwitch";
 
 // import EyeToggleButton from "./EyeToggleButton";
 import { FlexBox, FlexRowCenter, FlexBetween } from "components/flex-box";
@@ -86,6 +87,14 @@ const PartnerForm = () => {
     site: "",
     position: "",
     zipcode: "",
+    intersted: "",
+    question: "",
+    worktype:'',
+   // ismarketing: "",
+  //  agreements:false,
+    monthly: "",
+    newsletter:true,
+    
   };
   const formSchema = yup.object().shape({
     //t("name")
@@ -95,6 +104,7 @@ const PartnerForm = () => {
     adress: yup.string().required("adress is required"),
     phone: yup.number().required("phone number is required"),
     email: yup.string().email("invalid email").required("Email is required"),
+    //agreements: yup.Boolean().required("agreements is required"),
     // worktype: yup.string().required("subject is required"),
     // country: yup.string().required("subject is required")
     // city: yup.string().required("subject is required")
@@ -104,27 +114,39 @@ const PartnerForm = () => {
   const { profile } = useAuth();
 
   const { enqueueSnackbar } = useSnackbar();
+  const [news, setNews] = useState(false)
+  const [agreements ,setAgreements] =  useState(false)
+  const [productPulish, setProductPublish] = useState(false);
 
   const handleFormSubmit = async (values) => {
     console.log(values);
-    // const res = await fetch(`/api/order`, {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/json" },
 
-    //   body: JSON.stringify({ ...values, cart: cartList }),
-    // });
+if (!productPulish ){
+  enqueueSnackbar("You must to agree ", {
+    variant: "error",
+  });
+  return
+}
 
-    // console.log("RESPONSE", res);
 
-    // if (res?.status === 200) {
-    //   enqueueSnackbar("your order sended successfully", {
-    //     variant: "success",
-    //   });
-    // } else {
-    //   enqueueSnackbar("Some thing wrong", {
-    //     variant: "error",
-    //   });
-    // }
+    const res = await fetch(`/api/partner`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+
+      body: JSON.stringify({ ...values ,agreements:productPulish ,ismarketing:news }),
+    });
+
+    console.log("RESPONSE", res);
+
+    if (res?.status === 200) {
+      enqueueSnackbar("your form message has sended successfully", {
+        variant: "success",
+      });
+    } else {
+      enqueueSnackbar("Some thing wrong", {
+        variant: "error",
+      });
+    }
 
     //resetForm();
   };
@@ -277,8 +299,6 @@ const PartnerForm = () => {
           />
         </Grid>
 
-
-
         <Grid item sm={6} xs={12}>
           <BazaarTextField
             mb={1.5}
@@ -348,6 +368,67 @@ const PartnerForm = () => {
             helperText={touched.adress && errors.adress}
           />
         </Grid>
+
+        <Grid item sm={6} xs={12}>
+          <BazaarTextField
+            size="medium"
+            fullWidth
+            name="interested"
+            type="interested"
+            variant="outlined"
+            onBlur={handleBlur}
+            value={values.interested}
+            onChange={handleChange}
+            label="Interested"
+            placeholder="enter your interested"
+          />
+        </Grid>
+
+        <Grid item sm={6} xs={12}>
+          <BazaarTextField
+            size="medium"
+            fullWidth
+            name="question"
+            type="question"
+            variant="outlined"
+            onBlur={handleBlur}
+            value={values.question}
+            onChange={handleChange}
+            label="Question"
+            placeholder="enter your question"
+          />
+        </Grid>
+
+        <Grid item sm={6} xs={12}>
+          <BazaarTextField
+            size="medium"
+            fullWidth
+            name="monthly"
+            type="monthly"
+            variant="outlined"
+            onBlur={handleBlur}
+            value={values.monthly}
+            onChange={handleChange}
+            label="monthly average"
+            placeholder="enter your monthly average"
+          />
+        </Grid>
+
+        <Grid item sm={6} xs={12}>
+        <H5 className={'inline-block'}>Recieve newsletter</H5>
+        <BazaarSwitch color="info" checked={news} onChange={(e) => setNews(e.target.checked)} />
+
+</Grid>
+
+
+
+<Grid item sm={6} xs={12}>
+<H5 className={'inline-block'}>Agree</H5>
+<BazaarSwitch color="info" checked={productPulish} onChange={(e) => setProductPublish(e.target.checked)} />
+
+</Grid>
+
+
 
         <Grid item xs={12}>
           <TextField

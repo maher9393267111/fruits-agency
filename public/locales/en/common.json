@@ -8,7 +8,9 @@
     "home":"Home",
     "contact":"Contact",
     "orders":"Orders",
-    "partner":"Partner"
+    "partner":"Partner",
+    "shop":"Shop",
+    "media":"media"
   }
 
 }

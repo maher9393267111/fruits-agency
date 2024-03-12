@@ -1,7 +1,13 @@
 import Link from "next/link";
 import { useCallback, useState } from "react";
 import { Box, Button, Chip, Divider, styled } from "@mui/material";
-import { Add, Favorite, FavoriteBorder, Remove, RemoveRedEye } from "@mui/icons-material";
+import {
+  Add,
+  Favorite,
+  FavoriteBorder,
+  Remove,
+  RemoveRedEye,
+} from "@mui/icons-material";
 import { useSnackbar } from "notistack";
 import ShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import LazyImage from "components/LazyImage";
@@ -11,7 +17,7 @@ import { FlexBetween, FlexBox } from "components/flex-box";
 import ProductViewDialog from "components/products/ProductViewDialog";
 import { useAppContext } from "contexts/AppContext";
 import { calculateDiscount, currency } from "lib";
-
+import ReactPlayer from "react-player";
 // styled components
 const StyledBazaarCard = styled(Box)({
   height: "100%",
@@ -20,28 +26,38 @@ const StyledBazaarCard = styled(Box)({
   overflow: "hidden",
   position: "relative",
   flexDirection: "column",
-  justifyContent: "space-between"
+  justifyContent: "space-between",
 });
-const ImageWrapper = styled(Box)(({
-  theme
-}) => ({
+const ImageWrapper = styled(Box)(({ theme }) => ({
   borderRadius: 8,
   overflow: "hidden",
   textAlign: "center",
   position: "relative",
   display: "inline-block",
   [theme.breakpoints.down("sm")]: {
-    display: "block"
+    display: "block",
   },
   "&:hover": {
     "& .hoverButtonBox": {
-      opacity: 1
+      opacity: 1,
     },
     "& .hoverImgBox": {
-      filter: "blur(5px)"
-    }
-  }
+      filter: "blur(5px)",
+    },
+  },
 }));
+
+const VideoWrapper = styled(Box)(({ theme }) => ({
+  borderRadius: 8,
+  overflow: "hidden",
+  textAlign: "center",
+  position: "relative",
+  display: "inline-block",
+  [theme.breakpoints.down("sm")]: {
+    display: "block",
+  },
+}));
+
 const HoverButtonBox = styled(Box)({
   opacity: 0,
   top: "50%",
@@ -65,20 +81,18 @@ const HoverButtonBox = styled(Box)({
       padding: "4px 14px",
       position: "absolute",
       "& svg": {
-        fontSize: 16
-      }
-    }
-  }
+        fontSize: 16,
+      },
+    },
+  },
 });
 const ImageBox = styled(Box)({
   opacity: 1,
   padding: "44px 40px",
   background: "#F5F5F5",
-  transition: "all .3s ease"
+  transition: "all .3s ease",
 });
-const ItemController = styled(FlexBetween)(({
-  theme
-}) => ({
+const ItemController = styled(FlexBetween)(({ theme }) => ({
   background: "#fff",
   overflow: "hidden",
   borderRadius: "5px",
@@ -91,13 +105,13 @@ const ItemController = styled(FlexBetween)(({
     alignItems: "center",
     "&:hover": {
       cursor: "pointer",
-      background: "#f3f5f9"
-    }
+      background: "#f3f5f9",
+    },
   },
   "& svg": {
     fontSize: 22,
-    color: theme.palette.grey[600]
-  }
+    color: theme.palette.grey[600],
+  },
 }));
 const StyledChip = styled(Chip)({
   zIndex: 11,
@@ -107,22 +121,22 @@ const StyledChip = styled(Chip)({
   paddingRight: 3,
   fontWeight: 600,
   fontSize: "10px",
-  position: "absolute"
+  position: "absolute",
 });
 const ContentWrapper = styled(Box)({
   padding: "1rem",
   "& .title, & .categories": {
     overflow: "hidden",
     whiteSpace: "nowrap",
-    textOverflow: "ellipsis"
-  }
+    textOverflow: "ellipsis",
+  },
 });
 
 // ====================================================================
 
 // ====================================================================
 
-const ProductCardMain= ({...props }) => {
+const ProductCardMain = ({ ...props }) => {
   const {
     off,
     id,
@@ -131,20 +145,17 @@ const ProductCardMain= ({...props }) => {
     imgUrl,
     rating,
     hideRating,
-    slug
+    slug,
+    video,
+    ismedia,
   } = props;
-  const {
-    enqueueSnackbar
-  } = useSnackbar();
-  const {
-    state,
-    dispatch
-  } = useAppContext();
+  const { enqueueSnackbar } = useSnackbar();
+  const { state, dispatch } = useAppContext();
   const [openModal, setOpenModal] = useState(false);
   const [isFavorite, setIsFavorite] = useState(false);
-  const toggleIsFavorite = () => setIsFavorite(fav => !fav);
-  const toggleDialog = useCallback(() => setOpenModal(open => !open), []);
-  const cartItem = state.cart.find(item => item.slug === slug);
+  const toggleIsFavorite = () => setIsFavorite((fav) => !fav);
+  const toggleDialog = useCallback(() => setOpenModal((open) => !open), []);
+  const cartItem = state.cart.find((item) => item.slug === slug);
   const handleCartAmountChange = (amount, type) => () => {
     dispatch({
       type: "CHANGE_CART_AMOUNT",
@@ -154,34 +165,57 @@ const ProductCardMain= ({...props }) => {
         id,
         name: title,
         qty: amount,
-        slug
-      }
+        slug,
+      },
     });
 
     // SHOW ALERT PRODUCT ADDED OR REMOVE
     if (type === "remove") {
       enqueueSnackbar("Remove from Cart", {
-        variant: "error"
+        variant: "error",
       });
     } else {
       enqueueSnackbar("Added to Cart", {
-        variant: "success"
+        variant: "success",
       });
     }
   };
-  return <StyledBazaarCard>
-      <ImageWrapper>
-        
-
-        <ImageBox className="hoverImgBox">
-          <Link href={`/shop/${slug}`}>
+  return (
+    <StyledBazaarCard>
+      {ismedia ? (
+        <VideoWrapper>
+          <ImageBox className="hoverImgBox">
             <a>
-              <LazyImage alt={title} width={190} height={190} src={imgUrl} layout="responsive" objectFit="contain" />
+              <ReactPlayer
+                className="!rounded-2xl "
+                controls
+                width="auto"
+                //  height="500px"
+                playing={false}
+                muted={true}
+                url={video}
+              />
             </a>
-          </Link>
-        </ImageBox>
+          </ImageBox>
+        </VideoWrapper>
+      ) : (
+        <ImageWrapper>
+          <ImageBox className="hoverImgBox">
+            <Link href={`/shop/${slug}`}>
+              <a>
+                <LazyImage
+                  alt={title}
+                  width={190}
+                  height={190}
+                  src={imgUrl}
+                  layout="responsive"
+                  objectFit="contain"
+                />
+              </a>
+            </Link>
+          </ImageBox>
 
-        {/* <ProductViewDialog openDialog={openModal} handleCloseDialog={toggleDialog} product={{
+          {/* <ProductViewDialog openDialog={openModal} handleCloseDialog={toggleDialog} product={{
         title,
         price,
         id,
@@ -189,9 +223,9 @@ const ProductCardMain= ({...props }) => {
         imgGroup: [imgUrl, imgUrl]
       }} /> */}
 
-        <HoverButtonBox className="hoverButtonBox">
-          <Box className="buttonBox">
-            {/* <ItemController>
+          <HoverButtonBox className="hoverButtonBox">
+            <Box className="buttonBox">
+              {/* <ItemController>
               <Span onClick={toggleDialog}>
                 <RemoveRedEye />
               </Span>
@@ -209,37 +243,55 @@ const ProductCardMain= ({...props }) => {
               </Span>
             </ItemController> */}
 
-            
-            {props.isorderpage &&
-
-<div className="text-center flex justify-center">
-
-
-            {cartItem?.qty ? <Button color="primary" variant="outlined" className="addCartButton" onClick={handleCartAmountChange(cartItem.qty - 1, "remove")}>
-                <Remove /> Remove from Cart
-              </Button> : <Button color="primary" variant="outlined" className="addCartButton" onClick={handleCartAmountChange(1)}>
-                <Add /> Add to Cart
-              </Button>}
-              </div>
-}
-
-          </Box>
-
-
-        </HoverButtonBox>
-
-      </ImageWrapper>
+              {props.isorderpage && (
+                <div className="text-center flex justify-center">
+                  {cartItem?.qty ? (
+                    <Button
+                      color="primary"
+                      variant="outlined"
+                      className="addCartButton"
+                      onClick={handleCartAmountChange(0, "remove")}
+                    >
+                      <Remove /> Remove from Cart
+                    </Button>
+                  ) : (
+                    <Button
+                      color="primary"
+                      variant="outlined"
+                      className="addCartButton"
+                      onClick={handleCartAmountChange(1)}
+                    >
+                      <Add /> Add to Cart
+                    </Button>
+                  )}
+                </div>
+              )}
+            </Box>
+          </HoverButtonBox>
+        </ImageWrapper>
+      )}
 
       <ContentWrapper>
+        {ismedia ?
+        <H3 mb={1} title={title} fontSize="14px" fontWeight="600" className="title" color="text.secondary">
+            {title}
+          </H3>
+          :
         <Link href={`/shop/${slug}`}>
           <a>
-            <H3 mb={1} title={title} fontSize="14px" fontWeight="600" className="title" color="text.secondary">
+            <H3
+              mb={1}
+              title={title}
+              fontSize="14px"
+              fontWeight="600"
+              className="title"
+              color="text.secondary"
+            >
               {title}
             </H3>
           </a>
         </Link>
-
-     
+}
 
         {/* <FlexBox gap={1} alignItems="center" mt={0.5}>
           <Box fontWeight="600" color="primary.main">
@@ -251,6 +303,7 @@ const ProductCardMain= ({...props }) => {
             </Box>}
         </FlexBox> */}
       </ContentWrapper>
-    </StyledBazaarCard>;
+    </StyledBazaarCard>
+  );
 };
 export default ProductCardMain;

@@ -35,7 +35,7 @@ const ShopProducts = ({
 
       <Grid container mb={-0.5} spacing={3}>
         {products.map(item => <Grid key={item.id} item md={4} sm={6} xs={12}>
-            <ProductCard   isorderpage={true}  hideRating id={item.id} slug={item.id}  title={item.title}  imgUrl={item?.images[0]} />
+            <ProductCard ismedia={item?.ismedia}   isorderpage={true} video={item?.video || item?.videourl}  hideRating id={item.id} slug={item.id}  title={item.title}  imgUrl={item?.images[0]} />
           </Grid>)}
       </Grid>
       {/* <Box mt={6} display="flex" justifyContent="center">

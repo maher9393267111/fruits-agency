@@ -19,7 +19,7 @@ const UpdateProductMain = ({ product }) => {
   const { id } = query;
   //const [product, setProduct] = useState(null);
   const [files, setFiles] = useState([]);
-
+  const [videoFile,setVideoFile] = useState("");
   const isupdate = true;
   const { setPageLoading, pageLoading } = useAuth();
 
@@ -30,7 +30,16 @@ const UpdateProductMain = ({ product }) => {
   const onFinish = async (values) => {
     try {
       setPageLoading(true);
+      console.log("VideoURl" + !videoFile && !values.videourl);
+      if(values.ismedia && (!videoFile && !values.videourl)){
 
+        message.error("video is required")
+        return
+            }
+        
+
+
+      console.log("video-" + videoFile);
       // delete images
       const imagesToDelete = product.images.filter(
         (image) => !values.images.includes(image)
@@ -39,6 +48,15 @@ const UpdateProductMain = ({ product }) => {
     
       const newImagesUploaded = await uploadImages(files);
       values.images = [...values.images, ...newImagesUploaded];
+
+      if (videoFile) {
+        values.video = await uploadImages(videoFile,true)
+
+        message.success("Video Uploaded Successfully")
+        //return
+      }
+
+
       await updateDoc(doc(db, "products", id), values);
 
       message.success("Product Updated Successfully");
@@ -58,7 +76,8 @@ const UpdateProductMain = ({ product }) => {
       <ProductForm
         {...{
           initialValues,
-         
+         setVideoFile,
+         videoFile,
           files,
           setFiles,
           isupdate,

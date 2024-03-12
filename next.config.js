@@ -7,6 +7,7 @@ module.exports = {
       "res.cloudinary.com",
       "mir-s3-cdn-cf.behance.net",
       "firebasestorage.googleapis.com",
+      "www.google.com"
     ],
   },
   i18n,

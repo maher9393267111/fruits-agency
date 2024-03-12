@@ -38,7 +38,7 @@ const ReviewRow = ({
       </StyledTableCell>
 
       <StyledTableCell align="left">
-        <BazaarSwitch color="info" checked={productPulish} onChange={() => setProductPublish(state => !state)} />
+        <BazaarSwitch color="info" checked={productPulish} onChange={(e) => setProductPublish(e.target.checked)} />
       </StyledTableCell>
 
       <StyledTableCell align="center">

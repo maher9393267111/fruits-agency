@@ -238,7 +238,8 @@ const OrderSidebar = () => {
       />
 
       <TextField
-        className="my-3"
+
+        className="my-6"
         rows={6}
         multiline
         fullWidth
@@ -252,6 +253,8 @@ const OrderSidebar = () => {
         error={Boolean(errors.description && touched.description)}
         helperText={touched.description && errors.description}
       />
+
+
 
       {/* ---------Cart items---- */}
       <Box>

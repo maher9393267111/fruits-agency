@@ -10,7 +10,7 @@ import {
   getDocumentsOrder,
 } from "../src/functions/firebase/getData";
 import { orderBy, where } from "firebase/firestore";
-export default function Shop() {
+export default function Media() {
   const [products, setProducts] = useState([]);
   const [loacding, setLoading] = useState(true);
 
@@ -21,7 +21,7 @@ export default function Shop() {
       const data = await getDocumentsOrder(
         "products",
         orderBy("timeStamp", "asc"),
-        where("ismedia", "==", false)
+        where("ismedia", "==", true)
       );
 
       console.log(data, "fetch products ====>>>>");
