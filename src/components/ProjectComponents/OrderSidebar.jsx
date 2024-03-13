@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import Link from "next/link";
 import * as yup from "yup";
-import { useFormik } from "formik";
+import { useFormik ,useFormikContext } from "formik";
 import { H1, H6, H5, Paragraph, Tiny } from "components/Typography";
 import BazaarImage from "components/BazaarImage";
 import BazaarTextField from "components/BazaarTextField";
@@ -74,6 +74,10 @@ export const Wrapper = styled(({ children, passwordVisibility, ...rest }) => (
 const OrderSidebar = () => {
 
     const {t} = useTranslation("common")
+    
+ // callbacks
+
+
 
 
     const initialValues = {
@@ -82,7 +86,8 @@ const OrderSidebar = () => {
         subject:"",
         description:"",
         adress:"",
-        phone:""
+        phone:"",
+        recaptcha:false
 
       };
       const formSchema = yup.object().shape({
@@ -105,6 +110,17 @@ const OrderSidebar = () => {
 
   const handleFormSubmit = async (values) => {
     console.log(values);
+
+
+if(values.recaptcha === false){
+  enqueueSnackbar("Capthca is requeired", {
+    variant: "error",
+  });
+
+  return
+}
+
+
     const res = await fetch(`/api/order`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -238,7 +254,25 @@ const OrderSidebar = () => {
         helperText={touched.adress && errors.adress}
       />
 
-      <TextField
+
+<BazaarTextField
+className=''
+fullWidth
+color="primary"
+size="medium"
+name="description"
+onBlur={handleBlur}
+onChange={handleChange}
+value={values.description}
+label="message"
+placeholder="enter your message"
+error={Boolean(errors.description && touched.description)}
+helperText={touched.description && errors.description}
+      />
+
+
+
+      {/* <TextField
 
         className="my-6"
         rows={6}
@@ -251,9 +285,10 @@ const OrderSidebar = () => {
         onChange={handleChange}
         value={values.description}
         label="message"
+        placeholder="enter your message"
         error={Boolean(errors.description && touched.description)}
         helperText={touched.description && errors.description}
-      />
+      /> */}
 
 
 
@@ -359,7 +394,16 @@ const OrderSidebar = () => {
 {/* --------Captcha----- */}
 
 <div className="flex justify-center my-20">
-                <ReCAPTCHA size="normal" sitekey={sitekey} ref={captchaRef} />
+                <ReCAPTCHA
+                 onChange={handleChange}
+                 value={values.captcha}
+                 label="Caotcha"
+                 placeholder="enter your captcha"
+                 error={Boolean(errors.captcha && touched.captcha)}
+                 helperText={touched.captcha && errors.captcha}
+               
+                
+                size="normal" sitekey={sitekey} ref={captchaRef} />
               </div>
 
 
