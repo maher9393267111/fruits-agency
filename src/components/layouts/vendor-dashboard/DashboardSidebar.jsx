@@ -96,13 +96,13 @@ const DashboardSidebar = props => {
   }
   return <SidebarWrapper compact={sidebarCompact ? 1 : 0} onMouseEnter={() => setOnHover(true)} onMouseLeave={() => sidebarCompact && setOnHover(false)}>
       <FlexBetween p={2} maxHeight={TOP_HEADER_AREA} justifyContent={COMPACT ? "center" : "space-between"}>
-        <Avatar src={COMPACT ? "/assets/images/bazaar-white-sm.svg" : "/assets/images/logo.svg"} sx={{
+        <Avatar src="/assets/images/sweetimages/sweetsips-final-logo.png" sx={{
         borderRadius: 0,
         width: "auto",
-        marginLeft: COMPACT ? 0 : 1
+         marginLeft: COMPACT ? 0 : 1
       }} />
 
-        <ChevronLeftIcon color="disabled" compact={COMPACT} onClick={setSidebarCompact} sidebarcompact={sidebarCompact ? 1 : 0} />
+        {/* <ChevronLeftIcon color="disabled" compact={COMPACT} onClick={setSidebarCompact} sidebarcompact={sidebarCompact ? 1 : 0} /> */}
       </FlexBetween>
 
       {content}

@@ -84,16 +84,16 @@ const DashboardNavbar = ({
           <CustomButton onClick={() => router.push("/")} startIcon={<Globe sx={{
           color: "grey.900"
         }} />}>
-            Browse Website
+            Goto My Website
           </CustomButton>
 
           <Box flexGrow={1} />
 
           <FlexBox alignItems="center" gap={2}>
-            <StyledInputBase placeholder="Search anything..." startAdornment={<Search sx={{
+            {/* <StyledInputBase placeholder="Search anything..." startAdornment={<Search sx={{
             color: "grey.500",
             mr: 1
-          }} />} />
+          }} />} /> */}
 
             <NotificationsPopover />
             <AccountPopover />
