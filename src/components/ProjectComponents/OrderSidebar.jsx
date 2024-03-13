@@ -74,8 +74,16 @@ export const Wrapper = styled(({ children, passwordVisibility, ...rest }) => (
 const OrderSidebar = () => {
 
     const {t} = useTranslation("common")
-    
+    const [recaptcha,setRecaptcha] = useState(false)
  // callbacks
+ const valueOnChange = key => e => {
+  
+    setRecaptcha( e )
+  
+
+
+}
+
 
 
 
@@ -87,7 +95,7 @@ const OrderSidebar = () => {
         description:"",
         adress:"",
         phone:"",
-        recaptcha:false
+      //  recaptcha:false
 
       };
       const formSchema = yup.object().shape({
@@ -395,13 +403,8 @@ helperText={touched.description && errors.description}
 
 <div className="flex justify-center my-20">
                 <ReCAPTCHA
-                 onChange={handleChange}
-                 value={values.captcha}
-                 label="Caotcha"
-                 placeholder="enter your captcha"
-                 error={Boolean(errors.captcha && touched.captcha)}
-                 helperText={touched.captcha && errors.captcha}
-               
+             
+             onChange={valueOnChange('reCaptcha')}
                 
                 size="normal" sitekey={sitekey} ref={captchaRef} />
               </div>
