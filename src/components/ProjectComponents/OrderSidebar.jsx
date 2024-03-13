@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback, useState ,useRef } from "react";
 import {
   Button,
   Card,
@@ -31,7 +31,7 @@ import { useAppContext } from "contexts/AppContext";
 import { currency } from "lib";
 import { changeLanguage } from "i18next";
 import { useTranslation } from "next-i18next";
-
+import ReCAPTCHA from "react-google-recaptcha";
 // ===============================================================
 
 // ===============================================================
@@ -98,7 +98,8 @@ const OrderSidebar = () => {
 
 
   const { profile } = useAuth();
- 
+  const sitekey = "6Ldcb5cpAAAAAPWrd2Kk_YCIWOjIVd6lfbsLZ1D9";
+  const captchaRef = useRef(null);
 
   const { enqueueSnackbar } = useSnackbar();
 
@@ -353,6 +354,14 @@ const OrderSidebar = () => {
           </FlexBox>
         ))}
       </Box>
+
+
+{/* --------Captcha----- */}
+
+<div className="flex justify-center my-20">
+                <ReCAPTCHA size="normal" sitekey={sitekey} ref={captchaRef} />
+              </div>
+
 
       <Button
         className=" !bg-red-500"

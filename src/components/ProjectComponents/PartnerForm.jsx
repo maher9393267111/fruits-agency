@@ -430,7 +430,7 @@ if (!productPulish ){
 
 
 
-        <Grid item xs={12}>
+        <Grid className="my-4" item xs={12}>
           <TextField
             className="my-3"
             rows={6}
