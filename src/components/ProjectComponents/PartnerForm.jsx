@@ -80,7 +80,7 @@ const PartnerForm = () => {
     name: "",
     subject: "",
     description: "",
-    adress: "",
+    address: "",
     phone: "",
     country: "",
     city: "",
@@ -101,7 +101,7 @@ const PartnerForm = () => {
     name: yup.string().required("name is required"),
     description: yup.string().required("message is required"),
     subject: yup.string().required("subject is required"),
-    adress: yup.string().required("adress is required"),
+    address: yup.string().required("address is required"),
     phone: yup.number().required("phone number is required"),
     email: yup.string().email("invalid email").required("Email is required"),
     //agreements: yup.Boolean().required("agreements is required"),
@@ -162,14 +162,17 @@ if (!productPulish ){
   return (
     <form onSubmit={handleSubmit}>
       <BazaarImage
-        src="/assets/images/bazaar-black-sm.svg"
+        src="\assets\images\sweetimages\sweetsips-final-logo.png"
         sx={{
           m: "auto",
+          width:"20%",
+          height:"20%",
+          alignItems:'center'
         }}
       />
 
-      <H1 textAlign="center" mt={1} mb={4} fontSize={16}>
-        Be partner with us {profile?.name}
+      <H1 textAlign="center" mt={1} mb={4} fontSize={20}>
+      {t('partner.partnernow')} {profile?.name}
       </H1>
 
       <Grid container spacing={3}>
@@ -184,8 +187,8 @@ if (!productPulish ){
             onBlur={handleBlur}
             value={values.name}
             onChange={handleChange}
-            label="Enter your name"
-            placeholder="Enter your name"
+            label={t('partner.name')}
+            placeholder={t('partner.name')}
             error={!!touched.name && !!errors.email}
             helperText={touched.name && errors.name}
           />
@@ -202,8 +205,8 @@ if (!productPulish ){
             onBlur={handleBlur}
             value={values.email}
             onChange={handleChange}
-            label="Email "
-            placeholder="exmple@mail.com"
+            label={t('partner.email')}
+            placeholder={t('partner.email')}
             error={!!touched.email && !!errors.email}
             helperText={touched.email && errors.email}
           />
@@ -220,8 +223,8 @@ if (!productPulish ){
             onBlur={handleBlur}
             value={values.phone}
             onChange={handleChange}
-            label=" Phone"
-            placeholder=""
+            label={t('partner.phone')}
+            placeholder={t('partner.phone')}
             error={!!touched.phone && !!errors.phone}
             helperText={touched.phone && errors.phone}
           />
@@ -238,8 +241,8 @@ if (!productPulish ){
             onBlur={handleBlur}
             value={values.country}
             onChange={handleChange}
-            label="Country"
-            placeholder="country"
+            label={t('partner.country')}
+            placeholder={t('partner.country')}
             // error={!!touched.phone && !!errors.phone}
             // helperText={touched.phone && errors.phone}
           />
@@ -256,8 +259,8 @@ if (!productPulish ){
             onBlur={handleBlur}
             value={values.city}
             onChange={handleChange}
-            label="City"
-            placeholder="city"
+            label={t('partner.city')}
+            placeholder={t('partner.city')}
             // error={!!touched.phone && !!errors.phone}
             // helperText={touched.phone && errors.phone}
           />
@@ -274,8 +277,8 @@ if (!productPulish ){
             onBlur={handleBlur}
             value={values.position}
             onChange={handleChange}
-            label="Position"
-            placeholder="position"
+            label={t('partner.position')}
+            placeholder={t('partner.position')}
             // error={!!touched.phone && !!errors.phone}
             // helperText={touched.phone && errors.phone}
           />
@@ -292,8 +295,8 @@ if (!productPulish ){
             onBlur={handleBlur}
             value={values.worktype}
             onChange={handleChange}
-            label="worktype"
-            placeholder="worktype"
+            label={t('partner.worktype')}
+            placeholder={t('partner.worktype')}
             // error={!!touched.phone && !!errors.phone}
             // helperText={touched.phone && errors.phone}
           />
@@ -310,8 +313,8 @@ if (!productPulish ){
             onBlur={handleBlur}
             value={values.site}
             onChange={handleChange}
-            label="Site"
-            placeholder="site"
+            label={t('partner.site')}
+            placeholder={t('partner.site')}
             // error={!!touched.phone && !!errors.phone}
             // helperText={touched.phone && errors.phone}
           />
@@ -328,8 +331,8 @@ if (!productPulish ){
             onBlur={handleBlur}
             value={values.zipcode}
             onChange={handleChange}
-            label="Zipcode"
-            placeholder="zipcode"
+            label={t("partner.zipcode")}
+            placeholder={t("partner.zipcode")}
             // error={!!touched.phone && !!errors.phone}
             // helperText={touched.phone && errors.phone}
           />
@@ -345,8 +348,8 @@ if (!productPulish ){
             onBlur={handleBlur}
             value={values.subject}
             onChange={handleChange}
-            label="subject"
-            placeholder="enter your subject"
+            label={t("partner.subject")}
+            placeholder={t("partner.subject")}
             error={!!touched.subject && !!errors.subject}
             helperText={touched.subject && errors.subject}
           />
@@ -356,16 +359,16 @@ if (!productPulish ){
           <BazaarTextField
             size="medium"
             fullWidth
-            name="adress"
-            type="adress"
+            name="address"
+            type="address"
             variant="outlined"
             onBlur={handleBlur}
-            value={values.adress}
+            value={values.address}
             onChange={handleChange}
-            label="adress"
-            placeholder="enter your adress"
-            error={!!touched.adress && !!errors.adress}
-            helperText={touched.adress && errors.adress}
+            label={t("partner.address")}
+            placeholder={t("partner.address")}
+            error={!!touched.address && !!errors.address}
+            helperText={touched.address && errors.address}
           />
         </Grid>
 
@@ -379,8 +382,8 @@ if (!productPulish ){
             onBlur={handleBlur}
             value={values.interested}
             onChange={handleChange}
-            label="Interested"
-            placeholder="enter your interested"
+            label={t("partner.interested")}
+            placeholder={t("partner.interested")}
           />
         </Grid>
 
@@ -394,8 +397,8 @@ if (!productPulish ){
             onBlur={handleBlur}
             value={values.question}
             onChange={handleChange}
-            label="Question"
-            placeholder="enter your question"
+            label={t("partner.question")}
+            placeholder={t("partner.question")}
           />
         </Grid>
 
@@ -409,13 +412,13 @@ if (!productPulish ){
             onBlur={handleBlur}
             value={values.monthly}
             onChange={handleChange}
-            label="monthly average"
-            placeholder="enter your monthly average"
+            label={t("partner.monthlyAverage")}
+            placeholder={t("partner.monthlyAverage")}
           />
         </Grid>
 
         <Grid item sm={6} xs={12}>
-        <H5 className={'inline-block'}>Recieve newsletter</H5>
+        <H5 className={'inline-block'}>{t("partner.recieveNewsletter")}</H5>
         <BazaarSwitch color="info" checked={news} onChange={(e) => setNews(e.target.checked)} />
 
 </Grid>
@@ -423,7 +426,7 @@ if (!productPulish ){
 
 
 <Grid item sm={6} xs={12}>
-<H5 className={'inline-block'}>Agree</H5>
+<H5 className={'inline-block'}>{t("partner.agree")}</H5>
 <BazaarSwitch color="info" checked={productPulish} onChange={(e) => setProductPublish(e.target.checked)} />
 
 </Grid>
@@ -442,7 +445,7 @@ if (!productPulish ){
             onBlur={handleBlur}
             onChange={handleChange}
             value={values.description}
-            label="message"
+            label={t("partner.message")}
             error={Boolean(errors.description && touched.description)}
             helperText={touched.description && errors.description}
           />
@@ -459,7 +462,7 @@ if (!productPulish ){
           height: 44,
         }}
       >
-        Send
+        {t("partner.send")}
       </Button>
     </form>
   );

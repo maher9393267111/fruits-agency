@@ -1,13 +1,13 @@
 // carousel-data
 export const mainCarouselData = [{
   title: "Get groceries delivered within 40 minutes",
-  imgUrl: "/assets/images/Groceries Shop/banner-3.png",
+  imgUrl: "/assets/images/sweetimages/Home-Slide-show-1.png",
   description: null,
-  buttonText: "Shop Now",
-  buttonLink: "#"
+  buttonText: "Order Now",
+  buttonLink: "/order"
 }, {
   title: "Get groceries delivered within 40 minutes",
-  imgUrl: "/assets/images/Groceries Shop/banner-3.png",
+  imgUrl: "/assets/images/sweetimages/Home-Slide-show-2.png",
   description: null,
   buttonText: "Shop Now",
   buttonLink: "#"
