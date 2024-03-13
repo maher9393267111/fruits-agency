@@ -79,24 +79,29 @@ const OrderSidebar = () => {
     setRecaptcha(e);
   };
 
-  const initialValues = {
-    email: "",
-    name: "",
-    subject: "",
-    description: "",
-    adress: "",
-    phone: "",
-    //  recaptcha:false
-  };
-  const formSchema = yup.object().shape({
-    //t("name")
-    name: yup.string().required("name is required"),
-    description: yup.string().required("message is required"),
-    subject: yup.string().required("subject is required"),
-    adress: yup.string().required("adress is required"),
-    phone: yup.number().required("phone number is required"),
-    email: yup.string().email("invalid email").required("Email is required"),
-  });
+    
+
+
+    const initialValues = {
+        email: "",
+        name: "",
+        subject:"",
+        description:"",
+        address:"",
+        phone:""
+
+      };
+      const formSchema = yup.object().shape({
+        //t("name")
+        name: yup.string().required("name is required"),
+        description: yup.string().required("message is required"),
+        subject: yup.string().required("subject is required"),
+        address: yup.string().required("address is required"),
+        phone: yup.number().required("phone number is required"),
+        email: yup.string().email("invalid email").required("Email is required"),
+      });
+
+
 
   const { profile } = useAuth();
   const sitekey = "6Ldcb5cpAAAAAPWrd2Kk_YCIWOjIVd6lfbsLZ1D9";
@@ -129,7 +134,7 @@ const OrderSidebar = () => {
         variant: "success",
       });
     } else {
-      enqueueSnackbar("Some thing wrong", {
+      enqueueSnackbar("Something wrong", {
         variant: "error",
       });
     }
@@ -160,16 +165,21 @@ const OrderSidebar = () => {
   return (
     <form onSubmit={handleSubmit}>
       <BazaarImage
-        src="/assets/images/bazaar-black-sm.svg"
+        src="\assets\images\sweetimages\sweetsips-final-logo.png"
         sx={{
           m: "auto",
+          width:"50%",
+          height:"50%",
+          alignItems:'center'
         }}
       />
 
-      <H1 textAlign="center" mt={1} mb={4} fontSize={16}>
-        Make your order {profile?.name}
+      <H1 textAlign="center" mt={1} mb={2} fontSize={16}>
+      {t('order.ordernow')}  {profile?.name}
       </H1>
-
+        <H1 textAlign='center' >
+        SweetSips
+        </H1>
       <BazaarTextField
         mb={1.5}
         fullWidth
@@ -180,8 +190,8 @@ const OrderSidebar = () => {
         onBlur={handleBlur}
         value={values.name}
         onChange={handleChange}
-        label="Enter your name"
-        placeholder="Enter your name"
+        label={t('order.name')}
+        placeholder={t('order.name')}
         error={!!touched.name && !!errors.email}
         helperText={touched.name && errors.name}
       />
@@ -196,7 +206,7 @@ const OrderSidebar = () => {
         onBlur={handleBlur}
         value={values.email}
         onChange={handleChange}
-        label="Email "
+        label={t('order.email')}
         placeholder="exmple@mail.com"
         error={!!touched.email && !!errors.email}
         helperText={touched.email && errors.email}
@@ -205,20 +215,21 @@ const OrderSidebar = () => {
       <BazaarTextField
         mb={1.5}
         fullWidth
-        name="phone"
+        name='phone'
         size="phone"
         type="phone"
         variant="outlined"
         onBlur={handleBlur}
         value={values.phone}
         onChange={handleChange}
-        label=" Phone"
-        placeholder=""
+        label={t('order.phone')}
+        placeholder={t('order.phone')}
         error={!!touched.phone && !!errors.phone}
         helperText={touched.phone && errors.phone}
       />
 
       <BazaarTextField
+      className='my-1'
         size="medium"
         fullWidth
         name="subject"
@@ -227,23 +238,24 @@ const OrderSidebar = () => {
         onBlur={handleBlur}
         value={values.subject}
         onChange={handleChange}
-        label="subject"
-        placeholder="enter your subject"
+        label={t('order.subject')}
+        placeholder={t('order.subject')}
         error={!!touched.subject && !!errors.subject}
         helperText={touched.subject && errors.subject}
       />
 
       <BazaarTextField
+      
         size="medium"
         fullWidth
-        name="adress"
-        type="adress"
+        name="address"
+        type="address"
         variant="outlined"
         onBlur={handleBlur}
         value={values.adress}
         onChange={handleChange}
-        label="adress"
-        placeholder="enter your adress"
+        label={t('order.address')}
+        placeholder={t('order.address')}
         error={!!touched.adress && !!errors.adress}
         helperText={touched.adress && errors.adress}
       />
@@ -275,11 +287,13 @@ const OrderSidebar = () => {
         onBlur={handleBlur}
         onChange={handleChange}
         value={values.description}
-        label="message"
-        placeholder="enter your message"
+        label={t('order.message')}
         error={Boolean(errors.description && touched.description)}
         helperText={touched.description && errors.description}
-      /> */}
+        
+      />
+
+
 
       {/* ---------Cart items---- */}
       <Box>
@@ -400,7 +414,7 @@ const OrderSidebar = () => {
           height: 44,
         }}
       >
-        Send
+        {t('order.send')}
       </Button>
     </form>
   );

@@ -3,7 +3,7 @@
     "description": "Do you like to unleash some super powers to have all side optimized translations?",
     "Free Express Shipping": "Free Express Shipping",
     "Free": "Frrrrrrrrrrrrrrrrrrr",
-    "name":"English",
+    "name":"العربية",
     "navbar":{
       "home":"الرئيسية",
       "contact":"التواصل",
@@ -11,7 +11,41 @@
       "partner":"كن شريكا",
       "shop":"المتجر",
       "media":"الميديا"
+    },
+    "partner":{
+      "partnernow":"كن شريكاً معنا",
+      "name":"اسم الشركة/المحل",
+      "email":" عنوان البريد الإلكتروني",
+      "phone":"رقم الهاتف",
+      "country":" الدولة",
+      "city":"المدينة/المقاطعة",
+      "position":"المنصب",
+      "worktype":"نوع العمل (محل عصائر، كافيه، عربة متنقلة، سوبر ماركت، إلخ)",
+      "site":" موقع الويب (إن وجد)",
+      "zipcode":" الرمز البريدي",
+      "subject":"سنة التأسيس",
+      "address":"عنوان الشركة",
+      "interested":"المنتجات المهتم بها",
+      "question":"هل لديك أية متطلبات خاصة أو أسئلة؟",
+      "monthlyAverage":"معدل الطلب المتوقع (أسبوعي/شهري)",
+      "recieveNewsletter":"أوافق على تلقي معلومات وعروض من SweetSips",
+      "agree":" أوافق على شروط وأحكام شراكة SweetSips",
+      "message":"الرسالة",
+      "send":"إرسال طلب الشراكة"
+
     }
-  
+  ,
+  "order":{
+    "ordernow":"نموذج طلب منتجات",
+    "name":"الاسم الكامل",
+    "email":" عنوان البريد الإلكتروني",
+    "phone":"رقم الهاتف",
+    "subject":"الموضوع",
+    "address":"العنوان البريدي (لتوصيل الطلب)",
+    "message":"الرسالة",
+    "send":"ارسل"
+
+  }
+
   }
   
