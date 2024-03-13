@@ -212,6 +212,9 @@ if (!productPulish ){
           />
         </Grid>
 
+
+
+
         <Grid item sm={6} xs={12}>
           <BazaarTextField
             mb={1.5}
@@ -433,7 +436,7 @@ if (!productPulish ){
 
 
 
-        <Grid item xs={12}>
+        <Grid className="my-4" item xs={12}>
           <TextField
             className="my-3"
             rows={6}

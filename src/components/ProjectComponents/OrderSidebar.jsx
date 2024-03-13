@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback, useState, useRef } from "react";
 import {
   Button,
   Card,
@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import Link from "next/link";
 import * as yup from "yup";
-import { useFormik } from "formik";
+import { useFormik, useFormikContext } from "formik";
 import { H1, H6, H5, Paragraph, Tiny } from "components/Typography";
 import BazaarImage from "components/BazaarImage";
 import BazaarTextField from "components/BazaarTextField";
@@ -31,7 +31,7 @@ import { useAppContext } from "contexts/AppContext";
 import { currency } from "lib";
 import { changeLanguage } from "i18next";
 import { useTranslation } from "next-i18next";
-
+import ReCAPTCHA from "react-google-recaptcha";
 // ===============================================================
 
 // ===============================================================
@@ -72,8 +72,14 @@ export const Wrapper = styled(({ children, passwordVisibility, ...rest }) => (
   },
 }));
 const OrderSidebar = () => {
+  const { t } = useTranslation("common");
+  const [recaptcha, setRecaptcha] = useState(false);
+  // callbacks
+  const valueOnChange = (key) => (e) => {
+    setRecaptcha(e);
+  };
 
-    const {t} = useTranslation("common")
+    
 
 
     const initialValues = {
@@ -98,12 +104,22 @@ const OrderSidebar = () => {
 
 
   const { profile } = useAuth();
- 
+  const sitekey = "6Ldcb5cpAAAAAPWrd2Kk_YCIWOjIVd6lfbsLZ1D9";
+  const captchaRef = useRef(null);
 
   const { enqueueSnackbar } = useSnackbar();
 
   const handleFormSubmit = async (values) => {
     console.log(values);
+
+    if (!recaptcha) {
+      enqueueSnackbar("Capthca is required", {
+        variant: "error",
+      });
+
+      return;
+    }
+
     const res = await fetch(`/api/order`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -244,7 +260,22 @@ const OrderSidebar = () => {
         helperText={touched.adress && errors.adress}
       />
 
-      <TextField
+      <BazaarTextField
+        className=""
+        fullWidth
+        color="primary"
+        size="medium"
+        name="description"
+        onBlur={handleBlur}
+        onChange={handleChange}
+        value={values.description}
+        label="message"
+        placeholder="enter your message"
+        error={Boolean(errors.description && touched.description)}
+        helperText={touched.description && errors.description}
+      />
+
+      {/* <TextField
 
         className="my-6"
         rows={6}
@@ -361,6 +392,17 @@ const OrderSidebar = () => {
           </FlexBox>
         ))}
       </Box>
+
+      {/* --------Captcha----- */}
+
+      <div className="flex justify-center my-20">
+        <ReCAPTCHA
+          onChange={valueOnChange("reCaptcha")}
+          size="normal"
+          sitekey={sitekey}
+          ref={captchaRef}
+        />
+      </div>
 
       <Button
         className=" !bg-red-500"

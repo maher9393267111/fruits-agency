@@ -39,8 +39,9 @@ export default function Navbar() {
 
             <Link href="/">
                 <a className="font-bold leading-relaxed inline-flex items-center mr-4 py-2 whitespace-nowrap uppercase text-white">
-                  <Image src='/assets/images/sweetimages/sweetsips-final-logo.png'  width={45} height={45}  className=" text-4xl mr-2"/>
-                  <span className="text-base">SWEETSIPS</span>
+                  <img className="w-14 logo object-cover h-14" src="/assets/logo.png" alt="" />
+                  {/* <Icon icon={spaIcon} className=" logo text-4xl mr-2"/> */}
+                  <span className="text-base">sweetsips</span>
                 </a>
             </Link>  
             
