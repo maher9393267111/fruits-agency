@@ -1,4 +1,4 @@
-import { useCallback, useState ,useRef } from "react";
+import { useCallback, useState, useRef } from "react";
 import {
   Button,
   Card,
@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import Link from "next/link";
 import * as yup from "yup";
-import { useFormik ,useFormikContext } from "formik";
+import { useFormik, useFormikContext } from "formik";
 import { H1, H6, H5, Paragraph, Tiny } from "components/Typography";
 import BazaarImage from "components/BazaarImage";
 import BazaarTextField from "components/BazaarTextField";
@@ -72,43 +72,31 @@ export const Wrapper = styled(({ children, passwordVisibility, ...rest }) => (
   },
 }));
 const OrderSidebar = () => {
+  const { t } = useTranslation("common");
+  const [recaptcha, setRecaptcha] = useState(false);
+  // callbacks
+  const valueOnChange = (key) => (e) => {
+    setRecaptcha(e);
+  };
 
-    const {t} = useTranslation("common")
-    const [recaptcha,setRecaptcha] = useState(false)
- // callbacks
- const valueOnChange = key => e => {
-  
-    setRecaptcha( e )
-  
-
-
-}
-
-
-
-
-
-    const initialValues = {
-        email: "",
-        name: "",
-        subject:"",
-        description:"",
-        adress:"",
-        phone:"",
-      //  recaptcha:false
-
-      };
-      const formSchema = yup.object().shape({
-        //t("name")
-        name: yup.string().required("name is required"),
-        description: yup.string().required("message is required"),
-        subject: yup.string().required("subject is required"),
-        adress: yup.string().required("adress is required"),
-        phone: yup.number().required("phone number is required"),
-        email: yup.string().email("invalid email").required("Email is required"),
-      });
-
-
+  const initialValues = {
+    email: "",
+    name: "",
+    subject: "",
+    description: "",
+    adress: "",
+    phone: "",
+    //  recaptcha:false
+  };
+  const formSchema = yup.object().shape({
+    //t("name")
+    name: yup.string().required("name is required"),
+    description: yup.string().required("message is required"),
+    subject: yup.string().required("subject is required"),
+    adress: yup.string().required("adress is required"),
+    phone: yup.number().required("phone number is required"),
+    email: yup.string().email("invalid email").required("Email is required"),
+  });
 
   const { profile } = useAuth();
   const sitekey = "6Ldcb5cpAAAAAPWrd2Kk_YCIWOjIVd6lfbsLZ1D9";
@@ -119,15 +107,13 @@ const OrderSidebar = () => {
   const handleFormSubmit = async (values) => {
     console.log(values);
 
+    if (!recaptcha) {
+      enqueueSnackbar("Capthca is required", {
+        variant: "error",
+      });
 
-if(!recaptcha){
-  enqueueSnackbar("Capthca is requeired", {
-    variant: "error",
-  });
-
-  return
-}
-
+      return;
+    }
 
     const res = await fetch(`/api/order`, {
       method: "POST",
@@ -262,23 +248,20 @@ if(!recaptcha){
         helperText={touched.adress && errors.adress}
       />
 
-
-<BazaarTextField
-className=''
-fullWidth
-color="primary"
-size="medium"
-name="description"
-onBlur={handleBlur}
-onChange={handleChange}
-value={values.description}
-label="message"
-placeholder="enter your message"
-error={Boolean(errors.description && touched.description)}
-helperText={touched.description && errors.description}
+      <BazaarTextField
+        className=""
+        fullWidth
+        color="primary"
+        size="medium"
+        name="description"
+        onBlur={handleBlur}
+        onChange={handleChange}
+        value={values.description}
+        label="message"
+        placeholder="enter your message"
+        error={Boolean(errors.description && touched.description)}
+        helperText={touched.description && errors.description}
       />
-
-
 
       {/* <TextField
 
@@ -297,8 +280,6 @@ helperText={touched.description && errors.description}
         error={Boolean(errors.description && touched.description)}
         helperText={touched.description && errors.description}
       /> */}
-
-
 
       {/* ---------Cart items---- */}
       <Box>
@@ -398,17 +379,16 @@ helperText={touched.description && errors.description}
         ))}
       </Box>
 
+      {/* --------Captcha----- */}
 
-{/* --------Captcha----- */}
-
-<div className="flex justify-center my-20">
-                <ReCAPTCHA
-             
-             onChange={valueOnChange('reCaptcha')}
-                
-                size="normal" sitekey={sitekey} ref={captchaRef} />
-              </div>
-
+      <div className="flex justify-center my-20">
+        <ReCAPTCHA
+          onChange={valueOnChange("reCaptcha")}
+          size="normal"
+          sitekey={sitekey}
+          ref={captchaRef}
+        />
+      </div>
 
       <Button
         className=" !bg-red-500"
