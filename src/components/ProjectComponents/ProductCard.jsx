@@ -185,9 +185,10 @@ const ProductCardMain = ({ ...props }) => {
       {ismedia ? (
         <VideoWrapper>
           <ImageBox className="hoverImgBox">
-            <a>
+            <a className="!w-full">
               <ReactPlayer
-                className="!rounded-2xl "
+           
+                className="  "
                 controls
                 width="auto"
                 //  height="500px"

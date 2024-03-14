@@ -9,7 +9,17 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        kufi: ["Noto Kufi Arabic", "sans-serif"],
+        ibm: ['IBM Plex Sans Arabic', 'sans-serif']
+      },
+
+
+    },
   },
   plugins: [],
+  corePlugins: {
+    preflight: false,
+  },
 }
