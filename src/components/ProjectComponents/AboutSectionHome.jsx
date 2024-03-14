@@ -47,7 +47,7 @@ export default function AboutSectionHome() {
             // style={{
             //   textAlign: "-webkit-left",
             // }}
-            className="  col-span-1 md:text-lef  "
+            className="  col-span-1 md:text-lef  mt-12 md:mt-0 "
           >
             <div>
               <H1 className=" text-red-500 ">
