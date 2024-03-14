@@ -45,7 +45,33 @@
     "message":"الرسالة",
     "send":"ارسل"
 
-  }
-
+  },
+  "slider": [
+    {
+      "id": "1",
+      "link": "Home",
+      "image": "/assets/img/blog/1.jpg"
+    },
+    {
+      "id": "2",
+      "link": "News",
+      "image": "/assets/img/blog/1.jpg"
+    },
+    {
+      "id": "3",
+      "link": "Events",
+      "image": "/assets/img/blog/1.jpg"
+    },
+    {
+      "id": "4",
+      "link": "Blogs",
+      "image": "/assets/img/blog/1.jpg"
+    },
+    {
+      "id": "5",
+      "link": "Podcast",
+      "image": "/assets/img/blog/1.jpg"
+    }
+  ]
   }
   

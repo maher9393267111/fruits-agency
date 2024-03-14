@@ -30,6 +30,9 @@ export default function Navbar() {
   const i18n = locale === "en" ? en : es */
   const {t} = useTranslation("common") 
 
+  const slider= t('slider', { returnObjects: true }) 
+  console.log("links" ,slider)
+
 
   return (
     <>
@@ -37,6 +40,13 @@ export default function Navbar() {
         <div className="container px-4 mx-auto flex flex-wrap justify-between">
           <div className="w-full flex-grow  relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
 
+ {/* {slider?.map((item,index)=>{
+  return (
+    <div>
+      {item.link}
+    </div>
+  )
+})}  */}
             <Link href="/">
                 <a className="font-bold leading-relaxed inline-flex items-center mr-4 py-2 whitespace-nowrap uppercase text-white">
                   <img className="w-14 logo object-cover h-14" src="/assets/logo.png" alt="" />
