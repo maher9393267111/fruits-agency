@@ -145,11 +145,17 @@ export default function ProductSingle({}) {
               <Grid item md={6} xs={12} alignItems="center">
                 <H1 mb={1}>{ locale === 'en' ?  product.title : locale === 'ar' ? product?.titlear : product?.titletr}</H1>
 
-                {product?.desc && (
-                  <FlexBox className="mx-4 md:mx-2" alignItems="center" mb={1}>
-                    {parse(locale === 'en' ?  product.desc : locale === 'ar' ? product?.descar : product?.desctr)}
-                  </FlexBox>
-                )}
+
+                <div>
+  
+  {product?.desc && (
+                    <Box className="mx-4 md:mx-2" alignItems="center" mb={1}>
+                      {parse(locale === 'en' ?  product.desc : locale === 'ar' ? product?.descar : product?.desctr)}
+                    </Box>
+                  )}
+  </div>
+
+
 
                 {/* <FlexBox alignItems="center" mb={1}>
             <Box>Brand:</Box>
@@ -182,6 +188,11 @@ export default function ProductSingle({}) {
             </Link>
           </FlexBox> */}
               </Grid>
+
+
+
+
+
             </Grid>
           )}
 
