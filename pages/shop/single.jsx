@@ -147,7 +147,7 @@ export default function ProductSingle({}) {
 
                 {product?.desc && (
                   <FlexBox className="mx-4 md:mx-2" alignItems="center" mb={1}>
-                    {parse(locale === 'en' ?  item.desc : locale === 'ar' ? product?.descar : product?.desctr)}
+                    {parse(locale === 'en' ?  product.desc : locale === 'ar' ? product?.descar : product?.desctr)}
                   </FlexBox>
                 )}
 
