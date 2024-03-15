@@ -1,4 +1,5 @@
 import { Box, Button, Grid, styled } from "@mui/material";
+import { useRouter } from "next/router";
 import { H1 } from "components/Typography";
 import ProductCard from "./ProductCard";
 // styled component
@@ -27,6 +28,9 @@ const ShopProducts = ({
   products,
   isorderpage = false
 }) => {
+
+const {locale} = useRouter()
+
   return <Box>
       <TitleBox my={4}>
         <H1>Our All Products</H1>
@@ -35,7 +39,7 @@ const ShopProducts = ({
 
       <Grid container mb={-0.5} spacing={3}>
         {products.map(item => <Grid key={item.id} item md={4} sm={6} xs={12}>
-            <ProductCard ismedia={item?.ismedia}   isorderpage={isorderpage} video={item?.video || item?.videourl}  hideRating id={item.id} slug={item.id}  title={item.title}  imgUrl={item?.images[0]} />
+            <ProductCard ismedia={item?.ismedia}   isorderpage={isorderpage} video={item?.video || item?.videourl}  hideRating id={item.id} slug={item.id}  title={locale === 'en' ?  item?.title : locale === 'ar' ? item?.titlear : item.titletr}  imgUrl={item?.images[0]} />
           </Grid>)}
       </Grid>
       {/* <Box mt={6} display="flex" justifyContent="center">

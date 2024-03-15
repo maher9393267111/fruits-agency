@@ -7,7 +7,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import {
   getDocuments,
-  getDocumentsOrder,
+getDocumentsOrder,
 } from "../src/functions/firebase/getData";
 import { orderBy, where } from "firebase/firestore";
 export default function Shop() {

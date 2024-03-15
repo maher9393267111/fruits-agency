@@ -172,7 +172,7 @@ if (!productPulish ){
       />
 
       <H1 textAlign="center" mt={1} mb={4} fontSize={20}>
-      {t('partner.partnernow')} {profile?.name}
+      {t('partner.partnernow')} 
       </H1>
 
 <div className=" mt-2 bg-white py-4 px-6 rounded-lg">
