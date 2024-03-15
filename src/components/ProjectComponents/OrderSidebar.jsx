@@ -260,8 +260,10 @@ const OrderSidebar = () => {
         helperText={touched.adress && errors.adress}
       />
 
-      <BazaarTextField
-        className=""
+      <TextField
+        className="my-6"
+        rows={6}
+        multiline
         fullWidth
         color="primary"
         size="medium"
@@ -269,8 +271,8 @@ const OrderSidebar = () => {
         onBlur={handleBlur}
         onChange={handleChange}
         value={values.description}
-        label="message"
-        placeholder="enter your message"
+        label={t('order.message')}
+        placeholder={t('order.message')}
         error={Boolean(errors.description && touched.description)}
         helperText={touched.description && errors.description}
       />
@@ -395,7 +397,7 @@ const OrderSidebar = () => {
 
       {/* --------Captcha----- */}
 
-      <div className="flex justify-center my-20">
+      <div className="flex justify-center my-5">
         <ReCAPTCHA
           onChange={valueOnChange("reCaptcha")}
           size="normal"
