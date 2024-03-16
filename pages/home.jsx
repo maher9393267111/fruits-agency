@@ -63,29 +63,17 @@ export default function Home(props) {
         <Loader />
       ) : (
         <div className="mb-12">
-<<<<<<< HEAD
-          <HomeSlider
-            products={products}
-            mainCarouselData={props.mainCarouselData}
-          />
-=======
           {/* mainCarouselData={props.mainCarouselData} */}
           <HomeSlider products={products}  />
->>>>>>> 9e110a64cbe020881daf419b6ee847e2996b371b
 
           <Container
             sx={{
               mb: 6,
             }}
           >
-<<<<<<< HEAD
-            <HomeOffer offers={props.offerCards} />
-
-=======
             {/* <About /> */}
             <HomeOffer  offers={props.offerCards} />
             
->>>>>>> 9e110a64cbe020881daf419b6ee847e2996b371b
             <HomeProductsSlider
               isorderpage={false}
               products={products}
