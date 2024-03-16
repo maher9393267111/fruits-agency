@@ -2,7 +2,12 @@ import SEO from "components/SEO";
 import Login from "../../../src/components/admin/LoginAdminMain";
 import { FlexRowCenter } from "components/flex-box";
 import MainLayout from '../../../src/components/ProjectComponents/mainLayout'
+
+
+
 const LoginAdmin = () => {
+
+
   return <MainLayout>
 
 

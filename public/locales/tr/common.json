@@ -12,6 +12,80 @@
       "shop":"magaza",
       "media":"media"
     },
+
+
+
+    "products":"Tüm Ürünlerimiz",
+
+
+    "partner":{
+      "partnernow":"Become a Partner",
+      "name":"Company Name",
+      "email":"Email",
+      "phone":"Phone Number",
+      "country":" Country",
+      "city":"City/State",
+      "position":"Position",
+      "worktype":"Work Type",
+      "site":"Website if available",
+      "zipcode":" Zip Code",
+      "subject":"Subject",
+      "address":"Company Address",
+      "interested":"Your interested Products",
+      "question":"Do you have any question?",
+      "monthlyAverage":"Average Monthly Order",
+      "recieveNewsletter":"Agree to recive Newsletter of SweetSips",
+      "agree":" Agreements of SweetSips",
+      "message":"Message",
+      "send":"Send application partner"
+  
+    }
+  ,
+  "order":{
+    "ordernow":"Apply to our products",
+    "name":"Full Name",
+    "email":"Email",
+    "phone":"Phone Number",
+    "subject":"Subject",
+    "address":"your address to recieve your order",
+    "message":"Your message",
+    "send":"Send"
+  
+  },
+  
+  
+  "about":{
+    "title":"Tatlı Yudumlar Hakkında",
+    "p1":"Otantik lezzetin yüksek kaliteyle buluştuğu SweetSips dünyasına hoş geldiniz.Taze ve saf şeker kamışı ürünleri ve gelişmiş şeker kamışı suyu makineleri konusunda ideal tedarikçiniziz.Meyve suyu perakendecilerine, kafelere, seyyar gıda kamyonlarına ve süpermarketlere doğal ve ferahlatıcı malzemeler sunmaktan gurur duyuyoruz.Şeker kamışı suyunun her yudumunun eşsiz ve keyifli bir deneyim olması gerektiğine inanıyoruz.",
+    
+    "p2":"'Şeker kamışı suyunun 10 muhteşem faydası'",
+    "p3":"Şeker kamışı suyunun sağlık açısından pek çok faydası vardır ve bu da onu dünya çapında birçok kültürde sevilen bir içecek haline getirir.",
+    "p4":"İşte ana faydalarından bazıları:",
+    "1":"Doğal bir enerji kaynağı:",
+    "1a":"Şeker kamışı suyu, vücuda anında enerji sağlayan doğal şekerler açısından zengindir; bu da onu antrenmandan sonra veya sıcak bir gün boyunca ideal bir toparlanma içeceği haline getirir.",
+    "2":"Sindirimin iyileştirilmesi:",
+    "2a":"Şeker kamışı suyu, sindirim sisteminin normal işlevlerinin korunmasına yardımcı olan miktarda potasyum içerir ve kabızlık gibi sindirim sorunlarının hafifletilmesine yardımcı olabilir.",
+    "3":"Karaciğer sağlığını geliştirin:",
+    "3a":"Şeker kamışı suyunun karaciğer için yararlı özelliklere sahip olduğuna ve hepatit gibi hastalıkların önlenmesine veya karaciğer fonksiyonunun iyileştirilmesine yardımcı olabileceğine inanılmaktadır.",
+    "4":"Ağız ve diş sağlığını korumak:",
+    "4a":"Şeker kamışı suyu, yüksek şeker içeriğine rağmen diş çürükleriyle mücadeleye yardımcı olan ve ağız sağlığının korunmasına katkıda bulunabilecek maddeler içerir.",
+    "5":"Anti-inflamatuar:",
+    "5a":"Şeker kamışı suyunun anti-inflamatuar özellikleri vardır, bu da onu boğaz ağrısı gibi çeşitli inflamatuar durumların tedavisinde faydalı kılar.",
+    "6":"Doğal nemlendirici:",
+    "6a":"Şeker kamışı suyu, yüksek su içeriği nedeniyle vücudun nemlendirilmesine ve nemli tutulmasına yardımcı olan mükemmel bir nemlendiricidir.",
+    "7":"Hastalıklarla mücadele:",
+    "7a":"Enfeksiyonlarla savaşmaya ve vücudun hastalıklara karşı bağışıklığını güçlendirmeye yardımcı olan antioksidanlar içerir.",
+    "8":"Sağlıklı cildi teşvik edin:",
+    "8a":"Şeker kamışı suyunun besleyici özellikleri, sağlıklı cildin korunmasına yardımcı olarak cildin daha genç ve taze görünmesini sağlar.",
+    "9":"faydalıdır:",
+    "9a":"Şeker kamışı suyu, hamile kadınların sağlıklı fetal gelişimini desteklemek için önemli olan folik asit içerir.",
+    "10":"Sağlıklı kiloyu destekleyin:",
+    "10a":"Şeker kamışı suyu, tadı tatlı olmasına rağmen diğer şekerli içeceklere göre daha az kalori içerdiğinden kilosuna dikkat edenler için iyi bir seçimdir.",
+    "p5":"Şeker kamışı suyu tüketiminin, özellikle diyabet gibi belirli sağlık sorunları olan kişiler için dengeli bir beslenmenin parçası ve makul miktarlarda olması gerektiğine dikkat etmek önemlidir."
+  
+  },
+
+
     "slider": [
       {
         "id": "1",

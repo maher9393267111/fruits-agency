@@ -106,12 +106,14 @@ const Login = () => {
   });
   return <Wrapper elevation={3} passwordVisibility={passwordVisibility}>
       <form onSubmit={handleSubmit}>
-        <BazaarImage src="/assets/images/bazaar-black-sm.svg" sx={{
-        m: "auto"
+        <BazaarImage src="/assets/images/sweetimages/sweetsips-final-logo.png" sx={{
+        m: "auto",
+        width:'100px',
+        height:'100px'
       }} />
 
         <H1 textAlign="center" mt={1} mb={4} fontSize={16}>
-          Welcome To Bazaar {profile?.name}
+          Welcome To Sweetsips Admin {profile?.name}
         </H1>
 
         <BazaarTextField mb={1.5} fullWidth name="email" size="small" type="email" variant="outlined" onBlur={handleBlur} value={values.email} onChange={handleChange} label="Email or Phone Number" placeholder="exmple@mail.com" error={!!touched.email && !!errors.email} helperText={touched.email && errors.email} />

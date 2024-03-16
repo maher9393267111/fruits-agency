@@ -13,6 +13,9 @@ import Loader from "components/admin/common/Loader";
 
 import api from "utils/__api__/grocery3-shop";
 
+
+import About from "./about";
+
 export default function Home(props) {
   console.log("Products");
 
@@ -53,8 +56,9 @@ export default function Home(props) {
               mb: 6,
             }}
           >
+            <About />
             <HomeOffer  offers={props.offerCards} />
-
+            
             <HomeProductsSlider
             
               isorderpage={false}

@@ -2,6 +2,11 @@ import { Box, Button, Grid, styled, useTheme } from "@mui/material";
 import { H1 } from "components/Typography";
 import LazyImage from "components/LazyImage";
 import Carousel from "components/carousel/Carousel";
+
+
+import { useTranslation } from "next-i18next";
+
+
 // styled components
 const StyledBox = styled(Box)({
   marginBottom: 60,
@@ -72,8 +77,15 @@ const TextBox = styled(Box)(({ theme }) => ({
 // ===================================================================
 
 const HomeSlider = ({ mainCarouselData }) => {
+
+
+
   const { palette } = useTheme();
+  
+  const {t} = useTranslation("common")
+  
   return (
+    
     <StyledBox id="carouselBox">
       <Carousel
         spacing="0px"
@@ -85,6 +97,7 @@ const HomeSlider = ({ mainCarouselData }) => {
         dotColor={palette.primary.main}
         totalSlides={mainCarouselData.length}
       >
+
         {mainCarouselData?.map((item, ind) => (
           <Container key={ind}>
             <StyledGrid container>
@@ -95,7 +108,7 @@ const HomeSlider = ({ mainCarouselData }) => {
                     width={100}
                     height={100}
                     alt={item.title}
-                    src={item.imgUrl}
+                    src={item.imgUrl}   
                     layout="responsive"
                     objectFit="contain"
                   />
@@ -136,6 +149,7 @@ const HomeSlider = ({ mainCarouselData }) => {
             </StyledGrid>
           </Container>
         ))}
+       
       </Carousel>
     </StyledBox>
   );
