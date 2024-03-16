@@ -1,7 +1,12 @@
 import React from "react";
 import { H1 ,H3 } from "components/Typography";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
 
 export default function AboutSectionHome() {
+
+  const {t} = useTranslation("common")
+
   return (
     <div className="my-4">
       <section>
@@ -51,7 +56,7 @@ export default function AboutSectionHome() {
           >
             <div>
               <H1 className=" text-red-500 ">
-                About Company
+              {t('about.title')}
               </H1>
 
               <div className=" w-[80%] md:w-[65%] my-4">
@@ -74,3 +79,14 @@ export default function AboutSectionHome() {
     </div>
   );
 }
+
+
+  
+export const getStaticProps = async ({ locale }) => {
+
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"])),
+    },
+  };
+};

@@ -50,14 +50,15 @@ export default function Home(props) {
         <Loader />
       ) : (
         <div className="mb-12">
-          <HomeSlider products={products} mainCarouselData={props.mainCarouselData} />
+          {/* mainCarouselData={props.mainCarouselData} */}
+          <HomeSlider products={products}  />
 
           <Container
             sx={{
               mb: 6,
             }}
           >
-            <About />
+            {/* <About /> */}
             <HomeOffer  offers={props.offerCards} />
             
             <HomeProductsSlider

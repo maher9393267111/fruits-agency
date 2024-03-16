@@ -83,6 +83,9 @@ const HomeSlider = ({ mainCarouselData }) => {
   const { palette } = useTheme();
   
   const {t} = useTranslation("common")
+
+  const slider= t('slider', { returnObjects: true }) 
+  console.log("links" ,slider)
   
   return (
     
@@ -95,10 +98,12 @@ const HomeSlider = ({ mainCarouselData }) => {
         visibleSlides={1}
         dotClass="carousel-dot"
         dotColor={palette.primary.main}
-        totalSlides={mainCarouselData.length}
+        totalSlides={slider.length}
       >
 
-        {mainCarouselData?.map((item, ind) => (
+
+{/* mainCarouselData */}
+        {slider?.map((item, ind) => (
           <Container key={ind}>
             <StyledGrid container>
               <GridItemOne item md={6} sm={6} xs={12}>
