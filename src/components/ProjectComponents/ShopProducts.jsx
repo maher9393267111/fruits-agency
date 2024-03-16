@@ -2,6 +2,7 @@ import { Box, Button, Grid, styled } from "@mui/material";
 import { useRouter } from "next/router";
 import { H1 } from "components/Typography";
 import ProductCard from "./ProductCard";
+import { useTranslation } from "next-i18next";
 // styled component
 const TitleBox = styled(Box)(({
   theme
@@ -29,11 +30,14 @@ const ShopProducts = ({
   isorderpage = false
 }) => {
 
-const {locale} = useRouter()
+  const {locale} = useRouter()
+
+  const {t} = useTranslation("common")
 
   return <Box>
       <TitleBox my={4}>
-        <H1>Our All Products</H1>
+        <H1>{t('products')}</H1>
+      
         <Box />
       </TitleBox>
 

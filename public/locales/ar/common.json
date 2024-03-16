@@ -4,6 +4,8 @@
     "Free Express Shipping": "Free Express Shipping",
     "Free": "Frrrrrrrrrrrrrrrrrrr",
     "name":"العربية",
+    "products":"المنتجات",
+    
     "navbar":{
       "home":"الرئيسية",
       "contact":"اتصل بنا",
@@ -41,7 +43,7 @@
     "email":" عنوان البريد الإلكتروني",
     "phone":"رقم الهاتف",
     "subject":"الموضوع",
-    "address":"العنوان البريدي (لتوصيل الطلب)",
+    "address":"العنوان (لتوصيل الطلب)",
     "message":"الرسالة",
     "send":"ارسل"
 
