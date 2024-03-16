@@ -137,6 +137,17 @@ export default function Navbar() {
               </li>
 
 
+              <li className="nav-item">
+                <Link href="/about">
+                <a className="px-3 py-2 flex items-center text-sm uppercase font-bold leading-snug text-white hover:opacity-75">   
+                  <Icon  icon="eos-icons:system-image-outlined" className="text-lg leading-lg text-white opacity-75"/>  
+                  <span className="ml-2"> {t("navbar.about")}  </span>
+                </a>
+                </Link>  
+              </li>
+
+
+              
 
               <li className="nav-item">
                 <Link href="/contact">
