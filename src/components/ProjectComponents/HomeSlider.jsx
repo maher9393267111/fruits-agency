@@ -126,7 +126,8 @@ const HomeSlider = ({ mainCarouselData }) => {
                 </TextBox>
 
                 <div className="flex gap-2 lg:justify-center">
-                  <StyledButton
+                  <StyledButton 
+                    onClick={() => push(buttonLink)}
                     className=" bg-red-500 mx-2"
                     variant="contained"
                     color="primary"
@@ -139,6 +140,7 @@ const HomeSlider = ({ mainCarouselData }) => {
                   </StyledButton>
 
                   <StyledButton
+                    onClick={() => push(buttonLink)}
                     className=" bg-red-500 mx-2"
                     variant="contained"
                     color="primary"

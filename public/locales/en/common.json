@@ -102,8 +102,8 @@
     "title": "Get groceries delivered within 60 minutes",
     "imgUrl": "/assets/images/sweetimages/Home-Slide-show-2.png",
     "description": null,
-    "buttonText":"Shop Now",
-    "buttonLink":"/order"
+    "buttonText":"Be a partner",
+    "buttonLink":"/partner"
    }
 ]
 }
