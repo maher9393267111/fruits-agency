@@ -3,7 +3,7 @@ import { H1 } from "components/Typography";
 import LazyImage from "components/LazyImage";
 import Carousel from "components/carousel/Carousel";
 
-
+import Link from 'next/link'
 import { useTranslation } from "next-i18next";
 
 
@@ -112,8 +112,8 @@ const HomeSlider = ({ mainCarouselData }) => {
                     priority
                     width={100}
                     height={100}
-                    alt={item.title}
-                    src={item.imgUrl}   
+                    alt={item.title ? item?.title :'Title'}
+                    src={item.imgUrl ? item.imgUrl : "/assets/images/sweetimages/Home-Slide-show-2.png"}   
                     layout="responsive"
                     objectFit="contain"
                   />
@@ -126,6 +126,8 @@ const HomeSlider = ({ mainCarouselData }) => {
                 </TextBox>
 
                 <div className="flex gap-2 lg:justify-center">
+                  <Link href={'/shop'}>
+              
                   <StyledButton
                     className=" bg-red-500 mx-2"
                     variant="contained"
@@ -135,8 +137,13 @@ const HomeSlider = ({ mainCarouselData }) => {
                       py: "6px",
                     }}
                   >
-                    {item.buttonText}
+                    
+                    {t("navbar.shop")}
                   </StyledButton>
+
+                  </Link>
+
+                  <Link href={'/order'}>
 
                   <StyledButton
                     className=" bg-red-500 mx-2"
@@ -147,8 +154,10 @@ const HomeSlider = ({ mainCarouselData }) => {
                       py: "6px",
                     }}
                   >
-                    {item.buttonText}
+                    {t('navbar.orders')}
                   </StyledButton>
+</Link>
+
                 </div>
               </GridItemTwo>
             </StyledGrid>

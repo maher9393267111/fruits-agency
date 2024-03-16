@@ -15,7 +15,6 @@ import AboutSectionHome from "components/ProjectComponents/AboutSectionHome";
 import api from "utils/__api__/grocery3-shop";
 
 
-import About from "./about";
 
 export default function Home(props) {
   console.log("Products");
@@ -64,36 +63,31 @@ export default function Home(props) {
       ) : (
         <div className="mb-12">
           {/* mainCarouselData={props.mainCarouselData} */}
-          <HomeSlider products={products}  />
+          <HomeSlider products={products} />
 
           <Container
             sx={{
               mb: 6,
             }}
           >
+
+
             {/* <About /> */}
-            <HomeOffer  offers={props.offerCards} />
-            
+            <HomeOffer offers={props.offerCards} />
+
             <HomeProductsSlider
               isorderpage={false}
               products={products}
               // {props.topSailedProducts}
             />
 
-
-<div className=" my-12">
-
-<HomeProductsSlider
-              ismedia={true}
-              isorderpage={false}
-              products={media}
-
-            />
-
-</div>
-
-
-
+            <div className=" my-12">
+              <HomeProductsSlider
+                ismedia={true}
+                isorderpage={false}
+                products={media}
+              />
+            </div>
 
             <AboutSectionHome />
           </Container>
