@@ -27,7 +27,8 @@ const TitleBox = styled(Box)(({
 
 const ShopProducts = ({
   products,
-  isorderpage = false
+  isorderpage = false,
+  isrecipe= false
 }) => {
 
   const {locale} = useRouter()
@@ -43,7 +44,7 @@ const ShopProducts = ({
 
       <Grid container mb={-0.5} spacing={3}>
         {products.map(item => <Grid key={item.id} item md={4} sm={6} xs={12}>
-            <ProductCard ismedia={item?.ismedia}   isorderpage={isorderpage} video={item?.video || item?.videourl}  hideRating id={item.id} slug={item.id}  title={locale === 'en' ?  item?.title : locale === 'ar' ? item?.titlear : item.titletr}  imgUrl={item?.images[0]} />
+            <ProductCard isrecipe={isrecipe} ismedia={item?.ismedia}   isorderpage={isorderpage} video={item?.video || item?.videourl}  hideRating id={item.id} slug={item.id}  title={locale === 'en' ?  item?.title : locale === 'ar' ? item?.titlear : item.titletr}  imgUrl={item?.images[0]} />
           </Grid>)}
       </Grid>
       {/* <Box mt={6} display="flex" justifyContent="center">

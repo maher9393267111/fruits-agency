@@ -149,6 +149,7 @@ const ProductCardMain = ({ ...props }) => {
     slug,
     video,
     ismedia,
+    isrecipe
   } = props;
 
  
@@ -209,6 +210,10 @@ const ProductCardMain = ({ ...props }) => {
               />
             </a>
           </ImageBox>
+
+          <H3 mb={1} title={title} fontSize="14px" fontWeight="600" className="title" color="text.secondary">
+            {title}
+          </H3>
         </VideoWrapper>
       ) : (
         <ImageWrapper>
@@ -227,33 +232,11 @@ const ProductCardMain = ({ ...props }) => {
             </Link>
           </ImageBox>
 
-          {/* <ProductViewDialog openDialog={openModal} handleCloseDialog={toggleDialog} product={{
-        title,
-        price,
-        id,
-        slug,
-        imgGroup: [imgUrl, imgUrl]
-      }} /> */}
+  
 
           <HoverButtonBox className="hoverButtonBox">
             <Box className="buttonBox">
-              {/* <ItemController>
-              <Span onClick={toggleDialog}>
-                <RemoveRedEye />
-              </Span>
-
-              <Divider orientation="vertical" flexItem />
-
-              <Span onClick={toggleIsFavorite}>
-                {isFavorite ? <Favorite color="primary" fontSize="small" /> : <FavoriteBorder fontSize="small" color="primary" />}
-              </Span>
-
-              <Divider orientation="vertical" flexItem />
-
-              <Span onClick={handleCartAmountChange(1)}>
-                <ShoppingCartIcon />
-              </Span>
-            </ItemController> */}
+    
 
               {props.isorderpage && (
                 <div className="text-center flex justify-center">
@@ -280,16 +263,8 @@ const ProductCardMain = ({ ...props }) => {
               )}
             </Box>
           </HoverButtonBox>
-        </ImageWrapper>
-      )}
 
-      <ContentWrapper>
-        {ismedia ?
-        <H3 mb={1} title={title} fontSize="14px" fontWeight="600" className="title" color="text.secondary">
-            {title}
-          </H3>
-          :
-        <Link href={`/shop/single?id=${slug}`}>
+          <Link href={isrecipe ? `/recipe/single?id=${slug}` : `/shop/single?id=${slug}`}>
           <a>
             <H3
               mb={1}
@@ -303,7 +278,13 @@ const ProductCardMain = ({ ...props }) => {
             </H3>
           </a>
         </Link>
-}
+        </ImageWrapper>
+      )}
+
+
+
+      <ContentWrapper>
+ 
 
         {/* <FlexBox gap={1} alignItems="center" mt={0.5}>
           <Box fontWeight="600" color="primary.main">

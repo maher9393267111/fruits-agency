@@ -17,6 +17,8 @@ import { H1, H6, H5, Paragraph, Tiny } from "components/Typography";
 import BazaarImage from "components/BazaarImage";
 import BazaarTextField from "components/BazaarTextField";
 import BazaarSwitch from "components/BazaarSwitch";
+import { db } from "../../../src/functions/firebase";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore"
 
 // import EyeToggleButton from "./EyeToggleButton";
 import { FlexBox, FlexRowCenter, FlexBetween } from "components/flex-box";
@@ -127,6 +129,26 @@ if (!productPulish ){
   });
   return
 }
+
+//send newsletter if  true 
+
+if(values.newsletter){
+// add user to firebase
+
+const data={
+  name:values.name,
+  email:values.email,
+  phone:values.phone
+}
+
+
+await addDoc(collection(db, "news"), data);
+enqueueSnackbar("Added to newsletter users", {
+  variant: "success",
+});
+
+}
+
 
 
     const res = await fetch(`/api/partner`, {

@@ -38,7 +38,7 @@ const modules = {
   ],
 };
 
-const ProductForm = ({
+const RecipeForm = ({
   onFinish,
   initialValues,
   files,
@@ -50,23 +50,10 @@ const ProductForm = ({
   setVideoFile,
 }) => {
   const [images, setImages] = useState(initialValues?.images || []);
-  const [video, setVideo] = useState(initialValues?.video || "");
-  const [offerToggle, setOfferToggle] = useState(
-    initialValues?.isoffer || false
-  );
 
-  const [mediaToggle, setMediaToggle] = useState(
-    initialValues?.ismedia || false
-  );
 
-  const onChange = (checked) => {
-    setOfferToggle(checked);
-  };
 
-  const onChangeMedia = (checked) => {
-    console.log("checked", checked.target.checked);
-    setMediaToggle(checked.target.checked);
-  };
+
 
   const ReactQuill = useMemo(
     () => dynamic(() => import("react-quill"), { ssr: false }),
@@ -82,10 +69,10 @@ const ProductForm = ({
           onFinish={(values) =>
             // name of our function
             onFinish({
-              ismedia: mediaToggle,
+             
               ...values,
               images,
-              video,
+              
             })
           }
           initialValues={{
@@ -95,21 +82,10 @@ const ProductForm = ({
             desc: initialValues?.desc || "",
             descar: initialValues?.descar || "",
             desctr: initialValues?.desctr || "",
-            ismedia: initialValues?.ismedia || false,
-            video: initialValues?.video || "",
-            videourl: initialValues?.videourl || "",
+        
           }}
         >
-          <Form.Item className=" " name="ismedia" valuePropName="checked">
-            <Checkbox
-              checked={mediaToggle}
-              // defaultChecked
-              className="  "
-              onChange={onChangeMedia}
-            >
-              Is Media {mediaToggle ? "true" : "false"}
-            </Checkbox>
-          </Form.Item>
+          
 
           <Form.Item
             rules={[
@@ -154,7 +130,7 @@ const ProductForm = ({
             <div className=" flex  md:col-span-2 gap-2 items-center justify-center md:justify-start"></div>
           </div>
 
-          {!mediaToggle && (
+          
             <div>
               <Form.Item
                 label="Description"
@@ -215,7 +191,7 @@ const ProductForm = ({
                 />
               </Form.Item>
             </div>
-          )}
+         
 
           {/* -----images upload----- */}
 
@@ -271,55 +247,11 @@ const ProductForm = ({
             ))}
           </div>
 
-          {/* -----Video upload----- */}
+   
 
-          <div className=" flex flex-col mt-2   gap-12">
-            <div className="w-[20%]">
-              <Upload
-                accept="video/*"
-                maxCount={1}
-                // file is data of image will be uploaded to firebase/storage
-                beforeUpload={(file) => {
-                  setVideoFile(file);
-                  // setFiles((prev) => [...prev, file]);
-                  return false;
-                }}
-                listType="picture-card"
-                onRemove={() => setVideoFile("")}
-              >
-                Upload Video
-              </Upload>
-            </div>
+      
 
-            {mediaToggle && (
-              <Form.Item name="videourl" label="Video url">
-                <Input value={"url"} className="py-2" />
-              </Form.Item>
-            )}
-          </div>
-
-          {/* -----Video delete----- */}
-
-          <div className="flex flex-wrap gap-3 mt-2 ">
-            {video ? (
-              <div>
-                <img
-                  src="https://images.unsplash.com/photo-1590856029826-c7a73142bbf1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dmlkZW8lMjBpY29ufGVufDB8fDB8fHww"
-                  className="w-20 h-20 rounded-full "
-                />
-                <h1
-                  onClick={() => {
-                    setVideo("");
-                  }}
-                  className="text-center cursor-pointer text-red-600"
-                >
-                  remove
-                </h1>
-              </div>
-            ) : (
-              false
-            )}
-          </div>
+      
 
           <div className=" ">
             <Button
@@ -336,4 +268,4 @@ const ProductForm = ({
   );
 };
 
-export default ProductForm;
+export default RecipeForm;

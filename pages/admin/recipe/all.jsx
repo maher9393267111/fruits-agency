@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { getDocuments } from "functions/firebase/getData";
-import ProductsMain from "components/admin/product/products";
+import ProductsMain from "components/admin/recipe/recipes";
 import Loader from "../../../src/components/admin/common/Loader";
-const AllProductsPage = ({}) => {
+const  AllRecipesPage = ({}) => {
   const [products, setProducts] = useState([]);
   const [loacding, setLoading] = useState(true);
 
@@ -12,7 +12,7 @@ const AllProductsPage = ({}) => {
     const getProducts = async () => {
       setLoading(true);
       setProducts([]);
-      const data = await getDocuments("products");
+      const data = await getDocuments("recipes");
       console.log(data, "fetch categories ====>>>>");
       setProducts(data);
       setLoading(false);
@@ -29,16 +29,5 @@ const AllProductsPage = ({}) => {
   );
 };
 
-export default AllProductsPage;
+export default AllRecipesPage;
 
-// // serverside
-// AllProductsPage.getInitialProps = async (context) => {
-//  //const Products = await getDocuments("products"); //  []
-
-// // console.log("productsData", Products);
-
-//   return {
-//     // props from serverside will go to props in clientside
-//   //  products: Products || [] ,
-//   };
-// };

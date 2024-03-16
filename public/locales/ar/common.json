@@ -2,7 +2,7 @@
     "title": "Then you may have a look at <1>this blog post</1>.",
     "description": "Do you like to unleash some super powers to have all side optimized translations?",
     "Free Express Shipping": "Free Express Shipping",
-    "Free": "Frrrrrrrrrrrrrrrrrrr",
+    "Free": "Free",
     "name":"العربية",
     "products":"المنتجات",
     
@@ -12,7 +12,8 @@
       "orders":"الطلبيات",
       "partner":"كن شريكا",
       "shop":"المتجر",
-      "media":"الميديا"
+      "media":"الميديا",
+      "recipes":"الوصفات"
     },
     "partner":{
       "partnernow":"كن شريكاً معنا",
