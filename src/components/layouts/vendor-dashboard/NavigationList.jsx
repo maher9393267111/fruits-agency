@@ -25,7 +25,7 @@ export const navigations = [{
 ]}
 ,
 {
-  name: "Recipess",
+  name: "Recipes",
   icon: duotone.Products,
   children: [{
     name: "Recipes List",
