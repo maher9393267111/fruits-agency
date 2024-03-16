@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import { Box, styled, useTheme } from "@mui/material";
 import { H1 } from "components/Typography";
 import Carousel from "components/carousel/Carousel";
@@ -33,6 +34,11 @@ const  TopProducts = ({
   const theme = useTheme();
   const width = useWindowSize();
   const [visibleSlides, setVisibleSlides] = useState(3);
+
+  const { locale } = useRouter()
+
+
+
   useEffect(() => {
     if (width < 500) setVisibleSlides(1);else if (width < 650) setVisibleSlides(2);else if (width < 950) setVisibleSlides(3);else setVisibleSlides(3);
   }, [width]);
@@ -56,7 +62,10 @@ const  TopProducts = ({
       }
     }}>
         {products?.map(item => <Box py={0.5} key={item.id}>
-            <ProductCard  isorderpage={ isorderpage} id={item.id} slug={item.id} title={item.title} price={22} imgUrl={item?.images[0]} />
+            <ProductCard  isorderpage={ isorderpage} id={item.id} slug={item.id} 
+            title={ locale === 'en' ?  item.title : locale === 'ar' ? item?.titlear : item?.titletr}
+            
+            price={22} imgUrl={item?.images[0]} />
           </Box>)}
       </Carousel>
 }

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { useCallback, useState } from "react";
 import { Box, Button, Chip, Divider, styled } from "@mui/material";
 import {
@@ -149,6 +150,11 @@ const ProductCardMain = ({ ...props }) => {
     video,
     ismedia,
   } = props;
+
+ 
+  // const i18n = locale === "en" ? en : es */
+
+
   const { enqueueSnackbar } = useSnackbar();
   const { state, dispatch } = useAppContext();
   const [openModal, setOpenModal] = useState(false);
@@ -180,14 +186,20 @@ const ProductCardMain = ({ ...props }) => {
       });
     }
   };
+
+
+
+
+
   return (
     <StyledBazaarCard>
       {ismedia ? (
         <VideoWrapper>
           <ImageBox className="hoverImgBox">
-            <a>
+            <a className="!w-full">
               <ReactPlayer
-                className="!rounded-2xl "
+           
+                className="  "
                 controls
                 width="auto"
                 //  height="500px"

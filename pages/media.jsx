@@ -46,11 +46,11 @@ export default function Media() {
 }
 
 export const getStaticProps = async ({ locale }) => {
-  //const allProducts = await api.getAllProducts();
+ 
   return {
     props: {
       ...(await serverSideTranslations(locale, ["common"])),
-      // allProducts,
+    
     },
   };
 };

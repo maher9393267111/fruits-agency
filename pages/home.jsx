@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container } from "@mui/material";
+import { Container , Box } from "@mui/material";
 import MainLayout from "../src/components/ProjectComponents/mainLayout";
 import HomeSlider from "components/ProjectComponents/HomeSlider";
 import HomeOffer from "components/ProjectComponents/HomeOffer";
@@ -10,6 +10,7 @@ import { orderBy, where, collection, query, getDocs } from "firebase/firestore";
 import { db } from "functions/firebase";
 import { getDocuments, getDocumentsOrder } from "functions/firebase/getData";
 import Loader from "components/admin/common/Loader";
+import AboutSectionHome from 'components/ProjectComponents/AboutSectionHome'
 
 import api from "utils/__api__/grocery3-shop";
 
@@ -44,11 +45,11 @@ export default function Home(props) {
 
   return (
     <MainLayout>
-      {products?.length}
+      
       {loacding ? (
         <Loader />
       ) : (
-        <div>
+        <div className="mb-12">
           <HomeSlider products={products} mainCarouselData={props.mainCarouselData} />
 
           <Container
@@ -65,6 +66,11 @@ export default function Home(props) {
               products= {products}
               // {props.topSailedProducts}
             />
+
+
+
+<AboutSectionHome/>
+
           </Container>
         </div>
       )}

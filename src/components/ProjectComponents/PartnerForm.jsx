@@ -160,7 +160,7 @@ if (!productPulish ){
   const { palette } = useTheme();
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="mb-4" onSubmit={handleSubmit}>
       <BazaarImage
         src="\assets\images\sweetimages\sweetsips-final-logo.png"
         sx={{
@@ -172,8 +172,11 @@ if (!productPulish ){
       />
 
       <H1 textAlign="center" mt={1} mb={4} fontSize={20}>
-      {t('partner.partnernow')} {profile?.name}
+      {t('partner.partnernow')} 
       </H1>
+
+<div className=" mt-2 bg-white py-4 px-6 rounded-lg">
+
 
       <Grid container spacing={3}>
         <Grid item sm={6} xs={12}>
@@ -436,7 +439,7 @@ if (!productPulish ){
 
 
 
-        <Grid className="my-4" item xs={12}>
+        <Grid className="mt-4 mb-12" item xs={12}>
           <TextField
             className="my-3"
             rows={6}
@@ -456,7 +459,7 @@ if (!productPulish ){
       </Grid>
 
       <Button
-        className=" !bg-red-500"
+        className=" !bg-red-500 mt-4"
         fullWidth
         type="submit"
         color="primary"
@@ -467,6 +470,9 @@ if (!productPulish ){
       >
         {t("partner.send")}
       </Button>
+
+      </div>
+
     </form>
   );
 };

@@ -39,7 +39,7 @@ export default function Navbar() {
   
   return (
     <>
-      <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-emerald-500">
+      <nav className="  relative flex flex-wrap items-center justify-between px-2 py-3 bg-emerald-500">
         <div className="container px-4 mx-auto flex flex-wrap justify-between">
           <div className="w-full flex-grow  relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
 
@@ -85,7 +85,7 @@ export default function Navbar() {
                 <Link href="/home">
                 <a className="px-3 py-2 flex items-center text-sm uppercase font-bold leading-snug text-white hover:opacity-75">   
                   <Icon  icon="lucide:home" className="text-lg leading-lg text-white opacity-75"/>  
-                  <span className="ml-2"> {t("navbar.home")}  </span>
+                  <span className="ml-2 "> {t("navbar.home")}  </span>
                 </a>
                 </Link>  
               </li>
@@ -129,7 +129,7 @@ export default function Navbar() {
               </li>
 
 
-
+{/* 
               <li className="nav-item">
                 <Link href="/contact">
                     <a className="px-3 py-2 flex items-center text-sm uppercase font-bold leading-snug text-white hover:opacity-75">
@@ -137,7 +137,7 @@ export default function Navbar() {
                     <span className="ml-2"> {t("navbar.contact")}  </span>
                     </a>  
                 </Link>  
-              </li>
+              </li> */}
 
              
 

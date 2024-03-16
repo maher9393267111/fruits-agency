@@ -95,7 +95,7 @@ const DashboardNavbar = ({
             mr: 1
           }} />} /> */}
 
-            <NotificationsPopover />
+            {/* <NotificationsPopover /> */}
             <AccountPopover />
           </FlexBox>
         </StyledToolBar>

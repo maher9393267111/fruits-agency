@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
- 
+
 import { useRouter } from "next/router";
 import parse from "html-react-parser";
 import Loader from "../../src/components/admin/common/Loader";
@@ -48,10 +48,8 @@ export default function ProductSingle({}) {
   const [loacding, setLoading] = useState(false);
 
   const router = useRouter();
+  const locale =router.locale
   const id = router.query.id;
-
-
-  
 
   useEffect(() => {
     const getProduct = async () => {
@@ -145,13 +143,19 @@ export default function ProductSingle({}) {
               </Grid>
 
               <Grid item md={6} xs={12} alignItems="center">
-                <H1 mb={1}>{product?.title}</H1>
+                <H1 mb={1}>{ locale === 'en' ?  product.title : locale === 'ar' ? product?.titlear : product?.titletr}</H1>
 
-                {product?.desc && (
-                  <FlexBox className="mx-4 md:mx-2" alignItems="center" mb={1}>
-                    {parse(product?.desc)}
-                  </FlexBox>
-                )}
+
+                <div>
+  
+  {product?.desc && (
+                    <Box className="mx-4 md:mx-2" alignItems="center" mb={1}>
+                      {parse(locale === 'en' ?  product.desc : locale === 'ar' ? product?.descar : product?.desctr)}
+                    </Box>
+                  )}
+  </div>
+
+
 
                 {/* <FlexBox alignItems="center" mb={1}>
             <Box>Brand:</Box>
@@ -184,6 +188,11 @@ export default function ProductSingle({}) {
             </Link>
           </FlexBox> */}
               </Grid>
+
+
+
+
+
             </Grid>
           )}
 
@@ -193,9 +202,6 @@ export default function ProductSingle({}) {
     </MainLayout>
   );
 }
-
-
-
 
 export const getStaticProps = async (ctx) => {
   return {
