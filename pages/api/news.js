@@ -33,7 +33,7 @@ async function sendEmail({ name, email, phone ,to ,product}) {
         <h2 style="text-align: center; text-transform: uppercase; color: teal;">New message</h2>
         
       
-        
+        <p style="font-size:1rem;"><strong> New Offer</p> 
         <p style="font-size:1rem;"><strong> Product Name: </strong> ${product.title}</p>
        
         <img src="${product.images[0]}" style="width:150px; height:150px;">

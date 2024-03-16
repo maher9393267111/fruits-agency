@@ -39,6 +39,17 @@ const ProductTable = ({ products, news }) => {
 
 const SendNews =async()=>{
 
+if( !selectedProduct.title){
+
+  enqueueSnackbar("you must select product first", {
+    variant: "error",
+  });
+
+  return
+
+}
+
+
 const data ={
 to:selectedUser.email,
 phone:selectedUser.phone,
@@ -104,7 +115,7 @@ product:selectedProduct
                     onChange(record, e);
                   }}
                   className=" !placeholder-black"
-                  placeholder="Select Category"
+                  placeholder="Select Product"
                 >
                   {products?.map((product) => {
                     return (
