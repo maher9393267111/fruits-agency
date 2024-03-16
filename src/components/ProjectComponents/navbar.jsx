@@ -34,6 +34,9 @@ export default function Navbar() {
   console.log("links" ,slider)
 
 
+
+
+  
   return (
     <>
       <nav className="  relative flex flex-wrap items-center justify-between px-2 py-3 bg-emerald-500">

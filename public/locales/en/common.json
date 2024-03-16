@@ -51,31 +51,61 @@
   "send":"Send"
 
 },
+
+
+"about":{
+  "title":"About SweetSips",
+  "p1":"Welcome to the world of SweetSips, where authentic taste meets high quality. We are your ideal provider of fresh and pure sugarcane products and advanced sugarcane juice machines. We are proud to provide natural and refreshing ingredients to juice retailers, cafes, mobile food trucks and supermarkets. We believe that every sip of sugarcane juice should be a unique and enjoyable experience.",
+  
+  "p2":"'Ten amazing benefits of sugarcane juice'",
+  "p3":" Sugarcane juice has many health benefits that make it a beloved beverage in many cultures around the world.",
+  "p4":"Here are some of its main benefits:",
+  "1":"A natural source of energy:",
+  "1a":"Sugarcane juice is rich in natural sugars that provide instant energy to the body, making it an ideal recovery drink after a workout or during a hot day.",
+  "2":"Improving digestion:",
+  "2a":"Sugarcane juice contains amounts of potassium that help maintain the normal functions of the digestive system, and can help relieve digestive problems such as constipation.",
+  "3":"Promote liver health:",
+  "3a":"Sugarcane juice is believed to have beneficial properties for the liver and can help prevent diseases such as hepatitis or help improve liver function.",
+  "4":"Maintaining oral and dental health:",
+  "4a":"Despite its high sugar content, sugarcane juice contains substances that help fight tooth decay and can contribute to maintaining oral health.",
+  "5":"Anti-inflammatory:",
+  "5a":"Sugarcane juice has anti-inflammatory properties, which makes it useful in treating various inflammatory conditions such as sore throat.",
+  "6":"Natural moisturizer:",
+  "6a":"Due to its high water content, sugarcane juice is an excellent moisturizer that helps hydrate and keep the body hydrated.",
+  "7":"Fighting diseases:",
+  "7a":" It contains antioxidants that help fight infections and enhance the body’s immunity against diseases.",
+  "8":"Promote healthy skin:",
+  "8a":"The nourishing properties of sugarcane juice can help maintain healthy skin, making it look younger and fresher.",
+  "9":"Beneficial in pregnancy:",
+  "9a":"Sugarcane juice contains folic acid which is important for pregnant women to support healthy fetal development.",
+  "10":"Support a healthy weight:",
+  "10a":"Although it is sweet in taste, sugarcane juice contains fewer calories compared to other sugary drinks, making it a good choice for those watching their weight.",
+  "p5":"It is important to note that consumption of sugarcane juice should be part of a balanced diet and in moderate quantities, especially for people who have certain health conditions such as diabetes."
+
+},
+
+"contact":{
+"p15":"We are here to answer all your questions and help you with everything you need. You can reach us by phone or email at any time. We promise to provide support and advice to get the most out of our products.",
+"p20":"The contact form is as follows, The main elements you should include:"
+
+},
+
+
+
 "slider": [
-  {
-    "id": "1",
-    "link": "Home",
-    "image": "/assets/img/blog/1.jpg"
+  { 
+    "title":"1Get groceries delivered within 40 minutes",
+    "imgUrl":"/assets/images/sweetimages/Home-Slide-show-1.png",
+    "description":null,
+    "buttonText":"Order Now",
+    "buttonLink":"/order"
   },
   {
-    "id": "2",
-    "link": "News",
-    "image": "/assets/img/blog/1.jpg"
-  },
-  {
-    "id": "3",
-    "link": "Events",
-    "image": "/assets/img/blog/1.jpg"
-  },
-  {
-    "id": "4",
-    "link": "Blogs",
-    "image": "/assets/img/blog/1.jpg"
-  },
-  {
-    "id": "5",
-    "link": "Podcast",
-    "image": "/assets/img/blog/1.jpg"
-  }
+    "title": "Get groceries delivered within 60 minutes",
+    "imgUrl": "/assets/images/sweetimages/Home-Slide-show-2.png",
+    "description": null,
+    "buttonText":"Shop Now",
+    "buttonLink":"/order"
+   }
 ]
 }

@@ -2,6 +2,11 @@ import { Box, Button, Grid, styled, useTheme } from "@mui/material";
 import { H1 } from "components/Typography";
 import LazyImage from "components/LazyImage";
 import Carousel from "components/carousel/Carousel";
+
+
+import { useTranslation } from "next-i18next";
+
+
 // styled components
 const StyledBox = styled(Box)({
   marginBottom: 60,
@@ -72,8 +77,18 @@ const TextBox = styled(Box)(({ theme }) => ({
 // ===================================================================
 
 const HomeSlider = ({ mainCarouselData }) => {
+
+
+
   const { palette } = useTheme();
+  
+  const {t} = useTranslation("common")
+
+  const slider= t('slider', { returnObjects: true }) 
+  console.log("links" ,slider)
+  
   return (
+    
     <StyledBox id="carouselBox">
       <Carousel
         spacing="0px"
@@ -83,9 +98,12 @@ const HomeSlider = ({ mainCarouselData }) => {
         visibleSlides={1}
         dotClass="carousel-dot"
         dotColor={palette.primary.main}
-        totalSlides={mainCarouselData.length}
+        totalSlides={slider.length}
       >
-        {mainCarouselData?.map((item, ind) => (
+
+
+{/* mainCarouselData */}
+        {slider?.map((item, ind) => (
           <Container key={ind}>
             <StyledGrid container>
               <GridItemOne item md={6} sm={6} xs={12}>
@@ -95,7 +113,7 @@ const HomeSlider = ({ mainCarouselData }) => {
                     width={100}
                     height={100}
                     alt={item.title}
-                    src={item.imgUrl}
+                    src={item.imgUrl}   
                     layout="responsive"
                     objectFit="contain"
                   />
@@ -136,6 +154,7 @@ const HomeSlider = ({ mainCarouselData }) => {
             </StyledGrid>
           </Container>
         ))}
+       
       </Carousel>
     </StyledBox>
   );

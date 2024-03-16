@@ -157,6 +157,8 @@ const {locale} = useRouter()
     });
   };
 
+
+ 
   return (
     <form onSubmit={handleSubmit}>
       <BazaarImage

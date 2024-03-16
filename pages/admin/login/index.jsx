@@ -11,7 +11,7 @@ const LoginAdmin = () => {
         <SEO title="Login" />
         <Login />
       </FlexRowCenter>
-      ;
+      ; 
     </MainLayout>
   );
 };
