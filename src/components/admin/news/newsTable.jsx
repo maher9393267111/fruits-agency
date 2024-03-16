@@ -14,7 +14,6 @@ import Image from "next/image";
 import { useSnackbar } from "notistack";
 
 const ProductTable = ({ products, news }) => {
-    
   const { enqueueSnackbar } = useSnackbar();
   const [filteredInfo, setFilteredInfo] = useState({});
   const [sortedInfo, setSortedInfo] = useState({});
@@ -23,7 +22,7 @@ const ProductTable = ({ products, news }) => {
   const [selectedUser, setSelectedUser] = useState({});
   function onChange(user, i) {
     setSelectedProduct(products.find((product) => product.title === i));
-    setSelectedUser(user)
+    setSelectedUser(user);
     console.log("I", i, user, selectedProduct);
 
     //send news to user email
@@ -35,52 +34,41 @@ const ProductTable = ({ products, news }) => {
     setSortedInfo(sorter);
   };
 
+  const SendNews = async () => {
+    if (!selectedProduct.title) {
+      enqueueSnackbar("you must select product first", {
+        variant: "error",
+      });
 
+      return;
+    }
 
-const SendNews =async()=>{
-
-if( !selectedProduct.title){
-
-  enqueueSnackbar("you must select product first", {
-    variant: "error",
-  });
-
-  return
-
-}
-
-
-const data ={
-to:selectedUser.email,
-phone:selectedUser.phone,
-name:selectedUser.name,
-product:selectedProduct
-
-
-}
-
+    const data = {
+      to: selectedUser.email,
+      phone: selectedUser.phone,
+      name: selectedUser.name,
+      product: selectedProduct,
+    };
 
     const res = await fetch(`/api/news`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-  
-        body: JSON.stringify(data),
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+
+      body: JSON.stringify(data),
+    });
+
+    console.log("RESPONSE", res);
+
+    if (res?.status === 200) {
+      enqueueSnackbar("News has sended successfully", {
+        variant: "success",
       });
-  
-      console.log("RESPONSE", res);
-  
-      if (res?.status === 200) {
-        enqueueSnackbar("News has sended successfully", {
-          variant: "success",
-        });
-      } else {
-        enqueueSnackbar("Some thing wrong", {
-          variant: "error",
-        });
-      }
-
-}
-
+    } else {
+      enqueueSnackbar("Some thing wrong", {
+        variant: "error",
+      });
+    }
+  };
 
   const columns = [
     {
@@ -150,7 +138,10 @@ product:selectedProduct
               </div>
 
               <div>
-                <p onClick={ SendNews} className="  cursor-pointer bg-green-500 text-white font-semibold text-center px-4 py-2 rounded-md">
+                <p
+                  onClick={SendNews}
+                  className="  cursor-pointer bg-green-500 text-white font-semibold text-center px-4 py-2 rounded-md"
+                >
                   Send news
                 </p>
               </div>

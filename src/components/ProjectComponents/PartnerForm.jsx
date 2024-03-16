@@ -131,7 +131,7 @@ const PartnerForm = () => {
 
     //send newsletter if  true
 
-    if (values.newsletter) {
+    if (news) {
       // add user to firebase
 
       const data = {
