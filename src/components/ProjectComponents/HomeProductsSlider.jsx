@@ -62,7 +62,11 @@ const  TopProducts = ({
       }
     }}>
         {products?.map(item => <Box py={0.5} key={item.id}>
-            <ProductCard  isorderpage={ isorderpage} id={item.id} slug={item.id} 
+            <ProductCard 
+             ismedia={item.ismedia}
+             video={item?.video || item?.videourl}  
+            
+            isorderpage={ isorderpage} id={item.id} slug={item.id} 
             title={ locale === 'en' ?  item.title : locale === 'ar' ? item?.titlear : item?.titletr}
             
             price={22} imgUrl={item?.images[0]} />

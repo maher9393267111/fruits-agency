@@ -137,7 +137,7 @@ export default function Navbar() {
               </li>
 
 
-{/* 
+
               <li className="nav-item">
                 <Link href="/contact">
                     <a className="px-3 py-2 flex items-center text-sm uppercase font-bold leading-snug text-white hover:opacity-75">
@@ -145,7 +145,7 @@ export default function Navbar() {
                     <span className="ml-2"> {t("navbar.contact")}  </span>
                     </a>  
                 </Link>  
-              </li> */}
+              </li>
 
              
 

@@ -1,5 +1,5 @@
+
 import Link from "next/link";
-import { useRouter } from "next/router";
 import { useCallback, useState } from "react";
 import { Box, Button, Chip, Divider, styled } from "@mui/material";
 import {
@@ -151,11 +151,6 @@ const ProductCardMain = ({ ...props }) => {
     ismedia,
     isrecipe
   } = props;
-
- 
-  // const i18n = locale === "en" ? en : es */
-
-
   const { enqueueSnackbar } = useSnackbar();
   const { state, dispatch } = useAppContext();
   const [openModal, setOpenModal] = useState(false);
@@ -187,20 +182,15 @@ const ProductCardMain = ({ ...props }) => {
       });
     }
   };
-
-
-
-
-
   return (
     <StyledBazaarCard>
+      {ismedia ? 'meeee' :"nooo"}
       {ismedia ? (
         <VideoWrapper>
           <ImageBox className="hoverImgBox">
-            <a className="!w-full">
+            <a>
               <ReactPlayer
-           
-                className="  "
+                className="!rounded-2xl "
                 controls
                 width="auto"
                 //  height="500px"
@@ -210,15 +200,11 @@ const ProductCardMain = ({ ...props }) => {
               />
             </a>
           </ImageBox>
-
-          <H3 mb={1} title={title} fontSize="14px" fontWeight="600" className="title" color="text.secondary">
-            {title}
-          </H3>
         </VideoWrapper>
       ) : (
         <ImageWrapper>
           <ImageBox className="hoverImgBox">
-            <Link href={`/shop/single?id=${slug}`}>
+            <Link href={isrecipe ? `/recipes/single?id=${slug}` : `/shop/single?id=${slug}`}>
               <a>
                 <LazyImage
                   alt={title}
@@ -232,11 +218,33 @@ const ProductCardMain = ({ ...props }) => {
             </Link>
           </ImageBox>
 
-  
+          {/* <ProductViewDialog openDialog={openModal} handleCloseDialog={toggleDialog} product={{
+        title,
+        price,
+        id,
+        slug,
+        imgGroup: [imgUrl, imgUrl]
+      }} /> */}
 
           <HoverButtonBox className="hoverButtonBox">
             <Box className="buttonBox">
-    
+              {/* <ItemController>
+              <Span onClick={toggleDialog}>
+                <RemoveRedEye />
+              </Span>
+
+              <Divider orientation="vertical" flexItem />
+
+              <Span onClick={toggleIsFavorite}>
+                {isFavorite ? <Favorite color="primary" fontSize="small" /> : <FavoriteBorder fontSize="small" color="primary" />}
+              </Span>
+
+              <Divider orientation="vertical" flexItem />
+
+              <Span onClick={handleCartAmountChange(1)}>
+                <ShoppingCartIcon />
+              </Span>
+            </ItemController> */}
 
               {props.isorderpage && (
                 <div className="text-center flex justify-center">
@@ -263,8 +271,16 @@ const ProductCardMain = ({ ...props }) => {
               )}
             </Box>
           </HoverButtonBox>
+        </ImageWrapper>
+      )}
 
-          <Link href={isrecipe ? `/recipe/single?id=${slug}` : `/shop/single?id=${slug}`}>
+      <ContentWrapper>
+        {ismedia ?
+        <H3 mb={1} title={title} fontSize="14px" fontWeight="600" className="title" color="text.secondary">
+            {title}
+          </H3>
+          :
+        <Link href={isrecipe ? `/recipes/single?id=${slug}` : `/shop/single?id=${slug}`}>
           <a>
             <H3
               mb={1}
@@ -278,13 +294,7 @@ const ProductCardMain = ({ ...props }) => {
             </H3>
           </a>
         </Link>
-        </ImageWrapper>
-      )}
-
-
-
-      <ContentWrapper>
- 
+}
 
         {/* <FlexBox gap={1} alignItems="center" mt={0.5}>
           <Box fontWeight="600" color="primary.main">

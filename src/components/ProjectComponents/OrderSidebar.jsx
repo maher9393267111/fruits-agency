@@ -260,8 +260,9 @@ const OrderSidebar = () => {
         helperText={touched.adress && errors.adress}
       />
 
+<div className="my-12">
       <TextField
-        className="my-6"
+        className="m"
         rows={6}
         multiline
         fullWidth
@@ -277,6 +278,7 @@ const OrderSidebar = () => {
         helperText={touched.description && errors.description}
       />
 
+</div>
       {/* <TextField
 
         className="my-6"

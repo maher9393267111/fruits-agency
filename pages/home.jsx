@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container , Box } from "@mui/material";
+import { Container, Box } from "@mui/material";
 import MainLayout from "../src/components/ProjectComponents/mainLayout";
 import HomeSlider from "components/ProjectComponents/HomeSlider";
 import HomeOffer from "components/ProjectComponents/HomeOffer";
@@ -10,7 +10,7 @@ import { orderBy, where, collection, query, getDocs } from "firebase/firestore";
 import { db } from "functions/firebase";
 import { getDocuments, getDocumentsOrder } from "functions/firebase/getData";
 import Loader from "components/admin/common/Loader";
-import AboutSectionHome from 'components/ProjectComponents/AboutSectionHome'
+import AboutSectionHome from "components/ProjectComponents/AboutSectionHome";
 
 import api from "utils/__api__/grocery3-shop";
 
@@ -18,6 +18,7 @@ export default function Home(props) {
   console.log("Products");
 
   const [products, setProducts] = useState([]);
+  const [media, setMedia] = useState([]);
   const [loacding, setLoading] = useState(true);
 
   useEffect(() => {
@@ -27,46 +28,72 @@ export default function Home(props) {
       const data = await getDocumentsOrder(
         "products",
         orderBy("timeStamp", "asc"),
-         where("ismedia", "==", false)
+        where("ismedia", "==", false)
       );
 
       console.log(data, "fetch products ====>>>>");
       setProducts(data);
       setLoading(false);
     };
+
+    const getMedia = async () => {
+      setLoading(true);
+
+      const data = await getDocumentsOrder(
+        "products",
+        orderBy("timeStamp", "asc"),
+        where("ismedia", "==", true)
+      );
+
+      console.log(data, "fetch media ====>>>>");
+      setMedia(data);
+      setLoading(false);
+    };
+
     getProducts();
+    getMedia();
   }, []);
-
-
-
 
   return (
     <MainLayout>
-      
       {loacding ? (
         <Loader />
       ) : (
         <div className="mb-12">
-          <HomeSlider products={products} mainCarouselData={props.mainCarouselData} />
+          <HomeSlider
+            products={products}
+            mainCarouselData={props.mainCarouselData}
+          />
 
           <Container
             sx={{
               mb: 6,
             }}
           >
-            <HomeOffer  offers={props.offerCards} />
+            <HomeOffer offers={props.offerCards} />
 
             <HomeProductsSlider
-            
               isorderpage={false}
-              products= {products}
+              products={products}
               // {props.topSailedProducts}
             />
 
 
+<div className=" my-12">
 
-<AboutSectionHome/>
+<HomeProductsSlider
+              ismedia={true}
+              isorderpage={false}
+              products={media}
 
+            />
+
+</div>
+
+
+
+
+            <AboutSectionHome />
           </Container>
         </div>
       )}
@@ -84,8 +111,7 @@ export const getStaticProps = async ({ locale }) => {
 
       mainCarouselData,
       offerCards,
-    //  topSailedProducts,
+      //  topSailedProducts,
     },
   };
 };
-

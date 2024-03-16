@@ -18,7 +18,7 @@ import BazaarImage from "components/BazaarImage";
 import BazaarTextField from "components/BazaarTextField";
 import BazaarSwitch from "components/BazaarSwitch";
 import { db } from "../../../src/functions/firebase";
-import { addDoc, collection, serverTimestamp } from "firebase/firestore"
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 
 // import EyeToggleButton from "./EyeToggleButton";
 import { FlexBox, FlexRowCenter, FlexBetween } from "components/flex-box";
@@ -91,12 +91,11 @@ const PartnerForm = () => {
     zipcode: "",
     intersted: "",
     question: "",
-    worktype:'',
-   // ismarketing: "",
-  //  agreements:false,
+    worktype: "",
+    // ismarketing: "",
+    //  agreements:false,
     monthly: "",
-    newsletter:true,
-    
+    newsletter: true,
   };
   const formSchema = yup.object().shape({
     //t("name")
@@ -116,46 +115,46 @@ const PartnerForm = () => {
   const { profile } = useAuth();
 
   const { enqueueSnackbar } = useSnackbar();
-  const [news, setNews] = useState(false)
-  const [agreements ,setAgreements] =  useState(false)
+  const [news, setNews] = useState(false);
+  const [agreements, setAgreements] = useState(false);
   const [productPulish, setProductPublish] = useState(false);
 
   const handleFormSubmit = async (values) => {
     console.log(values);
 
-if (!productPulish ){
-  enqueueSnackbar("You must to agree ", {
-    variant: "error",
-  });
-  return
-}
+    if (!productPulish) {
+      enqueueSnackbar("You must to agree ", {
+        variant: "error",
+      });
+      return;
+    }
 
-//send newsletter if  true 
+    //send newsletter if  true
 
-if(values.newsletter){
-// add user to firebase
+    if (values.newsletter) {
+      // add user to firebase
 
-const data={
-  name:values.name,
-  email:values.email,
-  phone:values.phone
-}
+      const data = {
+        name: values.name,
+        email: values.email,
+        phone: values.phone,
+      };
 
-
-await addDoc(collection(db, "news"), data);
-enqueueSnackbar("Added to newsletter users", {
-  variant: "success",
-});
-
-}
-
-
+      await addDoc(collection(db, "news"), data);
+      enqueueSnackbar("Added to newsletter users", {
+        variant: "success",
+      });
+    }
 
     const res = await fetch(`/api/partner`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
 
-      body: JSON.stringify({ ...values ,agreements:productPulish ,ismarketing:news }),
+      body: JSON.stringify({
+        ...values,
+        agreements: productPulish,
+        ismarketing: news,
+      }),
     });
 
     console.log("RESPONSE", res);
@@ -187,314 +186,309 @@ enqueueSnackbar("Added to newsletter users", {
         src="\assets\images\sweetimages\sweetsips-final-logo.png"
         sx={{
           m: "auto",
-          width:"20%",
-          height:"20%",
-          alignItems:'center'
+          width: "20%",
+          height: "20%",
+          alignItems: "center",
         }}
       />
 
       <H1 textAlign="center" mt={1} mb={4} fontSize={20}>
-      {t('partner.partnernow')} 
+        {t("partner.partnernow")}
       </H1>
 
-<div className=" mt-2 bg-white py-4 px-6 rounded-lg">
+      <div className=" mt-2 bg-white py-4 px-6 rounded-lg">
+        <Grid container spacing={3}>
+          <Grid item sm={6} xs={12}>
+            <BazaarTextField
+              mb={1.5}
+              fullWidth
+              name="name"
+              size="small"
+              type="text"
+              variant="outlined"
+              onBlur={handleBlur}
+              value={values.name}
+              onChange={handleChange}
+              label={t("partner.name")}
+              placeholder={t("partner.name")}
+              error={!!touched.name && !!errors.email}
+              helperText={touched.name && errors.name}
+            />
+          </Grid>
 
+          <Grid item sm={6} xs={12}>
+            <BazaarTextField
+              mb={1.5}
+              fullWidth
+              name="email"
+              size="small"
+              type="email"
+              variant="outlined"
+              onBlur={handleBlur}
+              value={values.email}
+              onChange={handleChange}
+              label={t("partner.email")}
+              placeholder={t("partner.email")}
+              error={!!touched.email && !!errors.email}
+              helperText={touched.email && errors.email}
+            />
+          </Grid>
 
-      <Grid container spacing={3}>
-        <Grid item sm={6} xs={12}>
-          <BazaarTextField
-            mb={1.5}
-            fullWidth
-            name="name"
-            size="small"
-            type="text"
-            variant="outlined"
-            onBlur={handleBlur}
-            value={values.name}
-            onChange={handleChange}
-            label={t('partner.name')}
-            placeholder={t('partner.name')}
-            error={!!touched.name && !!errors.email}
-            helperText={touched.name && errors.name}
-          />
+          <Grid item sm={6} xs={12}>
+            <BazaarTextField
+              mb={1.5}
+              fullWidth
+              name="phone"
+              size="phone"
+              type="phone"
+              variant="outlined"
+              onBlur={handleBlur}
+              value={values.phone}
+              onChange={handleChange}
+              label={t("partner.phone")}
+              placeholder={t("partner.phone")}
+              error={!!touched.phone && !!errors.phone}
+              helperText={touched.phone && errors.phone}
+            />
+          </Grid>
+
+          <Grid item sm={6} xs={12}>
+            <BazaarTextField
+              mb={1.5}
+              fullWidth
+              name="country"
+              size="country"
+              type="country"
+              variant="outlined"
+              onBlur={handleBlur}
+              value={values.country}
+              onChange={handleChange}
+              label={t("partner.country")}
+              placeholder={t("partner.country")}
+              // error={!!touched.phone && !!errors.phone}
+              // helperText={touched.phone && errors.phone}
+            />
+          </Grid>
+
+          <Grid item sm={6} xs={12}>
+            <BazaarTextField
+              mb={1.5}
+              fullWidth
+              name="city"
+              size="city"
+              type="city"
+              variant="outlined"
+              onBlur={handleBlur}
+              value={values.city}
+              onChange={handleChange}
+              label={t("partner.city")}
+              placeholder={t("partner.city")}
+              // error={!!touched.phone && !!errors.phone}
+              // helperText={touched.phone && errors.phone}
+            />
+          </Grid>
+
+          <Grid item sm={6} xs={12}>
+            <BazaarTextField
+              mb={1.5}
+              fullWidth
+              name="position"
+              size="position"
+              type="position"
+              variant="outlined"
+              onBlur={handleBlur}
+              value={values.position}
+              onChange={handleChange}
+              label={t("partner.position")}
+              placeholder={t("partner.position")}
+              // error={!!touched.phone && !!errors.phone}
+              // helperText={touched.phone && errors.phone}
+            />
+          </Grid>
+
+          <Grid item sm={6} xs={12}>
+            <BazaarTextField
+              mb={1.5}
+              fullWidth
+              name="worktype"
+              size="worktype"
+              type="worktype"
+              variant="outlined"
+              onBlur={handleBlur}
+              value={values.worktype}
+              onChange={handleChange}
+              label={t("partner.worktype")}
+              placeholder={t("partner.worktype")}
+              // error={!!touched.phone && !!errors.phone}
+              // helperText={touched.phone && errors.phone}
+            />
+          </Grid>
+
+          <Grid item sm={6} xs={12}>
+            <BazaarTextField
+              mb={1.5}
+              fullWidth
+              name="site"
+              size="site"
+              type="site"
+              variant="outlined"
+              onBlur={handleBlur}
+              value={values.site}
+              onChange={handleChange}
+              label={t("partner.site")}
+              placeholder={t("partner.site")}
+              // error={!!touched.phone && !!errors.phone}
+              // helperText={touched.phone && errors.phone}
+            />
+          </Grid>
+
+          <Grid item sm={6} xs={12}>
+            <BazaarTextField
+              mb={1.5}
+              fullWidth
+              name="zipcode"
+              size="zipcode"
+              type="zipcode"
+              variant="outlined"
+              onBlur={handleBlur}
+              value={values.zipcode}
+              onChange={handleChange}
+              label={t("partner.zipcode")}
+              placeholder={t("partner.zipcode")}
+              // error={!!touched.phone && !!errors.phone}
+              // helperText={touched.phone && errors.phone}
+            />
+          </Grid>
+
+          <Grid item sm={6} xs={12}>
+            <BazaarTextField
+              size="medium"
+              fullWidth
+              name="subject"
+              type="subject"
+              variant="outlined"
+              onBlur={handleBlur}
+              value={values.subject}
+              onChange={handleChange}
+              label={t("partner.subject")}
+              placeholder={t("partner.subject")}
+              error={!!touched.subject && !!errors.subject}
+              helperText={touched.subject && errors.subject}
+            />
+          </Grid>
+
+          <Grid item sm={6} xs={12}>
+            <BazaarTextField
+              size="medium"
+              fullWidth
+              name="address"
+              type="address"
+              variant="outlined"
+              onBlur={handleBlur}
+              value={values.address}
+              onChange={handleChange}
+              label={t("partner.address")}
+              placeholder={t("partner.address")}
+              error={!!touched.address && !!errors.address}
+              helperText={touched.address && errors.address}
+            />
+          </Grid>
+
+          <Grid item sm={6} xs={12}>
+            <BazaarTextField
+              size="medium"
+              fullWidth
+              name="interested"
+              type="interested"
+              variant="outlined"
+              onBlur={handleBlur}
+              value={values.interested}
+              onChange={handleChange}
+              label={t("partner.interested")}
+              placeholder={t("partner.interested")}
+            />
+          </Grid>
+
+          <Grid item sm={6} xs={12}>
+            <BazaarTextField
+              size="medium"
+              fullWidth
+              name="question"
+              type="question"
+              variant="outlined"
+              onBlur={handleBlur}
+              value={values.question}
+              onChange={handleChange}
+              label={t("partner.question")}
+              placeholder={t("partner.question")}
+            />
+          </Grid>
+
+          <Grid item sm={6} xs={12}>
+            <BazaarTextField
+              size="medium"
+              fullWidth
+              name="monthly"
+              type="monthly"
+              variant="outlined"
+              onBlur={handleBlur}
+              value={values.monthly}
+              onChange={handleChange}
+              label={t("partner.monthlyAverage")}
+              placeholder={t("partner.monthlyAverage")}
+            />
+          </Grid>
+
+          <Grid item sm={6} xs={12}>
+            <H5 className={"inline-block"}>{t("partner.recieveNewsletter")}</H5>
+            <BazaarSwitch
+              color="info"
+              checked={news}
+              onChange={(e) => setNews(e.target.checked)}
+            />
+          </Grid>
+
+          <Grid item sm={6} xs={12}>
+            <H5 className={"inline-block"}>{t("partner.agree")}</H5>
+            <BazaarSwitch
+              color="info"
+              checked={productPulish}
+              onChange={(e) => setProductPublish(e.target.checked)}
+            />
+          </Grid>
+
+          <Grid className="mt-4 mb-12" item xs={12}>
+            <TextField
+              className="my-3"
+              rows={6}
+              multiline
+              fullWidth
+              color="primary"
+              size="medium"
+              name="description"
+              onBlur={handleBlur}
+              onChange={handleChange}
+              value={values.description}
+              label={t("partner.message")}
+              error={Boolean(errors.description && touched.description)}
+              helperText={touched.description && errors.description}
+            />
+          </Grid>
         </Grid>
 
-        <Grid item sm={6} xs={12}>
-          <BazaarTextField
-            mb={1.5}
-            fullWidth
-            name="email"
-            size="small"
-            type="email"
-            variant="outlined"
-            onBlur={handleBlur}
-            value={values.email}
-            onChange={handleChange}
-            label={t('partner.email')}
-            placeholder={t('partner.email')}
-            error={!!touched.email && !!errors.email}
-            helperText={touched.email && errors.email}
-          />
-        </Grid>
-
-
-
-
-        <Grid item sm={6} xs={12}>
-          <BazaarTextField
-            mb={1.5}
-            fullWidth
-            name="phone"
-            size="phone"
-            type="phone"
-            variant="outlined"
-            onBlur={handleBlur}
-            value={values.phone}
-            onChange={handleChange}
-            label={t('partner.phone')}
-            placeholder={t('partner.phone')}
-            error={!!touched.phone && !!errors.phone}
-            helperText={touched.phone && errors.phone}
-          />
-        </Grid>
-
-        <Grid item sm={6} xs={12}>
-          <BazaarTextField
-            mb={1.5}
-            fullWidth
-            name="country"
-            size="country"
-            type="country"
-            variant="outlined"
-            onBlur={handleBlur}
-            value={values.country}
-            onChange={handleChange}
-            label={t('partner.country')}
-            placeholder={t('partner.country')}
-            // error={!!touched.phone && !!errors.phone}
-            // helperText={touched.phone && errors.phone}
-          />
-        </Grid>
-
-        <Grid item sm={6} xs={12}>
-          <BazaarTextField
-            mb={1.5}
-            fullWidth
-            name="city"
-            size="city"
-            type="city"
-            variant="outlined"
-            onBlur={handleBlur}
-            value={values.city}
-            onChange={handleChange}
-            label={t('partner.city')}
-            placeholder={t('partner.city')}
-            // error={!!touched.phone && !!errors.phone}
-            // helperText={touched.phone && errors.phone}
-          />
-        </Grid>
-
-        <Grid item sm={6} xs={12}>
-          <BazaarTextField
-            mb={1.5}
-            fullWidth
-            name="position"
-            size="position"
-            type="position"
-            variant="outlined"
-            onBlur={handleBlur}
-            value={values.position}
-            onChange={handleChange}
-            label={t('partner.position')}
-            placeholder={t('partner.position')}
-            // error={!!touched.phone && !!errors.phone}
-            // helperText={touched.phone && errors.phone}
-          />
-        </Grid>
-
-        <Grid item sm={6} xs={12}>
-          <BazaarTextField
-            mb={1.5}
-            fullWidth
-            name="worktype"
-            size="worktype"
-            type="worktype"
-            variant="outlined"
-            onBlur={handleBlur}
-            value={values.worktype}
-            onChange={handleChange}
-            label={t('partner.worktype')}
-            placeholder={t('partner.worktype')}
-            // error={!!touched.phone && !!errors.phone}
-            // helperText={touched.phone && errors.phone}
-          />
-        </Grid>
-
-        <Grid item sm={6} xs={12}>
-          <BazaarTextField
-            mb={1.5}
-            fullWidth
-            name="site"
-            size="site"
-            type="site"
-            variant="outlined"
-            onBlur={handleBlur}
-            value={values.site}
-            onChange={handleChange}
-            label={t('partner.site')}
-            placeholder={t('partner.site')}
-            // error={!!touched.phone && !!errors.phone}
-            // helperText={touched.phone && errors.phone}
-          />
-        </Grid>
-
-        <Grid item sm={6} xs={12}>
-          <BazaarTextField
-            mb={1.5}
-            fullWidth
-            name="zipcode"
-            size="zipcode"
-            type="zipcode"
-            variant="outlined"
-            onBlur={handleBlur}
-            value={values.zipcode}
-            onChange={handleChange}
-            label={t("partner.zipcode")}
-            placeholder={t("partner.zipcode")}
-            // error={!!touched.phone && !!errors.phone}
-            // helperText={touched.phone && errors.phone}
-          />
-        </Grid>
-
-        <Grid item sm={6} xs={12}>
-          <BazaarTextField
-            size="medium"
-            fullWidth
-            name="subject"
-            type="subject"
-            variant="outlined"
-            onBlur={handleBlur}
-            value={values.subject}
-            onChange={handleChange}
-            label={t("partner.subject")}
-            placeholder={t("partner.subject")}
-            error={!!touched.subject && !!errors.subject}
-            helperText={touched.subject && errors.subject}
-          />
-        </Grid>
-
-        <Grid item sm={6} xs={12}>
-          <BazaarTextField
-            size="medium"
-            fullWidth
-            name="address"
-            type="address"
-            variant="outlined"
-            onBlur={handleBlur}
-            value={values.address}
-            onChange={handleChange}
-            label={t("partner.address")}
-            placeholder={t("partner.address")}
-            error={!!touched.address && !!errors.address}
-            helperText={touched.address && errors.address}
-          />
-        </Grid>
-
-        <Grid item sm={6} xs={12}>
-          <BazaarTextField
-            size="medium"
-            fullWidth
-            name="interested"
-            type="interested"
-            variant="outlined"
-            onBlur={handleBlur}
-            value={values.interested}
-            onChange={handleChange}
-            label={t("partner.interested")}
-            placeholder={t("partner.interested")}
-          />
-        </Grid>
-
-        <Grid item sm={6} xs={12}>
-          <BazaarTextField
-            size="medium"
-            fullWidth
-            name="question"
-            type="question"
-            variant="outlined"
-            onBlur={handleBlur}
-            value={values.question}
-            onChange={handleChange}
-            label={t("partner.question")}
-            placeholder={t("partner.question")}
-          />
-        </Grid>
-
-        <Grid item sm={6} xs={12}>
-          <BazaarTextField
-            size="medium"
-            fullWidth
-            name="monthly"
-            type="monthly"
-            variant="outlined"
-            onBlur={handleBlur}
-            value={values.monthly}
-            onChange={handleChange}
-            label={t("partner.monthlyAverage")}
-            placeholder={t("partner.monthlyAverage")}
-          />
-        </Grid>
-
-        <Grid item sm={6} xs={12}>
-        <H5 className={'inline-block'}>{t("partner.recieveNewsletter")}</H5>
-        <BazaarSwitch color="info" checked={news} onChange={(e) => setNews(e.target.checked)} />
-
-</Grid>
-
-
-
-<Grid item sm={6} xs={12}>
-<H5 className={'inline-block'}>{t("partner.agree")}</H5>
-<BazaarSwitch color="info" checked={productPulish} onChange={(e) => setProductPublish(e.target.checked)} />
-
-</Grid>
-
-
-
-        <Grid className="mt-4 mb-12" item xs={12}>
-          <TextField
-            className="my-3"
-            rows={6}
-            multiline
-            fullWidth
-            color="primary"
-            size="medium"
-            name="description"
-            onBlur={handleBlur}
-            onChange={handleChange}
-            value={values.description}
-            label={t("partner.message")}
-            error={Boolean(errors.description && touched.description)}
-            helperText={touched.description && errors.description}
-          />
-        </Grid>
-      </Grid>
-
-      <Button
-        className=" !bg-red-500 mt-4"
-        fullWidth
-        type="submit"
-        color="primary"
-        variant="contained"
-        sx={{
-          height: 44,
-        }}
-      >
-        {t("partner.send")}
-      </Button>
-
+        <Button
+          className=" !bg-red-500 mt-4"
+          fullWidth
+          type="submit"
+          color="primary"
+          variant="contained"
+          sx={{
+            height: 44,
+          }}
+        >
+          {t("partner.send")}
+        </Button>
       </div>
-
     </form>
   );
 };
