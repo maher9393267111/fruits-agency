@@ -184,7 +184,7 @@ const ProductCardMain = ({ ...props }) => {
   };
   return (
     <StyledBazaarCard>
-      {ismedia ? 'meeee' :"nooo"}
+      {/* {ismedia ? 'meeee' :"nooo"} */}
       {ismedia ? (
         <VideoWrapper>
           <ImageBox className="hoverImgBox">

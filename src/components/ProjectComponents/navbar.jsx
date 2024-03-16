@@ -100,7 +100,7 @@ export default function Navbar() {
               <li className="nav-item">
                 <Link href="/recipes">
                 <a className="px-3 py-2 flex items-center text-sm uppercase font-bold leading-snug text-white hover:opacity-75">   
-                  <Icon  icon="lucide:monitor-play" className="text-lg leading-lg text-white opacity-75"/>  
+                  <Icon  icon="arcticons:recipe-keeper" className="text-lg leading-lg text-white opacity-75"/>  
                   <span className="ml-2"> {t("navbar.recipes")}  </span>
                 </a>
                 </Link>  

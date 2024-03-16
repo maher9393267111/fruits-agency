@@ -128,7 +128,7 @@ const Topbar = ({
               pr: ".8rem"
             }
           }} />
-            <Span className="title">{t("name")}</Span>
+            <Span className="title">{language === "en" ? "EN" : language === 'ar' ? 'Ar' : language === 'tr' && "TR"}</Span>
           </FlexBox>
 
           <IconButton disableRipple className="expand" onClick={() => setExpand(state => !state)}>
@@ -139,7 +139,7 @@ const Topbar = ({
         <FlexBox className="topbarRight" alignItems="center">
           <BazaarMenu handler={<TouchRipple className="handler marginRight">
                 <Span className="menuTitle">
-                  {language === "en" ? "EN" : language === 'ar' ? 'Ar' : 'Tr'}
+                  {language === "en" ? "EN" : language === 'ar' ? 'Ar' : language === 'tr' && "TR"}
                 </Span>
                 <ExpandMore fontSize="inherit" />
               </TouchRipple>}>

@@ -159,8 +159,8 @@ const ContactForm = () => {
           onBlur={handleBlur}
           value={values.name}
           onChange={handleChange}
-          label={t("partner.name")}
-          placeholder={t("partner.name")}
+          label={t("order.name")}
+          placeholder={t("order.name")}
           error={!!touched.name && !!errors.email}
           helperText={touched.name && errors.name}
         />

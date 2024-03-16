@@ -32,6 +32,7 @@ import { currency } from "lib";
 import { changeLanguage } from "i18next";
 import { useTranslation } from "next-i18next";
 import ReCAPTCHA from "react-google-recaptcha";
+import { useRouter } from "next/router";
 // ===============================================================
 
 // ===============================================================
@@ -79,34 +80,28 @@ const OrderSidebar = () => {
     setRecaptcha(e);
   };
 
-    
-
-
-    const initialValues = {
-        email: "",
-        name: "",
-        subject:"",
-        description:"",
-        address:"",
-        phone:""
-
-      };
-      const formSchema = yup.object().shape({
-        //t("name")
-        name: yup.string().required("name is required"),
-        description: yup.string().required("message is required"),
-        subject: yup.string().required("subject is required"),
-        address: yup.string().required("address is required"),
-        phone: yup.number().required("phone number is required"),
-        email: yup.string().email("invalid email").required("Email is required"),
-      });
-
-
+  const initialValues = {
+    email: "",
+    name: "",
+    subject: "",
+    description: "",
+    address: "",
+    phone: "",
+  };
+  const formSchema = yup.object().shape({
+    //t("name")
+    name: yup.string().required("name is required"),
+    description: yup.string().required("message is required"),
+    subject: yup.string().required("subject is required"),
+    address: yup.string().required("address is required"),
+    phone: yup.number().required("phone number is required"),
+    email: yup.string().email("invalid email").required("Email is required"),
+  });
 
   const { profile } = useAuth();
   const sitekey = "6Ldcb5cpAAAAAPWrd2Kk_YCIWOjIVd6lfbsLZ1D9";
   const captchaRef = useRef(null);
-
+const {locale} = useRouter()
   const { enqueueSnackbar } = useSnackbar();
 
   const handleFormSubmit = async (values) => {
@@ -168,18 +163,16 @@ const OrderSidebar = () => {
         src="\assets\images\sweetimages\sweetsips-final-logo.png"
         sx={{
           m: "auto",
-          width:"50%",
-          height:"50%",
-          alignItems:'center'
+          width: "50%",
+          height: "50%",
+          alignItems: "center",
         }}
       />
 
       <H1 textAlign="center" mt={1} mb={2} fontSize={16}>
-      {t('order.ordernow')}  {profile?.name}
+        {t("order.ordernow")} {profile?.name}
       </H1>
-        <H1 textAlign='center' >
-        SweetSips
-        </H1>
+      <H1 textAlign="center">SweetSips</H1>
       <BazaarTextField
         mb={1.5}
         fullWidth
@@ -190,8 +183,8 @@ const OrderSidebar = () => {
         onBlur={handleBlur}
         value={values.name}
         onChange={handleChange}
-        label={t('order.name')}
-        placeholder={t('order.name')}
+        label={t("order.name")}
+        placeholder={t("order.name")}
         error={!!touched.name && !!errors.email}
         helperText={touched.name && errors.name}
       />
@@ -206,7 +199,7 @@ const OrderSidebar = () => {
         onBlur={handleBlur}
         value={values.email}
         onChange={handleChange}
-        label={t('order.email')}
+        label={t("order.email")}
         placeholder="exmple@mail.com"
         error={!!touched.email && !!errors.email}
         helperText={touched.email && errors.email}
@@ -215,21 +208,21 @@ const OrderSidebar = () => {
       <BazaarTextField
         mb={1.5}
         fullWidth
-        name='phone'
+        name="phone"
         size="phone"
         type="phone"
         variant="outlined"
         onBlur={handleBlur}
         value={values.phone}
         onChange={handleChange}
-        label={t('order.phone')}
-        placeholder={t('order.phone')}
+        label={t("order.phone")}
+        placeholder={t("order.phone")}
         error={!!touched.phone && !!errors.phone}
         helperText={touched.phone && errors.phone}
       />
 
       <BazaarTextField
-      className='my-1'
+        className="my-1"
         size="medium"
         fullWidth
         name="subject"
@@ -238,14 +231,13 @@ const OrderSidebar = () => {
         onBlur={handleBlur}
         value={values.subject}
         onChange={handleChange}
-        label={t('order.subject')}
-        placeholder={t('order.subject')}
+        label={t("order.subject")}
+        placeholder={t("order.subject")}
         error={!!touched.subject && !!errors.subject}
         helperText={touched.subject && errors.subject}
       />
 
       <BazaarTextField
-      
         size="medium"
         fullWidth
         name="address"
@@ -254,31 +246,30 @@ const OrderSidebar = () => {
         onBlur={handleBlur}
         value={values.adress}
         onChange={handleChange}
-        label={t('order.address')}
-        placeholder={t('order.address')}
+        label={t("order.address")}
+        placeholder={t("order.address")}
         error={!!touched.adress && !!errors.adress}
         helperText={touched.adress && errors.adress}
       />
 
-<div className="my-12">
-      <TextField
-        className="m"
-        rows={6}
-        multiline
-        fullWidth
-        color="primary"
-        size="medium"
-        name="description"
-        onBlur={handleBlur}
-        onChange={handleChange}
-        value={values.description}
-        label={t('order.message')}
-        placeholder={t('order.message')}
-        error={Boolean(errors.description && touched.description)}
-        helperText={touched.description && errors.description}
-      />
-
-</div>
+      <div className="my-12">
+        <TextField
+          className="m"
+          rows={6}
+          multiline
+          fullWidth
+          color="primary"
+          size="medium"
+          name="description"
+          onBlur={handleBlur}
+          onChange={handleChange}
+          value={values.description}
+          label={t("order.message")}
+          placeholder={t("order.message")}
+          error={Boolean(errors.description && touched.description)}
+          helperText={touched.description && errors.description}
+        />
+      </div>
       {/* <TextField
 
         className="my-6"
@@ -342,7 +333,7 @@ const OrderSidebar = () => {
               </Button>
             </FlexBox>
 
-            <Link href={`/product/${item.id}`}>
+            <Link href={`/shop/single?id=${item.id}`}>
               <a>
                 <Avatar
                   alt={item.name}
@@ -364,7 +355,7 @@ const OrderSidebar = () => {
                 textOverflow: "ellipsis",
               }}
             >
-              <Link href={`/product/${item.slug}`}>
+              <Link href={`/shop/single?id=${item.id}`}>
                 <a>
                   <H5 ellipsis fontSize="14px" className="title">
                     {item.name}
@@ -418,7 +409,7 @@ const OrderSidebar = () => {
           height: 44,
         }}
       >
-        {t('order.send')}
+        {t("order.send")}
       </Button>
     </form>
   );
