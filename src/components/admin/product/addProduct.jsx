@@ -20,28 +20,18 @@ const AddProductMain = ({ products }) => {
   const onFinish = async (values) => {
     console.log("values-->", values);
 
-
-    if(values.ismedia && (!videoFile && !values.videourl)){
-
-message.error("video is required")
-return
+    if (values.ismedia && !videoFile && !values.videourl) {
+      message.error("video is required");
+      return;
     }
-
 
     /////urls [array of images]
     values.images = await uploadImages(files);
-
-   
-
-
 
     if (videoFile) {
       values.video = await uploadImages(videoFile, true);
       message.success("Video Uploaded Successfully");
     }
-
-  
-
 
     values.timeStamp = serverTimestamp();
 

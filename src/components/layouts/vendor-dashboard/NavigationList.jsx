@@ -19,11 +19,33 @@ export const navigations = [{
     name: "Create Product",
     path: "/admin/product/add"
   }
-  // , {
-  //   name: "Review",
-  //   path: "/admin/product-reviews"
-  // }
+
+
+
 ]}
+,
+{
+  name: "Recipes",
+  icon: duotone.Products,
+  children: [{
+    name: "Recipes List",
+    path: "/admin/recipe/all"
+  }, {
+    name: "Create Recipe",
+    path: "/admin/recipe/add"
+  }
+
+
+
+]},
+
+,{name: "NewsLetter",
+icon: duotone.Products,
+path: "/admin/news"
+}
+
+
+
 // }, {
 //   name: "Categories",
 //   icon: duotone.Accounts,
@@ -137,4 +159,6 @@ export const navigations = [{
   ,{name: "Logout",
   icon: duotone.Session,
   path: "/"
+
+
 }];

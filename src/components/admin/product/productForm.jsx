@@ -82,7 +82,7 @@ const ProductForm = ({
           onFinish={(values) =>
             // name of our function
             onFinish({
-              ismedia:mediaToggle,
+              ismedia: mediaToggle,
               ...values,
               images,
               video,
@@ -97,10 +97,8 @@ const ProductForm = ({
             desctr: initialValues?.desctr || "",
             ismedia: initialValues?.ismedia || false,
             video: initialValues?.video || "",
-            videourl: initialValues?.videourl|| "",
-
-          }
-          }
+            videourl: initialValues?.videourl || "",
+          }}
         >
           <Form.Item className=" " name="ismedia" valuePropName="checked">
             <Checkbox
@@ -113,40 +111,42 @@ const ProductForm = ({
             </Checkbox>
           </Form.Item>
 
-          <Form.Item 
-             rules={[
-              {
-                required: true,
-                message: "Please input your title",
-              },
-            ]}
-          
-          name="title" label="Title english">
-            <Input className="py-2" />
-          </Form.Item>
-
-
-
-
           <Form.Item
-             rules={[
+            rules={[
               {
                 required: true,
                 message: "Please input your title",
               },
             ]}
-          name="titlear" label="Title arabic">
+            name="title"
+            label="Title english"
+          >
             <Input className="py-2" />
           </Form.Item>
 
           <Form.Item
-             rules={[
+            rules={[
               {
                 required: true,
                 message: "Please input your title",
               },
             ]}
-          name="titletr" label="Title turkish">
+            name="titlear"
+            label="Title arabic"
+          >
+            <Input className="py-2" />
+          </Form.Item>
+
+          <Form.Item
+            rules={[
+              {
+                required: true,
+                message: "Please input your title",
+              },
+            ]}
+            name="titletr"
+            label="Title turkish"
+          >
             <Input className="py-2" />
           </Form.Item>
 
@@ -291,13 +291,11 @@ const ProductForm = ({
               </Upload>
             </div>
 
-
             {mediaToggle && (
-              <Form.Item  name="videourl" label="Video url">
-                <Input value={'url'} className="py-2" />
+              <Form.Item name="videourl" label="Video url">
+                <Input value={"url"} className="py-2" />
               </Form.Item>
             )}
-
           </div>
 
           {/* -----Video delete----- */}

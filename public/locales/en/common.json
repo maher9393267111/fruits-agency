@@ -12,7 +12,9 @@
     "orders":"Orders",
     "partner":"Partner",
     "shop":"Shop",
-    "media":"media"
+    "media":"Media",
+    "recipes":"Recipes",
+    "about":"About"
   }
   ,
   "partner":{

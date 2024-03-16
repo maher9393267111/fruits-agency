@@ -1,5 +1,5 @@
+
 import Link from "next/link";
-import { useRouter } from "next/router";
 import { useCallback, useState } from "react";
 import { Box, Button, Chip, Divider, styled } from "@mui/material";
 import {
@@ -149,12 +149,8 @@ const ProductCardMain = ({ ...props }) => {
     slug,
     video,
     ismedia,
+    isrecipe
   } = props;
-
- 
-  // const i18n = locale === "en" ? en : es */
-
-
   const { enqueueSnackbar } = useSnackbar();
   const { state, dispatch } = useAppContext();
   const [openModal, setOpenModal] = useState(false);
@@ -186,20 +182,15 @@ const ProductCardMain = ({ ...props }) => {
       });
     }
   };
-
-
-
-
-
   return (
     <StyledBazaarCard>
+      {/* {ismedia ? 'meeee' :"nooo"} */}
       {ismedia ? (
         <VideoWrapper>
           <ImageBox className="hoverImgBox">
-            <a className="!w-full">
+            <a>
               <ReactPlayer
-           
-                className="  "
+                className="!rounded-2xl "
                 controls
                 width="auto"
                 //  height="500px"
@@ -213,7 +204,7 @@ const ProductCardMain = ({ ...props }) => {
       ) : (
         <ImageWrapper>
           <ImageBox className="hoverImgBox">
-            <Link href={`/shop/single?id=${slug}`}>
+            <Link href={isrecipe ? `/recipes/single?id=${slug}` : `/shop/single?id=${slug}`}>
               <a>
                 <LazyImage
                   alt={title}
@@ -289,7 +280,7 @@ const ProductCardMain = ({ ...props }) => {
             {title}
           </H3>
           :
-        <Link href={`/shop/single?id=${slug}`}>
+        <Link href={isrecipe ? `/recipes/single?id=${slug}` : `/shop/single?id=${slug}`}>
           <a>
             <H3
               mb={1}
