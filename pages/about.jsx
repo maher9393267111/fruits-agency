@@ -59,10 +59,17 @@ const faqs = [
 ]
 
 export default function About() {
+
+
+  const {t} = useTranslation("common")
+  
+  const aboutus= t('aboutus', { returnObjects: true }) 
+  console.log("links" ,aboutus)
+
   return (
     <MainLayout>
 
-   
+    {aboutus.length}
     <section
       id="faq"
       aria-labelledby="faq-title"
@@ -82,32 +89,43 @@ export default function About() {
             id="faq-title"
             className="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl"
           >
-            Frequently asked questions
+            {t('about.title')}
           </h2>
           <p className="mt-4 text-lg tracking-tight text-slate-700">
-            If you can’t find what you’re looking for, email our amazing support team
-            and someone will get back to you.
+          {t('about.p1')}
+          </p>
+          <p className="mt-4 text-lg tracking-tight text-slate-700">
+          {t('about.p2')}
+          </p>
+          <p className="mt-4 text-lg tracking-tight text-slate-700">
+          {t('about.p3')}
+          </p>
+          <p className="mt-4 text-lg tracking-tight text-slate-700">
+          {t('about.p4')}
           </p>
         </div>
-        <ul
+        {/* <ul
           role="list"
           className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 lg:max-w-none lg:grid-cols-3"
         >
-          {faqs.map((column, columnIndex) => (
-            <li key={columnIndex}>
+          {aboutus.map((item, Index) => (
+            <li key={Index}>
               <ul role="list" className="flex flex-col gap-y-8">
-                {column.map((faq, faqIndex) => (
-                  <li key={faqIndex}>
+               
+                  <li>
                     <h3 className="font-display text-lg leading-7 text-slate-900">
-                      {faq.question}
+                      {item.a}
                     </h3>
-                    <p className="mt-4 text-sm text-slate-700">{faq.answer}</p>
+                    <p className="mt-4 text-sm text-slate-700">{item.b}</p>
                   </li>
-                ))}
+           
               </ul>
             </li>
           ))}
-        </ul>
+        </ul> */}
+        <p className="mt-4 text-lg tracking-tight text-slate-700">
+          {t('about.p5')}
+          </p>
       </div>
     </section>
     </MainLayout>

@@ -1,7 +1,8 @@
 import React from "react";
-import { H1 ,H3 } from "components/Typography";
+import { H1 ,H3,H4 } from "components/Typography";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
+import { Link } from "@mui/material";
 
 export default function AboutSectionHome() {
 
@@ -18,8 +19,8 @@ export default function AboutSectionHome() {
               <div className="grid gap-2 items-center grid-cols-1 md:grid-cols-2">
                 <div className="w-full">
                   <img
-                    className="!w-full max-w-full"
-                    src="https://demo.bravisthemes.com/munfirm/wp-content/uploads/2022/08/company-300x400.jpg"
+                    className="!w-full max-w-full h-full"
+                    src="/assets/images/sweetimages/about1.jpg"
                     alt=""
                   />
                 </div>
@@ -27,21 +28,23 @@ export default function AboutSectionHome() {
                 <div>
                   <img
                     className="w-full"
-                    src="https://demo.bravisthemes.com/munfirm/wp-content/uploads/2022/08/company2-300x280.jpg"
+                    src="/assets/images/sweetimages/about2.jpg"
                     alt=""
                   />
                   <img
                     className="w-full"
-                    src="https://demo.bravisthemes.com/munfirm/wp-content/uploads/2022/08/company2-300x280.jpg"
+                    src="/assets/images/sweetimages/about3.jpg"
                     alt=""
                   />
                 </div>
               </div>
 
-              <div className="offer  absolute !top-[90%] md:!top-[70%] !left-[10%]">
+              <div className="offer  absolute !top-[90%] md:!top-[80%] sm:top-[50%] !left-[10%] ">
                 <img
-                  src="https://demo.bravisthemes.com/munfirm/wp-content/themes/munfirm/assets/images/organic.png"
+                  src="/assets/images/sweetimages/about4.png"
                   alt="Offer"
+                  width={'200px'}
+                  height={'150px'}
                 />
               </div>
             </div>
@@ -56,21 +59,21 @@ export default function AboutSectionHome() {
           >
             <div>
               <H1 className=" text-red-500 ">
-              {t('about.title')}
+              {t('aboutsectionhome.title')}
               </H1>
 
-              <div className=" w-[80%] md:w-[65%] my-4">
-                <H1 className=" ">
-                  Organic & Helathy Foods Provider Farming
-                </H1>
-
+              <div className=" w-[80%] md:w-[95%] my-4">
+                
                 <H3 mt={4} className="  text-gray">
-                {/* السخط الصالح والكراهية للرجال الذين خدعتهم وأحبطتهم سحر متعة اللحظة التي أعمتها الرغبة، لدرجة أنهم لا يستطيعون */}
-                  On the other hand we denounce with righteous indignation and
-                  dislike men who are beguiled and demoralized by the charms of
-                  pleasure of the moment so blinded by desire, that they cannot
-                  foresee the pain
+                <span>  {t('aboutsectionhome.p1')}    </span>
                 </H3>
+                <Link href="/about">
+                <span>more details</span>
+                </Link>
+            
+               
+              
+                
               </div>
             </div>
           </div>

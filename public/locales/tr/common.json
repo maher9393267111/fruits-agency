@@ -3,10 +3,10 @@
     "description": "Do you like to unleash some super powers to have all side optimized translations?",
     "Free Express Shipping": "Free Express Shipping",
     "Free": "Frrrrrrrrrrrrrrrrrrr",
-    "name":"English",
+    "name":"Turkish",
     "navbar":{
-      "home":"Ev",
-      "contact":"balanti kur",
+      "home":"Ana Sayfa",
+      "contact":"İletişim",
       "orders":"siparisler",
       "partner":"ortak ol",
       "shop":"magaza",
@@ -18,49 +18,67 @@
 
 
 
-    "products":"Tüm Ürünlerimiz",
+    "products":"Hemen Siparişinizi Verin",
 
 
     "partner":{
-      "partnernow":"Become a Partner",
-      "name":"Company Name",
-      "email":"Email",
-      "phone":"Phone Number",
-      "country":" Country",
-      "city":"City/State",
-      "position":"Position",
-      "worktype":"Work Type",
-      "site":"Website if available",
-      "zipcode":" Zip Code",
-      "subject":"Subject",
-      "address":"Company Address",
-      "interested":"Your interested Products",
-      "question":"Do you have any question?",
-      "monthlyAverage":"Average Monthly Order",
-      "recieveNewsletter":"Agree to recive Newsletter of SweetSips",
-      "agree":" Agreements of SweetSips",
-      "message":"Message",
-      "send":"Send application partner"
+      "partnernow":"Partner olmak",
+      "name":"Firma Adı",
+      "email":"E-posta",
+      "phone":"Telefon numarası",
+      "country":"Ülke",
+      "city":"Şehir/Eyalet",
+      "position":"Konum",
+      "worktype":"Çalışma tipi",
+      "site":"Varsa web sitesi",
+      "zipcode":"Posta kodu",
+      "subject":"Ders",
+      "address":"şirket adresi",
+      "interested":"İlgilendiğiniz Ürünler",
+      "question":"Herhangi bir sorun var mı?",
+      "monthlyAverage":"Ortalama Aylık Sipariş",
+      "recieveNewsletter":"SweetSips Haber Bültenini almayı kabul ediyorum",
+      "agree":" SweetSips Anlaşmaları",
+      "message":"İleti",
+      "send":"Uygulama ortağını gönder"
   
     }
   ,
   "order":{
-    "ordernow":"Apply to our products",
-    "name":"Full Name",
-    "email":"Email",
-    "phone":"Phone Number",
-    "subject":"Subject",
-    "address":"your address to recieve your order",
-    "message":"Your message",
-    "send":"Send"
+    "ordernow":"Ürünlerimize başvurun",
+    "name":"Tam Ad",
+    "email":"E-posta adresi",
+    "phone":"Telefon Numarası",
+    "subject":"Konu veya Başlık",
+    "address":"siparişinizi almak için adresiniz",
+    "message":"Mesaj veya Yorumlar",
+    "send":"Gönder düğmesi"
   
   },
+
+  
+"contactus":{
+  "p1":"Tüm sorularınızı yanıtlamak ve ihtiyacınız olan her konuda size yardımcı olmak için buradayız. Bize istediğiniz zaman telefon veya e-posta yoluyla ulaşabilirsiniz. Ürünlerimizden en iyi şekilde yararlanmanız için destek ve tavsiye sağlamaya söz veriyoruz.",
+
+
+  "welcome":"Bize ulaşın Sweetsips",
+  "name":"Tam Ad",
+  "email":"E-posta adresi",
+  "phone":"Telefon Numarası",
+  "subject":"Konu veya Başlık",
+  "message":"Mesaj veya Yorumlar",
+  "Newsletter":"SweetSips Haber Bültenini almayı kabul ediyorum",
+  "send":"Gönder düğmesi"
+
+},
   
   
-  "about":{
+  "aboutsectionhome":{
     "title":"Tatlı Yudumlar Hakkında",
-    "p1":"Otantik lezzetin yüksek kaliteyle buluştuğu SweetSips dünyasına hoş geldiniz.Taze ve saf şeker kamışı ürünleri ve gelişmiş şeker kamışı suyu makineleri konusunda ideal tedarikçiniziz.Meyve suyu perakendecilerine, kafelere, seyyar gıda kamyonlarına ve süpermarketlere doğal ve ferahlatıcı malzemeler sunmaktan gurur duyuyoruz.Şeker kamışı suyunun her yudumunun eşsiz ve keyifli bir deneyim olması gerektiğine inanıyoruz.",
-    
+    "p1":"Otantik lezzetin yüksek kaliteyle buluştuğu SweetSips dünyasına hoş geldiniz.Taze ve saf şeker kamışı ürünleri ve gelişmiş şeker kamışı suyu makineleri konusunda ideal tedarikçiniziz.Meyve suyu perakendecilerine, kafelere, seyyar gıda kamyonlarına ve süpermarketlere doğal ve ferahlatıcı malzemeler sunmaktan gurur duyuyoruz.Şeker kamışı suyunun her yudumunun eşsiz ve keyifli bir deneyim olması gerektiğine inanıyoruz."
+  },
+  
+  "aboutus":[{
     "p2":"'Şeker kamışı suyunun 10 muhteşem faydası'",
     "p3":"Şeker kamışı suyunun sağlık açısından pek çok faydası vardır ve bu da onu dünya çapında birçok kültürde sevilen bir içecek haline getirir.",
     "p4":"İşte ana faydalarından bazıları:",
@@ -85,37 +103,29 @@
     "10":"Sağlıklı kiloyu destekleyin:",
     "10a":"Şeker kamışı suyu, tadı tatlı olmasına rağmen diğer şekerli içeceklere göre daha az kalori içerdiğinden kilosuna dikkat edenler için iyi bir seçimdir.",
     "p5":"Şeker kamışı suyu tüketiminin, özellikle diyabet gibi belirli sağlık sorunları olan kişiler için dengeli bir beslenmenin parçası ve makul miktarlarda olması gerektiğine dikkat etmek önemlidir."
+    }],
   
+
+
+    
+"slider": [
+  { 
+    "welcome":"SweetSips'e Hoş Geldiniz",
+    "title":"Her Yudumda Tazelik",
+    "imgUrl":"/assets/images/sweetimages/Home-Slide-show-1.png",
+    "description":null,
+    "buttonText":"Şimdi sipariş ver",
+    "buttonLink":"/order"
   },
-
-
-    "slider": [
-      {
-        "id": "1",
-        "link": "Home",
-        "image": "/assets/img/blog/1.jpg"
-      },
-      {
-        "id": "2",
-        "link": "News",
-        "image": "/assets/img/blog/1.jpg"
-      },
-      {
-        "id": "3",
-        "link": "Events",
-        "image": "/assets/img/blog/1.jpg"
-      },
-      {
-        "id": "4",
-        "link": "Blogs",
-        "image": "/assets/img/blog/1.jpg"
-      },
-      {
-        "id": "5",
-        "link": "Podcast",
-        "image": "/assets/img/blog/1.jpg"
-      }
-    ]
+  {
+    "welcome":"SweetSips'e Hoş Geldiniz",
+    "title":"Tek bir yudum taze dökülmüş meyve suyu gerekli tüm vitaminleri içerir",
+    "imgUrl": "/assets/images/sweetimages/Home-Slide-show-2.png",
+    "description": null,
+    "buttonText":"Ortak olun",
+    "buttonLink":"/partner"
+   }
+]
   
   }
   

@@ -1,8 +1,8 @@
 import { Box, Button, Grid, styled, useTheme } from "@mui/material";
-import { H1 } from "components/Typography";
+import { H1,H2 } from "components/Typography";
 import LazyImage from "components/LazyImage";
 import Carousel from "components/carousel/Carousel";
-
+import { useRouter } from "next/router";
 
 import { useTranslation } from "next-i18next";
 
@@ -86,6 +86,8 @@ const HomeSlider = ({ mainCarouselData }) => {
 
   const slider= t('slider', { returnObjects: true }) 
   console.log("links" ,slider)
+
+  const router = useRouter();
   
   return (
     
@@ -110,8 +112,8 @@ const HomeSlider = ({ mainCarouselData }) => {
                 <Box pt={6}>
                   <LazyImage
                     priority
-                    width={100}
-                    height={100}
+                    width={120}
+                    height={120}
                     alt={item.title}
                     src={item.imgUrl}   
                     layout="responsive"
@@ -122,12 +124,14 @@ const HomeSlider = ({ mainCarouselData }) => {
 
               <GridItemTwo item md={6} sm={6} xs={12}>
                 <TextBox>
-                  <H1 maxWidth={400}>{item.title}</H1>
+
+                  <H1 className='my-20' maxWidth={400}>{item.welcome}</H1>
+                  <H2 maxWidth={400}>{item.title}</H2>
                 </TextBox>
 
                 <div className="flex gap-2 lg:justify-center">
                   <StyledButton 
-                    onClick={() => push(buttonLink)}
+                    onClick={() => router.push(item.buttonLink)}
                     className=" bg-red-500 mx-2"
                     variant="contained"
                     color="primary"
@@ -140,7 +144,7 @@ const HomeSlider = ({ mainCarouselData }) => {
                   </StyledButton>
 
                   <StyledButton
-                    onClick={() => push(buttonLink)}
+                    onClick={() => router.push(item.buttonLink1)}
                     className=" bg-red-500 mx-2"
                     variant="contained"
                     color="primary"
@@ -149,7 +153,7 @@ const HomeSlider = ({ mainCarouselData }) => {
                       py: "6px",
                     }}
                   >
-                    {item.buttonText}
+                    {item.buttonText1}
                   </StyledButton>
                 </div>
               </GridItemTwo>

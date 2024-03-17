@@ -3,7 +3,7 @@ import { Button, Card, Box, styled, TextField } from "@mui/material";
 import Link from "next/link";
 import * as yup from "yup";
 import { useFormik } from "formik";
-import { H1, H6, H5 } from "components/Typography";
+import { H1, H2, H6, H5 } from "components/Typography";
 import BazaarImage from "components/BazaarImage";
 import BazaarTextField from "components/BazaarTextField";
 
@@ -97,13 +97,7 @@ const ContactForm = () => {
       enqueueSnackbar("Added to newsletter users", {
         variant: "success",
       });
-
-
-
     }
-
-
-
 
     const res = await fetch(`/api/contact`, {
       method: "POST",
@@ -136,131 +130,137 @@ const ContactForm = () => {
       validationSchema: formSchema,
     });
   return (
-    <Wrapper elevation={3}>
-      <form onSubmit={handleSubmit}>
-        <BazaarImage
-          src="/assets/images/bazaar-black-sm.svg"
-          sx={{
-            m: "auto",
-          }}
-        />
+    <div className=" -my-20 relative">
+      <img src="/assets/images/sweetimages/sugarcane Contact us.jpg" className="w-full h-full  object-cover opacity-100 absolute" alt="img" />
+      <H5 className="flex justify-center my-2 text-white relative text-center  flex-wrap m-auto w-[90%] sm:w-[55%]">{t("contactus.p1")}</H5>
+      <Wrapper elevation={3} className=' m-auto   opacity-80'>
+        <form onSubmit={handleSubmit}>
+          <BazaarImage
+            src="/assets/images/sweetimages/sweetsips-final-logo.png"
+            sx={{
+              m: "auto",
+              width: "30%",
+              height: "30%",
+            }}
+          />
 
-        <H1 textAlign="center" mt={1} mb={4} fontSize={16}>
-          Welcome To Bazaar
-        </H1>
+          <H1 textAlign="center" mt={1} mb={4} fontSize={16}>
+            {t("contactus.welcome")}
+          </H1>
 
-        <BazaarTextField
-          mb={1.5}
-          fullWidth
-          name="name"
-          size="small"
-          type="text"
-          variant="outlined"
-          onBlur={handleBlur}
-          value={values.name}
-          onChange={handleChange}
-          label={t("order.name")}
-          placeholder={t("order.name")}
-          error={!!touched.name && !!errors.email}
-          helperText={touched.name && errors.name}
-        />
-
-        <BazaarTextField
-          mb={1.5}
-          fullWidth
-          name="email"
-          size="small"
-          type="email"
-          variant="outlined"
-          onBlur={handleBlur}
-          value={values.email}
-          onChange={handleChange}
-          label={t("partner.email")}
-          placeholder={t("partner.email")}
-          error={!!touched.email && !!errors.email}
-          helperText={touched.email && errors.email}
-        />
-
-        <BazaarTextField
-          mb={1.5}
-          fullWidth
-          name="phone"
-          size="phone"
-          type="phone"
-          variant="outlined"
-          onBlur={handleBlur}
-          value={values.phone}
-          onChange={handleChange}
-          label={t("partner.phone")}
-          placeholder={t("partner.phone")}
-          error={!!touched.phone && !!errors.phone}
-          helperText={touched.phone && errors.phone}
-        />
-
-        <BazaarTextField
-          size="medium"
-          fullWidth
-          name="subject"
-          type="subject"
-          variant="outlined"
-          onBlur={handleBlur}
-          value={values.subject}
-          onChange={handleChange}
-          label={t("partner.subject")}
-          placeholder={t("partner.subject")}
-          error={!!touched.subject && !!errors.subject}
-          helperText={touched.subject && errors.subject}
-        />
-
-        <div className="my-12">
-          <TextField
-            className="my-2"
-            rows={6}
-            multiline
+          <BazaarTextField
+            mb={1.5}
             fullWidth
-            color="primary"
-            size="medium"
-            name="description"
+            name="name"
+            size="small"
+            type="text"
+            variant="outlined"
             onBlur={handleBlur}
+            value={values.name}
             onChange={handleChange}
-            value={values.description}
-            label={t("partner.message")}
-            error={Boolean(errors.description && touched.description)}
-            helperText={touched.description && errors.description}
+            label={t("contactus.name")}
+            placeholder={t("contactus.name")}
+            error={!!touched.name && !!errors.email}
+            helperText={touched.name && errors.name}
           />
-        </div>
 
-        <H5 className={"inline-block"}>{t("partner.recieveNewsletter")}</H5>
-        <BazaarSwitch
-          color="info"
-          checked={news}
-          onChange={(e) => setNews(e.target.checked)}
-        />
-
-        {/* --------Captcha----- */}
-
-        <div className="flex justify-center my-5">
-          <ReCAPTCHA
-            onChange={valueOnChange("reCaptcha")}
-            size="normal"
-            sitekey={sitekey}
-            ref={captchaRef}
+          <BazaarTextField
+            mb={1.5}
+            fullWidth
+            name="email"
+            size="small"
+            type="email"
+            variant="outlined"
+            onBlur={handleBlur}
+            value={values.email}
+            onChange={handleChange}
+            label={t("contactus.email")}
+            placeholder={t("contactus.email")}
+            error={!!touched.email && !!errors.email}
+            helperText={touched.email && errors.email}
           />
-        </div>
 
-        <Button
-          fullWidth
-          type="submit"
-          color="primary"
-          variant="contained"
-          sx={{
-            height: 44,
-          }}
-        >
-          Login
-        </Button>
-      </form>
-    </Wrapper>
+          <BazaarTextField
+            mb={1.5}
+            fullWidth
+            name="phone"
+            size="phone"
+            type="phone"
+            variant="outlined"
+            onBlur={handleBlur}
+            value={values.phone}
+            onChange={handleChange}
+            label={t("contactus.phone")}
+            placeholder={t("contactus.phone")}
+            error={!!touched.phone && !!errors.phone}
+            helperText={touched.phone && errors.phone}
+          />
+
+          <BazaarTextField
+            size="medium"
+            fullWidth
+            name="subject"
+            type="subject"
+            variant="outlined"
+            onBlur={handleBlur}
+            value={values.subject}
+            onChange={handleChange}
+            label={t("contactus.subject")}
+            placeholder={t("contactus.subject")}
+            error={!!touched.subject && !!errors.subject}
+            helperText={touched.subject && errors.subject}
+          />
+
+          <div className="my-4">
+            <TextField
+              className="my-2"
+              rows={6}
+              multiline
+              fullWidth
+              color="primary"
+              size="medium"
+              name="description"
+              onBlur={handleBlur}
+              onChange={handleChange}
+              value={values.description}
+              label={t("contactus.message")}
+              error={Boolean(errors.description && touched.description)}
+              helperText={touched.description && errors.description}
+            />
+          </div>
+
+          <H5 className={"inline-block"}>{t("contactus.Newsletter")}</H5>
+          <BazaarSwitch
+            color="info"
+            checked={news}
+            onChange={(e) => setNews(e.target.checked)}
+          />
+
+          {/* --------Captcha----- */}
+
+          <div className="flex justify-center my-3">
+            <ReCAPTCHA
+              onChange={valueOnChange("reCaptcha")}
+              size="normal"
+              sitekey={sitekey}
+              ref={captchaRef}
+            />
+          </div>
+
+          <Button
+            fullWidth
+            type="submit"
+            color="primary"
+            variant="contained"
+            sx={{
+              height: 44,
+            }}
+          >
+            {t("contactus.send")}
+          </Button>
+        </form>
+      </Wrapper>
+    </div>
   );
 };
 
