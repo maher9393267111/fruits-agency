@@ -19,6 +19,9 @@ import ProductViewDialog from "components/products/ProductViewDialog";
 import { useAppContext } from "contexts/AppContext";
 import { calculateDiscount, currency } from "lib";
 import ReactPlayer from "react-player";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+
 // styled components
 const StyledBazaarCard = styled(Box)({
   height: "100%",
@@ -43,7 +46,7 @@ const ImageWrapper = styled(Box)(({ theme }) => ({
       opacity: 1,
     },
     "& .hoverImgBox": {
-      filter: "blur(5px)",
+      filter: "blur(0px)",
     },
   },
 }));
@@ -182,6 +185,12 @@ const ProductCardMain = ({ ...props }) => {
       });
     }
   };
+
+  
+
+  const {t} = useTranslation("common")
+
+
   return (
     <StyledBazaarCard>
       {/* {ismedia ? 'meeee' :"nooo"} */}
@@ -255,7 +264,7 @@ const ProductCardMain = ({ ...props }) => {
                       className="addCartButton"
                       onClick={handleCartAmountChange(0, "remove")}
                     >
-                      <Remove /> Remove from Cart
+                      <Remove /> {t('removefromcart')}
                     </Button>
                   ) : (
                     <Button
@@ -264,7 +273,7 @@ const ProductCardMain = ({ ...props }) => {
                       className="addCartButton"
                       onClick={handleCartAmountChange(1)}
                     >
-                      <Add /> Add to Cart
+                      <Add /> {t('addtocart')}
                     </Button>
                   )}
                 </div>
@@ -310,3 +319,16 @@ const ProductCardMain = ({ ...props }) => {
   );
 };
 export default ProductCardMain;
+
+
+
+
+export const getStaticProps = async ({ locale }) => {
+
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"])),
+
+    },
+  };
+};

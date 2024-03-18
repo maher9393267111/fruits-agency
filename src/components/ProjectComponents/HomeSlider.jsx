@@ -3,7 +3,7 @@ import { H1 } from "components/Typography";
 import LazyImage from "components/LazyImage";
 import Carousel from "components/carousel/Carousel";
 
-import Link from 'next/link'
+import Link from "next/link";
 import { useTranslation } from "next-i18next";
 
 
@@ -77,18 +77,14 @@ const TextBox = styled(Box)(({ theme }) => ({
 // ===================================================================
 
 const HomeSlider = ({ mainCarouselData }) => {
-
-
-
   const { palette } = useTheme();
-  
-  const {t} = useTranslation("common")
 
-  const slider= t('slider', { returnObjects: true }) 
-  console.log("links" ,slider)
-  
+  const { t } = useTranslation("common");
+
+  const slider = t("slider", { returnObjects: true });
+  console.log("links", slider);
+
   return (
-    
     <StyledBox id="carouselBox">
       <Carousel
         spacing="0px"
@@ -100,9 +96,7 @@ const HomeSlider = ({ mainCarouselData }) => {
         dotColor={palette.primary.main}
         totalSlides={slider.length}
       >
-
-
-{/* mainCarouselData */}
+        {/* mainCarouselData */}
         {slider?.map((item, ind) => (
           <Container key={ind}>
             <StyledGrid container>
@@ -112,8 +106,12 @@ const HomeSlider = ({ mainCarouselData }) => {
                     priority
                     width={100}
                     height={100}
-                    alt={item.title ? item?.title :'Title'}
-                    src={item.imgUrl ? item.imgUrl : "/assets/images/sweetimages/Home-Slide-show-2.png"}   
+                    alt={item.title ? item?.title : "Title"}
+                    src={
+                      item.imgUrl
+                        ? item.imgUrl
+                        : "/assets/images/sweetimages/Home-Slide-show-2.png"
+                    }
                     layout="responsive"
                     objectFit="contain"
                   />
@@ -126,44 +124,38 @@ const HomeSlider = ({ mainCarouselData }) => {
                 </TextBox>
 
                 <div className="flex gap-2 lg:justify-center">
-                  <Link href={'/shop'}>
-              
-                  <StyledButton
-                    className=" bg-red-500 mx-2"
-                    variant="contained"
-                    color="primary"
-                    sx={{
-                      px: "30px",
-                      py: "6px",
-                    }}
-                  >
-                    
-                    {t("navbar.shop")}
-                  </StyledButton>
-
+                  <Link href={"/shop"}>
+                    <StyledButton
+                      className=" bg-red-500 mx-2"
+                      variant="contained"
+                      color="primary"
+                      sx={{
+                        px: "30px",
+                        py: "6px",
+                      }}
+                    >
+                      {t("navbar.shop")}
+                    </StyledButton>
                   </Link>
 
-                  <Link href={'/order'}>
-
-                  <StyledButton
-                    className=" bg-red-500 mx-2"
-                    variant="contained"
-                    color="primary"
-                    sx={{
-                      px: "30px",
-                      py: "6px",
-                    }}
-                  >
-                    {t('navbar.orders')}
-                  </StyledButton>
-</Link>
-
+                  <Link href={"/order"}>
+                    <StyledButton
+                      className=" bg-red-500 mx-2"
+                      variant="contained"
+                      color="primary"
+                      sx={{
+                        px: "30px",
+                        py: "6px",
+                      }}
+                    >
+                      {t("navbar.orders")}
+                    </StyledButton>
+                  </Link>
                 </div>
               </GridItemTwo>
             </StyledGrid>
           </Container>
         ))}
-       
       </Carousel>
     </StyledBox>
   );

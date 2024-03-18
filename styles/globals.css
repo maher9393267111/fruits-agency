@@ -21,8 +21,8 @@
 
 
   .logo {
-		border: 4px white solid;
-		box-shadow: 1px 1px 3px black;
+		/* border: 4px white solid; */
+		/* box-shadow: 1px 1px 3px black; */
 		animation: rotateAnimation 5s linear infinite;
   }
 

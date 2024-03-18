@@ -172,9 +172,10 @@ const {locale} = useRouter()
       />
 
       <H1 textAlign="center" mt={1} mb={2} fontSize={16}>
-        {t("order.ordernow")} {profile?.name}
+        {t("order.ordernow")} 
+        {/* {profile?.name} */}
       </H1>
-      <H1 textAlign="center">SweetSips</H1>
+      <H1 textAlign="center"></H1>
       <BazaarTextField
         mb={1.5}
         fullWidth

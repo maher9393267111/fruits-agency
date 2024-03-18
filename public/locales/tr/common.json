@@ -3,13 +3,13 @@
     "description": "Do you like to unleash some super powers to have all side optimized translations?",
     "Free Express Shipping": "Free Express Shipping",
     "Free": "Frrrrrrrrrrrrrrrrrrr",
-    "name":"English",
+    "name":"Turkish",
     "navbar":{
-      "home":"Ev",
-      "contact":"balanti kur",
+      "home":"Ana Sayfa",
+      "contact":"İletişim",
       "orders":"siparisler",
       "partner":"ortak ol",
-      "shop":"magaza",
+      "shop":"ürünler",
       "media":"media",
       "recipes":"tarifleri",
       "about":"Hakkımızda"
@@ -18,76 +18,76 @@
 
 
 
-    "products":"Tüm Ürünlerimiz",
-
+    "products":"Bizim ürünlerimiz",
+    "addtocart":"Sepete ekle",
+    "removefromcart":"sepetten kaldır",
 
     "partner":{
-      "partnernow":"Become a Partner",
-      "name":"Company Name",
-      "email":"Email",
-      "phone":"Phone Number",
-      "country":" Country",
-      "city":"City/State",
-      "position":"Position",
-      "worktype":"Work Type",
-      "site":"Website if available",
-      "zipcode":" Zip Code",
-      "subject":"Subject",
-      "address":"Company Address",
-      "interested":"Your interested Products",
-      "question":"Do you have any question?",
-      "monthlyAverage":"Average Monthly Order",
-      "recieveNewsletter":"Agree to recive Newsletter of SweetSips",
-      "agree":" Agreements of SweetSips",
-      "message":"Message",
-      "send":"Send application partner"
+      "partnernow":"Partner olmak",
+      "name":"Firma Adı",
+      "email":"E-posta",
+      "phone":"Telefon numarası",
+      "country":"Ülke",
+      "city":"Şehir/Eyalet",
+      "position":"Konum",
+      "worktype":"Çalışma tipi",
+      "site":"Varsa web sitesi",
+      "zipcode":"Posta kodu",
+      "subject":"Ders",
+      "address":"şirket adresi",
+      "interested":"İlgilendiğiniz Ürünler",
+      "question":"Herhangi bir sorun var mı?",
+      "monthlyAverage":"Ortalama Aylık Sipariş",
+      "recieveNewsletter":"SweetSips Haber Bültenini almayı kabul ediyorum",
+      "agree":" SweetSips Anlaşmaları",
+      "message":"İleti",
+      "send":"Uygulama ortağını gönder"
   
     }
   ,
   "order":{
-    "ordernow":"Apply to our products",
-    "name":"Full Name",
-    "email":"Email",
-    "phone":"Phone Number",
-    "subject":"Subject",
-    "address":"your address to recieve your order",
-    "message":"Your message",
-    "send":"Send"
-  
-  },
-  
-  
-  "about":{
-    "title":"Tatlı Yudumlar Hakkında",
-    "p1":"Otantik lezzetin yüksek kaliteyle buluştuğu SweetSips dünyasına hoş geldiniz.Taze ve saf şeker kamışı ürünleri ve gelişmiş şeker kamışı suyu makineleri konusunda ideal tedarikçiniziz.Meyve suyu perakendecilerine, kafelere, seyyar gıda kamyonlarına ve süpermarketlere doğal ve ferahlatıcı malzemeler sunmaktan gurur duyuyoruz.Şeker kamışı suyunun her yudumunun eşsiz ve keyifli bir deneyim olması gerektiğine inanıyoruz.",
-    
-    "p2":"'Şeker kamışı suyunun 10 muhteşem faydası'",
-    "p3":"Şeker kamışı suyunun sağlık açısından pek çok faydası vardır ve bu da onu dünya çapında birçok kültürde sevilen bir içecek haline getirir.",
-    "p4":"İşte ana faydalarından bazıları:",
-    "1":"Doğal bir enerji kaynağı:",
-    "1a":"Şeker kamışı suyu, vücuda anında enerji sağlayan doğal şekerler açısından zengindir; bu da onu antrenmandan sonra veya sıcak bir gün boyunca ideal bir toparlanma içeceği haline getirir.",
-    "2":"Sindirimin iyileştirilmesi:",
-    "2a":"Şeker kamışı suyu, sindirim sisteminin normal işlevlerinin korunmasına yardımcı olan miktarda potasyum içerir ve kabızlık gibi sindirim sorunlarının hafifletilmesine yardımcı olabilir.",
-    "3":"Karaciğer sağlığını geliştirin:",
-    "3a":"Şeker kamışı suyunun karaciğer için yararlı özelliklere sahip olduğuna ve hepatit gibi hastalıkların önlenmesine veya karaciğer fonksiyonunun iyileştirilmesine yardımcı olabileceğine inanılmaktadır.",
-    "4":"Ağız ve diş sağlığını korumak:",
-    "4a":"Şeker kamışı suyu, yüksek şeker içeriğine rağmen diş çürükleriyle mücadeleye yardımcı olan ve ağız sağlığının korunmasına katkıda bulunabilecek maddeler içerir.",
-    "5":"Anti-inflamatuar:",
-    "5a":"Şeker kamışı suyunun anti-inflamatuar özellikleri vardır, bu da onu boğaz ağrısı gibi çeşitli inflamatuar durumların tedavisinde faydalı kılar.",
-    "6":"Doğal nemlendirici:",
-    "6a":"Şeker kamışı suyu, yüksek su içeriği nedeniyle vücudun nemlendirilmesine ve nemli tutulmasına yardımcı olan mükemmel bir nemlendiricidir.",
-    "7":"Hastalıklarla mücadele:",
-    "7a":"Enfeksiyonlarla savaşmaya ve vücudun hastalıklara karşı bağışıklığını güçlendirmeye yardımcı olan antioksidanlar içerir.",
-    "8":"Sağlıklı cildi teşvik edin:",
-    "8a":"Şeker kamışı suyunun besleyici özellikleri, sağlıklı cildin korunmasına yardımcı olarak cildin daha genç ve taze görünmesini sağlar.",
-    "9":"faydalıdır:",
-    "9a":"Şeker kamışı suyu, hamile kadınların sağlıklı fetal gelişimini desteklemek için önemli olan folik asit içerir.",
-    "10":"Sağlıklı kiloyu destekleyin:",
-    "10a":"Şeker kamışı suyu, tadı tatlı olmasına rağmen diğer şekerli içeceklere göre daha az kalori içerdiğinden kilosuna dikkat edenler için iyi bir seçimdir.",
-    "p5":"Şeker kamışı suyu tüketiminin, özellikle diyabet gibi belirli sağlık sorunları olan kişiler için dengeli bir beslenmenin parçası ve makul miktarlarda olması gerektiğine dikkat etmek önemlidir."
+    "ordernow":"Ürünlerimize başvurun",
+    "name":"Tam Ad",
+    "email":"E-posta adresi",
+    "phone":"Telefon Numarası",
+    "subject":"Konu veya Başlık",
+    "address":"siparişinizi almak için adresiniz",
+    "message":"Mesaj veya Yorumlar",
+    "send":"Gönder düğmesi"
   
   },
 
+  
+"contactus":{
+  "p1":"Tüm sorularınızı yanıtlamak ve ihtiyacınız olan her konuda size yardımcı olmak için buradayız. Bize istediğiniz zaman telefon veya e-posta yoluyla ulaşabilirsiniz. Ürünlerimizden en iyi şekilde yararlanmanız için destek ve tavsiye sağlamaya söz veriyoruz.",
+
+
+  "welcome":"Bize ulaşın Sweetsips",
+  "name":"Tam Ad",
+  "email":"E-posta adresi",
+  "phone":"Telefon Numarası",
+  "subject":"Konu veya Başlık",
+  "message":"Mesaj veya Yorumlar",
+  "Newsletter":"SweetSips Haber Bültenini almayı kabul ediyorum",
+  "send":"Gönder düğmesi"
+
+},
+  
+  
+  "aboutsectionhome":{
+    "title":"Tatlı Yudumlar Hakkında",
+    "p1":"Otantik lezzetin yüksek kaliteyle buluştuğu SweetSips dünyasına hoş geldiniz.Taze ve saf şeker kamışı ürünleri ve gelişmiş şeker kamışı suyu makineleri konusunda ideal tedarikçiniziz.Meyve suyu perakendecilerine, kafelere, seyyar gıda kamyonlarına ve süpermarketlere doğal ve ferahlatıcı malzemeler sunmaktan gurur duyuyoruz.Şeker kamışı suyunun her yudumunun eşsiz ve keyifli bir deneyim olması gerektiğine inanıyoruz.",
+    "moredetails":"daha fazla detay"
+  },
+  
+  "about":{
+    "p2":"'Şeker kamışı suyunun 10 muhteşem faydası'",
+    "p3":"Şeker kamışı suyunun sağlık açısından pek çok faydası vardır ve bu da onu dünya çapında birçok kültürde sevilen bir içecek haline getirir.",
+    "p4":"İşte ana faydalarından bazıları:",
+    "p5":"Şeker kamışı suyu tüketiminin, özellikle diyabet gibi belirli sağlık sorunları olan kişiler için dengeli bir beslenmenin parçası ve makul miktarlarda olması gerektiğine dikkat etmek önemlidir."
+  },
+
+<<<<<<< HEAD
 
   "slider": [
     { 
@@ -105,6 +105,70 @@
       "buttonLink":"/order"
      }
   ]
+=======
+    "aboutus":[{
+    "a":"Doğal bir enerji kaynağı:",
+    "b":"Şeker kamışı suyu, vücuda anında enerji sağlayan doğal şekerler açısından zengindir; bu da onu antrenmandan sonra veya sıcak bir gün boyunca ideal bir toparlanma içeceği haline getirir."},
+    {
+    "a":"Sindirimin iyileştirilmesi:",
+    "b":"Şeker kamışı suyu, sindirim sisteminin normal işlevlerinin korunmasına yardımcı olan miktarda potasyum içerir ve kabızlık gibi sindirim sorunlarının hafifletilmesine yardımcı olabilir."},
+    {
+    "a":"Karaciğer sağlığını geliştirin:",
+    "b":"Şeker kamışı suyunun karaciğer için yararlı özelliklere sahip olduğuna ve hepatit gibi hastalıkların önlenmesine veya karaciğer fonksiyonunun iyileştirilmesine yardımcı olabileceğine inanılmaktadır."},
+    {
+    "a":"Ağız ve diş sağlığını korumak:",
+    "b":"Şeker kamışı suyu, yüksek şeker içeriğine rağmen diş çürükleriyle mücadeleye yardımcı olan ve ağız sağlığının korunmasına katkıda bulunabilecek maddeler içerir."},
+    {
+    "a":"Anti-inflamatuar:",
+    "b":"Şeker kamışı suyunun anti-inflamatuar özellikleri vardır, bu da onu boğaz ağrısı gibi çeşitli inflamatuar durumların tedavisinde faydalı kılar."},
+    {
+    "a":"Doğal nemlendirici:",
+    "b":"Şeker kamışı suyu, yüksek su içeriği nedeniyle vücudun nemlendirilmesine ve nemli tutulmasına yardımcı olan mükemmel bir nemlendiricidir."},
+    {
+    "a":"Hastalıklarla mücadele:",
+    "b":"Enfeksiyonlarla savaşmaya ve vücudun hastalıklara karşı bağışıklığını güçlendirmeye yardımcı olan antioksidanlar içerir."},
+    {
+    "a":"Sağlıklı cildi teşvik edin:",
+    "b":"Şeker kamışı suyunun besleyici özellikleri, sağlıklı cildin korunmasına yardımcı olarak cildin daha genç ve taze görünmesini sağlar."},
+    {
+    "a":"faydalıdır:",
+    "b":"Şeker kamışı suyu, hamile kadınların sağlıklı fetal gelişimini desteklemek için önemli olan folik asit içerir."},
+    {
+    "a":"Sağlıklı kiloyu destekleyin:",
+    "b":"Şeker kamışı suyu, tadı tatlı olmasına rağmen diğer şekerli içeceklere göre daha az kalori içerdiğinden kilosuna dikkat edenler için iyi bir seçimdir."
+  }],
+>>>>>>> 6d6acadb97d6477132a642438a4dfd38425381b1
   
+
+
+    
+"slider": [
+  { 
+    "welcome":"SweetSips'e Hoş Geldiniz",
+    "title":"Her Yudumda Tazelik",
+    "imgUrl":"/assets/images/sweetimages/Home-Slide-show-1.png",
+    "description":null,
+    "buttonText":"Şimdi sipariş ver",
+    "buttonLink":"/order",
+    "buttonText1":"Ortak olun",
+    "buttonLink1":"/partner"
+  },
+  {
+    "welcome":"SweetSips'e Hoş Geldiniz",
+    "title":"Tek bir yudum taze dökülmüş meyve suyu gerekli tüm vitaminleri içerir",
+    "imgUrl": "/assets/images/sweetimages/Home-Slide-show-2.png",
+    "description": null,
+    "buttonText":"Şimdi sipariş ver",
+    "buttonLink":"/order",
+    "buttonText1":"Ortak olun",
+    "buttonLink1":"/partner"
+   }
+],
+  
+
+
+"homeproductsslider":"en çok satılan ürünler",
+"homeproductsslider1":"Tariflerimiz"
   }
   
+

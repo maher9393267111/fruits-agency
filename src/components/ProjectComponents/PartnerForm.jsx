@@ -457,7 +457,7 @@ const PartnerForm = () => {
             />
           </Grid>
 
-          <Grid className="mt-4 mb-12" item xs={12}>
+          <Grid className="mt-2 mb-4" item xs={12}>
             <TextField
               className="my-3"
               rows={6}

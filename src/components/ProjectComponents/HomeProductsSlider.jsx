@@ -5,6 +5,10 @@ import { H1 } from "components/Typography";
 import Carousel from "components/carousel/Carousel";
 import ProductCard from "./ProductCard";
 import useWindowSize from "hooks/useWindowSize";
+import { t } from "i18next";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+
 // styled components
 const TitleBox = styled(Box)(({
   theme
@@ -37,16 +41,13 @@ const  TopProducts = ({
 
   const { locale } = useRouter()
 
-
+  const {t} = useTranslation("common")
 
   useEffect(() => {
     if (width < 500) setVisibleSlides(1);else if (width < 650) setVisibleSlides(2);else if (width < 950) setVisibleSlides(3);else setVisibleSlides(3);
   }, [width]);
   return <Box>
-      <TitleBox my={4}>
-        <H1>Top Saled Products</H1>
-        <Box />
-      </TitleBox>
+
 
 
       {(products && products?.length > 0) &&
