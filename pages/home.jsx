@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Container, Box } from "@mui/material";
 import MainLayout from "../src/components/ProjectComponents/mainLayout";
 import HomeSlider from "components/ProjectComponents/HomeSlider";
 import HomeOffer from "components/ProjectComponents/HomeOffer";
@@ -13,8 +12,33 @@ import Loader from "components/admin/common/Loader";
 import AboutSectionHome from "components/ProjectComponents/AboutSectionHome";
 
 import api from "utils/__api__/grocery3-shop";
+import { Box, styled, useTheme,Container } from "@mui/material";
+import { H1 } from "components/Typography";
 
 export default function Home(props) {
+
+
+    // styled components
+const TitleBox = styled(Box)(({
+  theme
+}) => ({
+  textAlign: "center",
+  "& h1": {
+    fontSize: 40,
+    fontWeight: 600,
+    marginBottom: "10px"
+  },
+  "& div": {
+    width: 200,
+    height: "2px",
+    margin: "auto",
+    background: theme.palette.primary.main
+  }
+}));
+
+
+// ---------------------------------------------------------
+
   console.log("Products");
 
   const [products, setProducts] = useState([]);
@@ -54,12 +78,15 @@ export default function Home(props) {
     getMedia();
   }, []);
 
+
+  const {t} = useTranslation("common")
+
   return (
     <MainLayout>
       {loacding ? (
         <Loader />
       ) : (
-        <div className="mb-12">
+        <div className="mb-1">
           <HomeSlider
             products={products}
             mainCarouselData={props.mainCarouselData}
@@ -67,20 +94,34 @@ export default function Home(props) {
 
           <Container
             sx={{
-              mb: 6,
+              mb: 3,
             }}
           >
-            <HomeOffer offers={props.offerCards} />
 
+          <AboutSectionHome />
+          <TitleBox my={2}>
+        
+        <H1>{t('homeproductsslider')}</H1>
+        
+        <Box />
+      </TitleBox>
+            
             <HomeProductsSlider
               isorderpage={false}
               products={products}
               // {props.topSailedProducts}
             />
 
+<HomeOffer offers={props.offerCards} />
 
-<div className=" my-12">
 
+<div className=" my-10">
+<TitleBox my={2}>
+        
+        <H1>{t('homeproductsslider1')}</H1>
+        
+        <Box />
+      </TitleBox>
 <HomeProductsSlider
               ismedia={true}
               isorderpage={false}
@@ -88,12 +129,14 @@ export default function Home(props) {
 
             />
 
+            
+
 </div>
 
 
 
 
-            <AboutSectionHome />
+          
           </Container>
         </div>
       )}

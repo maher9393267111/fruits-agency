@@ -3,6 +3,11 @@ import { useRouter } from "next/router";
 import { H1 } from "components/Typography";
 import ProductCard from "./ProductCard";
 import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import Link from "next/link";
+import { useState } from "react";
+
+
 // styled component
 const TitleBox = styled(Box)(({
   theme
@@ -28,17 +33,24 @@ const TitleBox = styled(Box)(({
 const ShopProducts = ({
   products,
   isorderpage = false,
-  isrecipe= false
+  isrecipe= false,
+  ismedia
 }) => {
 
   const {locale} = useRouter()
 
   const {t} = useTranslation("common")
 
+  const [page,setPage]= useState("/recipes");
+
   return <Box>
       <TitleBox my={4}>
+        { page === "/recipes" ? 
         <H1>{t('products')}</H1>
-      
+        
+          :
+          <H1>{t('homeproductsslider1')}</H1>
+        }
         <Box />
       </TitleBox>
 
@@ -57,3 +69,15 @@ const ShopProducts = ({
     </Box>;
 };
 export default ShopProducts;
+
+
+
+export const getStaticProps = async ({ locale }) => {
+
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"])),
+
+    },
+  };
+};

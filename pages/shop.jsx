@@ -10,6 +10,7 @@ import {
 getDocumentsOrder,
 } from "../src/functions/firebase/getData";
 import { orderBy, where } from "firebase/firestore";
+
 export default function Shop() {
   const [products, setProducts] = useState([]);
   const [loacding, setLoading] = useState(true);

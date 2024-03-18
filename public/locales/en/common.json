@@ -4,19 +4,25 @@
   "Free Express Shipping": "Free Express Shipping",
   "Free": "Frrrrrrrrrrrrrrrrrrr",
   "name":"English",
-  "products":"Make Your Order Now",
+  
+
+  
 
   "navbar":{
     "home":"Home",
     "contact":"Contact us",
     "orders":"Orders",
     "partner":"Partner",
-    "shop":"Shop",
+    "shop":"Products",
     "media":"Media",
     "recipes":"Recipes",
     "about":"About"
-  }
-  ,
+  },
+
+  "products":"Our Products",
+  "addtocart":"Add to cart",
+  "removefromcart":"Remove from cart",
+  
   "partner":{
     "partnernow":"Become a Partner",
     "name":"Company Name",
@@ -71,7 +77,9 @@
 
 "aboutsectionhome":{
   "title":"About SweetSips",
-  "p1":"Welcome to the world of SweetSips, where authentic taste meets high quality. We are your ideal provider of fresh and pure sugarcane products and advanced sugarcane juice machines. We are proud to provide natural and refreshing ingredients to juice retailers, cafes, mobile food trucks and supermarkets. We believe that every sip of sugarcane juice should be a unique and enjoyable experience."},
+  "p1":"Welcome to the world of SweetSips, where authentic taste meets high quality. We are your ideal provider of fresh and pure sugarcane products and advanced sugarcane juice machines. We are proud to provide natural and refreshing ingredients to juice retailers, cafes, mobile food trucks and supermarkets. We believe that every sip of sugarcane juice should be a unique and enjoyable experience.",
+  "moredetails":"more details"
+},
   
   "about":{
   "p2":"'Ten amazing benefits of sugarcane juice'",
@@ -130,5 +138,12 @@
     "buttonText1":"Be a partner",
     "buttonLink1":"/partner"
    }
-]
-}
+],
+  
+
+
+"homeproductsslider":"Top Saled Products",
+"homeproductsslider1":"Our Recipes"
+
+  }
+  

@@ -10,6 +10,9 @@ import { layoutConstant } from "utils/constants";
 import { useRouter } from "next/router";
 import { useTranslation } from "react-i18next";
 import useSettings from "hooks/useSettings";
+import { TbWorld } from "react-icons/tb";
+import { FaTiktok } from "react-icons/fa6";
+
 // styled component
 const TopbarWrapper = styled(Box, {
   shouldForwardProp: props => props !== "bgColor"
@@ -119,14 +122,9 @@ const Topbar = ({
       <StyledContainer>
         <FlexBetween width="100%">
           <FlexBox alignItems="center" gap={1}>
-            <Chip label="HOT" size="small" sx={{
+            <TbWorld className="w-5 h-5" label="WORLD" size="small" sx={{
             color: "white",
-            fontWeight: 700,
-            backgroundColor: "primary.main",
-            "& .MuiChip-label": {
-              pl: ".8rem",
-              pr: ".8rem"
-            }
+              
           }} />
             <Span className="title">{language === "en" ? "EN" : language === 'ar' ? 'Ar' : language === 'tr' && "TR"}</Span>
           </FlexBox>
@@ -169,26 +167,23 @@ const Topbar = ({
 };
 const socialLinks = [{
   id: 1,
-  Icon: Twitter,
-  url: "#"
+  Icon: FaTiktok,
+  url: "https://www.tiktok.com/@sweetsips24"
 }, {
   id: 2,
   Icon: Facebook,
-  url: "#"
-}, {
-  id: 3,
-  Icon: Instagram,
-  url: "#"
+  url: "https://www.facebook.com/profile.php?id=61556662798449"
 }];
+
 const languageList = [{
   title: "EN",
   value: "en"
 }, {
-  title: "Ar",
+  title: "AR",
   value: "ar"
 }
 , {
-  title: "Tr",
+  title: "TR",
   value: "tr"
 }
 

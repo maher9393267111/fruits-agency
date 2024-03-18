@@ -109,11 +109,11 @@ const HomeSlider = ({ mainCarouselData }) => {
           <Container key={ind}>
             <StyledGrid container>
               <GridItemOne item md={6} sm={6} xs={12}>
-                <Box pt={6}>
+                <Box pt={0}>
                   <LazyImage
                     priority
-                    width={120}
-                    height={120}
+                    width={100}
+                    height={100}
                     alt={item.title}
                     src={item.imgUrl}   
                     layout="responsive"
@@ -124,8 +124,8 @@ const HomeSlider = ({ mainCarouselData }) => {
 
               <GridItemTwo item md={6} sm={6} xs={12}>
                 <TextBox>
-
-                  <H1 className='my-20' maxWidth={400}>{item.welcome}</H1>
+                 
+                  <H1 className=' !my-6 md:!my-[160px] text-green-500' maxWidth={400}>{item.welcome}</H1>
                   <H2 maxWidth={400}>{item.title}</H2>
                 </TextBox>
 
