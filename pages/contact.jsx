@@ -6,7 +6,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 const ContactPage = () => {
   return (
     <MainLayout>
-      <div className=" mt-20 mb-20">
+      <div className=" mt-20 mb-20 pb-20">
         <FlexRowCenter flexDirection="column" minHeight="80vh">
           <SEO title="Contact" />
           <ContactForm />

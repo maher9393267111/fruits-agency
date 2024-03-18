@@ -58,6 +58,7 @@
     "react-icons": "^5.0.1",
     "react-player": "^2.15.1",
     "react-quill": "^2.0.0",
+    "react-reveal": "^1.2.2",
     "react-scroll": "^1.8.8",
     "react-toastify": "^10.0.4",
     "sharp": "^0.31.1",
