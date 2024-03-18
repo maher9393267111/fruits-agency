@@ -87,25 +87,6 @@
     "p5":"Şeker kamışı suyu tüketiminin, özellikle diyabet gibi belirli sağlık sorunları olan kişiler için dengeli bir beslenmenin parçası ve makul miktarlarda olması gerektiğine dikkat etmek önemlidir."
   },
 
-<<<<<<< HEAD
-
-  "slider": [
-    { 
-      "title":"1Get groceries delivered within 40 minutes",
-      "imgUrl":"/assets/images/sweetimages/Home-Slide-show-1.png",
-      "description":null,
-      "buttonText":"Order Now",
-      "buttonLink":"/order"
-    },
-    {
-      "title": "Get groceries delivered within 60 minutes",
-      "imgUrl": "/assets/images/sweetimages/Home-Slide-show-2.png",
-      "description": null,
-      "buttonText":"Shop Now",
-      "buttonLink":"/order"
-     }
-  ]
-=======
     "aboutus":[{
     "a":"Doğal bir enerji kaynağı:",
     "b":"Şeker kamışı suyu, vücuda anında enerji sağlayan doğal şekerler açısından zengindir; bu da onu antrenmandan sonra veya sıcak bir gün boyunca ideal bir toparlanma içeceği haline getirir."},
@@ -137,7 +118,6 @@
     "a":"Sağlıklı kiloyu destekleyin:",
     "b":"Şeker kamışı suyu, tadı tatlı olmasına rağmen diğer şekerli içeceklere göre daha az kalori içerdiğinden kilosuna dikkat edenler için iyi bir seçimdir."
   }],
->>>>>>> 6d6acadb97d6477132a642438a4dfd38425381b1
   
 
 
