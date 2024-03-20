@@ -19,7 +19,7 @@ const ProductTable = ({ products }) => {
 
   const columns = [
     {
-      title: "Title",
+      title: "englishTitle",
       // same name from database   // category={title ,....}
       dataIndex: "title",
 

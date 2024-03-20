@@ -111,6 +111,10 @@ const TitleBox = styled(Box)(({
               products={products}
               // {props.topSailedProducts}
             />
+<TitleBox my={2}>
+        <H1>{t('homeproductsslider2')}</H1>
+        <Box />
+      </TitleBox>
 
 <HomeOffer offers={props.offerCards} />
 

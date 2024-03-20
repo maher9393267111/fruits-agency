@@ -5,14 +5,16 @@ import { FlexRowCenter } from "components/flex-box";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 const ContactPage = () => {
   return (
-    <MainLayout>
-      <div className=" mt-20 mb-20">
-        <FlexRowCenter flexDirection="column" minHeight="80vh">
+    <div className="w-fit">
+    <MainLayout >
+      <div className=" my-20 !min-w-full ">
+        <FlexRowCenter flexDirection="column" minHeight="80vh" >
           <SEO title="Contact" />
           <ContactForm />
         </FlexRowCenter>
       </div>
     </MainLayout>
+    </div>
   );
 };
 export default ContactPage;

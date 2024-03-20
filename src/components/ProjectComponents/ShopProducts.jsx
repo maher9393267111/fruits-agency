@@ -45,11 +45,13 @@ const ShopProducts = ({
 
   return <Box>
       <TitleBox my={4}>
-        { page === "/recipes" ? 
-        <H1>{t('products')}</H1>
+        { page === "shop" ? 
+
+<H1>{t('homeproductsslider2')}</H1> 
+        
         
           :
-          <H1>{t('homeproductsslider1')}</H1>
+          <H1>{t('products')}</H1>  
         }
         <Box />
       </TitleBox>

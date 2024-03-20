@@ -130,8 +130,8 @@ const ContactForm = () => {
       validationSchema: formSchema,
     });
   return (
-    <div className=" -my-20 relative">
-      <img src="/assets/images/sweetimages/sugarcane Contact us.jpg" className="w-full h-full  object-cover opacity-100 absolute" alt="img" />
+    <div className=" -my-20 relative ">
+      <img src="/assets/images/sweetimages/sugarcane Contact us.jpg" className="!w-[full] !h-[full]  object-cover opacity-100 absolute" alt="img" />
       <H5 className="flex justify-center my-2 text-white relative text-center  flex-wrap m-auto w-[90%] sm:w-[55%]">{t("contactus.p1")}</H5>
       <Wrapper elevation={3} className=' m-auto   opacity-80'>
         <form onSubmit={handleSubmit}>

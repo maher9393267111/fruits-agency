@@ -92,7 +92,7 @@ const HoverButtonBox = styled(Box)({
 });
 const ImageBox = styled(Box)({
   opacity: 1,
-  padding: "44px 40px",
+  // padding: "44px 40px",
   background: "#F5F5F5",
   transition: "all .3s ease",
 });
