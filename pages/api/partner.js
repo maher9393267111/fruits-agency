@@ -22,7 +22,7 @@ async function sendEmail({ name, email, phone, intersted ,agreements,question, w
     const defaultYear = new Date().getFullYear();
   const emailOptions = {
     form: `${name}`,
-    to: "basma94ghanem@gmail.com",
+    to: "sweetsips.tr@gmail.com",
     subject: `Order Message from ${email}`,
     html: `<body style="background: #f3f4f6; padding:0 5px;">
     <div style="max-width: 600px; margin: 0 auto; padding: 20px 0; font-family:Trebuchet MS;">

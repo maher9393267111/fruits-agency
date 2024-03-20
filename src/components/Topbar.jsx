@@ -120,7 +120,7 @@ const Topbar = ({
   };
   return <TopbarWrapper bgColor={bgColor} expand={expand ? 1 : 0}>
       <StyledContainer>
-        <FlexBetween width="100%">
+        {/* <FlexBetween width="100%">
           <FlexBox alignItems="center" gap={1}>
             <TbWorld className="w-5 h-5" label="WORLD" size="small" sx={{
             color: "white",
@@ -132,10 +132,13 @@ const Topbar = ({
           <IconButton disableRipple className="expand" onClick={() => setExpand(state => !state)}>
             {expand ? <Remove /> : <Add />}
           </IconButton>
-        </FlexBetween>
+        </FlexBetween> */}
 
         <FlexBox className="topbarRight" alignItems="center">
           <BazaarMenu handler={<TouchRipple className="handler marginRight">
+          <TbWorld className="w-5 h-5" label="WORLD" size="small" sx={{
+            color: "white",
+          }} />
                 <Span className="menuTitle">
                   {language === "en" ? "EN" : language === 'ar' ? 'Ar' : language === 'tr' && "TR"}
                 </Span>

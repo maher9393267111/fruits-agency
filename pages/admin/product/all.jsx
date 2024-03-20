@@ -4,7 +4,7 @@ import ProductsMain from "components/admin/product/products";
 import Loader from "../../../src/components/admin/common/Loader";
 const AllProductsPage = ({}) => {
   const [products, setProducts] = useState([]);
-  const [loacding, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
 
   // const Products = await getDocuments("products")
 
@@ -22,23 +22,24 @@ const AllProductsPage = ({}) => {
 
   return (
     <div>
+      {products.length}
       {/* {products && products?.length > 0 ? */}
 
-      {loacding ? <Loader /> : <ProductsMain products={products} />}
+      {loading ? <Loader /> : <ProductsMain products={products} />}
     </div>
   );
 };
 
 export default AllProductsPage;
 
-// // serverside
+// serverside
 // AllProductsPage.getInitialProps = async (context) => {
-//  //const Products = await getDocuments("products"); //  []
+//  const Products = await getDocuments("products"); //  []
 
-// // console.log("productsData", Products);
+// console.log("productsData", Products);
 
 //   return {
-//     // props from serverside will go to props in clientside
-//   //  products: Products || [] ,
+//     //props from serverside will go to props in clientside
+//    products: Products || [] ,
 //   };
 // };

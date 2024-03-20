@@ -45,7 +45,7 @@ const ProductDescription = () => {
 export default function ProductSingle({}) {
   const [product, setProduct] = useState({});
   console.log("🎭🎭🎭>", product.title);
-  const [loacding, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const router = useRouter();
   const locale =router.locale
@@ -89,7 +89,7 @@ export default function ProductSingle({}) {
         }}
       >
         <Box className=" mt-[66px]" width="100%">
-          {loacding ? (
+          {loading ? (
             <Loader />
           ) : (
             <Grid container spacing={3} justifyContent="space-around">

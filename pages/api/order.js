@@ -20,7 +20,7 @@ const transporter = nodemailer.createTransport({
 async function sendEmail({ name, email, phone, message, subject, adress ,cart }) {
   const emailOptions = {
     form: `${name}`,
-    to: "basma94ghanem@gmail.com",
+    to: "sweetsips.tr@gmail.com",
     subject: `Order Message from ${email}`,
     html: ` <h2 style="font-size: 3rem; color: #F20F38; background-color: #110B10; padding: 50px; text-align: center;">Order Email</h2>
     <ul>

@@ -4,7 +4,7 @@ import ProductsMain from "components/admin/recipe/recipes";
 import Loader from "../../../src/components/admin/common/Loader";
 const  AllRecipesPage = ({}) => {
   const [products, setProducts] = useState([]);
-  const [loacding, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
 
   // const Products = await getDocuments("products")
 
@@ -24,7 +24,7 @@ const  AllRecipesPage = ({}) => {
     <div>
       {/* {products && products?.length > 0 ? */}
 
-      {loacding ? <Loader /> : <ProductsMain products={products} />}
+      {loading ? <Loader /> : <ProductsMain products={products} />}
     </div>
   );
 };

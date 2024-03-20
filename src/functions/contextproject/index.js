@@ -529,7 +529,7 @@ export const StateContextProvider = ({ children }) => {
         signInUser,
         forgetPassword,
         pageLoading,
-        profile,
+        //profile,
         userData,
         logout,
         setPageLoading,
