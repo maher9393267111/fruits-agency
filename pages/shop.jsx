@@ -40,6 +40,8 @@ export default function Shop() {
         }}
       >
         {/* OUR ALL PRODUCTS AREA */}
+
+     
         <AllProducts products={products} />
       </Container>
     </MainLayout>

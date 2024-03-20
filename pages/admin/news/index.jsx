@@ -5,7 +5,7 @@ import Loader from "../../../src/components/admin/common/Loader";
 const AllProductsPage = ({}) => {
   const [news, setNews] = useState([]);
   const [products, setProducts] = useState([]);
-  const [loacding, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
 
   // const Products = await getDocuments("products")
 
@@ -37,7 +37,7 @@ const AllProductsPage = ({}) => {
     <div>
       {/* {products && products?.length > 0 ? */}
 
-      {loacding ? <Loader /> : <NewsMain products={products} news={news} />}
+      {loading ? <Loader /> : <NewsMain products={products} news={news} />}
     </div>
   );
 };
