@@ -171,11 +171,15 @@ const Topbar = ({
 const socialLinks = [{
   id: 1,
   Icon: FaTiktok,
-  url: "https://www.tiktok.com/@sweetsips24"
+  url: "https://www.tiktok.com/@sweetsips24",
+  target: "_blank",
+  rel:"noreferrer"
 }, {
   id: 2,
   Icon: Facebook,
-  url: "https://www.facebook.com/profile.php?id=61556662798449"
+  url: "https://www.facebook.com/profile.php?id=61556662798449-targetblank",
+  target: "_blank",
+  rel:"noreferrer"
 }];
 
 const languageList = [{

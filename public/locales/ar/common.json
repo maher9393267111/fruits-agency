@@ -121,16 +121,6 @@
 
  
   "slider": [
-    { 
-      "welcome":"مرحبا بكم في SweetSips",
-      "title":"الانتعاش مع كل رشفة",
-      "imgUrl":"/assets/images/sweetimages/Home-Slide-show-1.png",
-      "description":null,
-      "buttonText":"اطلب الان",
-      "buttonLink":"/order",
-      "buttonText1":"كن شريكا",
-      "buttonLink1":"/partner"
-    },
     {
       "welcome":"مرحبا بكم في SweetSips",
       "title":"رشفة واحدة من العصير الطازج تحتوي على جميع الفيتامينات الضرورية",
@@ -140,7 +130,17 @@
       "buttonLink":"/order",
       "buttonText1":"كن شريكا",
       "buttonLink1":"/partner"
-     }
+     },
+    { 
+      "welcome":"مرحبا بكم في SweetSips",
+      "title":"الانتعاش مع كل رشفة",
+      "imgUrl":"/assets/images/sweetimages/Home-Slide-show-1.png",
+      "description":null,
+      "buttonText":"اطلب الان",
+      "buttonLink":"/order",
+      "buttonText1":"كن شريكا",
+      "buttonLink1":"/partner"
+    }
   ],
   
 

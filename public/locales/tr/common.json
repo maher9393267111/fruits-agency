@@ -123,16 +123,6 @@
 
     
 "slider": [
-  { 
-    "welcome":"SweetSips'e Hoş Geldiniz",
-    "title":"Her Yudumda Tazelik",
-    "imgUrl":"/assets/images/sweetimages/Home-Slide-show-1.png",
-    "description":null,
-    "buttonText":"Şimdi sipariş ver",
-    "buttonLink":"/order",
-    "buttonText1":"Ortak olun",
-    "buttonLink1":"/partner"
-  },
   {
     "welcome":"SweetSips'e Hoş Geldiniz",
     "title":"Tek bir yudum taze dökülmüş meyve suyu gerekli tüm vitaminleri içerir",
@@ -142,7 +132,17 @@
     "buttonLink":"/order",
     "buttonText1":"Ortak olun",
     "buttonLink1":"/partner"
-   }
+   },
+  { 
+    "welcome":"SweetSips'e Hoş Geldiniz",
+    "title":"Her Yudumda Tazelik",
+    "imgUrl":"/assets/images/sweetimages/Home-Slide-show-1.png",
+    "description":null,
+    "buttonText":"Şimdi sipariş ver",
+    "buttonLink":"/order",
+    "buttonText1":"Ortak olun",
+    "buttonLink1":"/partner"
+  }
 ],
   
 

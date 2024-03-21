@@ -28,7 +28,7 @@ export default function AboutSectionHome() {
 
               <div className=" w-[80%] md:w-[95%] my-4">
               <span> 
-                <H3 mt={4} className="  text-gray">
+                <H3 mt={4} className="  text-gray   text-justify">
                  {t('aboutsectionhome.p1')}    
                 </H3>
                 </span>

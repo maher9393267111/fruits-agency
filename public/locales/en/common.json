@@ -118,16 +118,7 @@
 
 
 "slider": [
-  { 
-    "welcome":"Welcome To SweetSips",
-    "title":"The Freshness With Each Sip",
-    "imgUrl":"/assets/images/sweetimages/Home-Slide-show-1.png",
-    "description":null,
-    "buttonText":"Order Now",
-    "buttonLink":"/order",
-    "buttonText1":"Be a partner",
-    "buttonLink1":"/partner"
-  },
+
   {
     "welcome":"Welcome To SweetSips",
     "title": "A single sip of fresh poured juice contains all necessary vitamins",
@@ -137,7 +128,18 @@
     "buttonLink":"/order",
     "buttonText1":"Be a partner",
     "buttonLink1":"/partner"
-   }
+   },
+  { 
+    "welcome":"Welcome To SweetSips",
+    "title":"The Freshness With Each Sip",
+    "imgUrl":"/assets/images/sweetimages/Home-Slide-show-1.png",
+    "description":null,
+    "buttonText":"Order Now",
+    "buttonLink":"/order",
+    "buttonText1":"Be a partner",
+    "buttonLink1":"/partner"
+  }
+
 ],
   
 

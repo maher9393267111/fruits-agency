@@ -192,17 +192,17 @@ const ProductCardMain = ({ ...props }) => {
 
 
   return (
-    <StyledBazaarCard>
+    <StyledBazaarCard >
       {/* {ismedia ? 'meeee' :"nooo"} */}
       {ismedia ? (
-        <VideoWrapper>
+        <VideoWrapper >
           <ImageBox className="hoverImgBox">
             <a>
               <ReactPlayer
                 className="!rounded-2xl "
                 controls
                 width="auto"
-                //  height="500px"
+                 //height="400px"
                 playing={false}
                 muted={true}
                 url={video}
@@ -283,9 +283,9 @@ const ProductCardMain = ({ ...props }) => {
         </ImageWrapper>
       )}
 
-      <ContentWrapper>
+      <ContentWrapper >
         {ismedia ?
-        <H3 mb={1} title={title} fontSize="14px" fontWeight="600" className="title" color="text.secondary">
+        <H3 mb={1} title={title} fontSize="14px" fontWeight="600" className="title " color="text.secondary">
             {title}
           </H3>
           :
