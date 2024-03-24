@@ -1,5 +1,5 @@
 import { Box, Button, Grid, styled, useTheme } from "@mui/material";
-import { H1 } from "components/Typography";
+import { H1 ,H2 } from "components/Typography";
 import LazyImage from "components/LazyImage";
 import Carousel from "components/carousel/Carousel";
 
@@ -71,6 +71,10 @@ const TextBox = styled(Box)(({ theme }) => ({
     paddingTop: 30,
   },
 }));
+
+
+
+
 
 // ===================================================================
 
