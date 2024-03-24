@@ -83,7 +83,7 @@
   "about":{
     "p2":"'Şeker kamışı suyunun 10 muhteşem faydası'",
     "p3":"Şeker kamışı suyunun sağlık açısından pek çok faydası vardır ve bu da onu dünya çapında birçok kültürde sevilen bir içecek haline getirir.",
-    "p4":"İşte ana faydalarından bazıları:",
+    "p4":"İşte ana faydalarından bazıları",
     "p5":"Şeker kamışı suyu tüketiminin, özellikle diyabet gibi belirli sağlık sorunları olan kişiler için dengeli bir beslenmenin parçası ve makul miktarlarda olması gerektiğine dikkat etmek önemlidir."
   },
 
@@ -149,7 +149,37 @@
 
 "homeproductsslider":"en çok satılan ürünler",
 "homeproductsslider1":"Media",
-"homeproductsslider2":"tarifleri"
-  }
+"homeproductsslider2":"tarifleri",
+
+
+
   
+"recipesCardHomeSlider": [{
+  "id": 1,
+  "title": "Zencefil ile şeker kamışı",
+  "subtitle": "Bileşenler şunlardır: Şeker kamışı çubukları ve Taze zencefil kökü",
+  "imgUrl": "/assets/images/sweetimages/Sugarcane with ginger.png",
+  "shopUrl": "/recipes",
+  "bgColor": "#F6FFE5",
+  "buttonText":"Daha fazla detay"
+}, {
+  "id": 2,
+  "title": "Limonlu şeker kamışı",
+  "subtitle": "Bileşenler: Şeker kamışı çubukları ve Taze limon",
+  "imgUrl": "/assets/images/sweetimages/Sugarcane with lemon.png",
+  "shopUrl": "/recipes",
+  "bgColor": "#FFF8E5",
+  "buttonText":"Daha fazla detay"
+}, {
+  "id": 3,
+  "title": "Çilek ile şeker kamışı",
+  "subtitle": "Bileşenler: Şeker kamışı çubukları ve Taze çilek",
+  "imgUrl": "/assets/images/sweetimages/sugarcane with strawberry.png",
+  "shopUrl": "/recipes",
+  "bgColor": "#F6FFE5",
+  "buttonText":"Daha fazla detay"
+  }]
+
+
+}
 

@@ -202,7 +202,7 @@ const ProductCardMain = ({ ...props }) => {
                 className="!rounded-2xl "
                 controls
                 width="auto"
-                 //height="400px"
+                height="330px"
                 playing={false}
                 muted={true}
                 url={video}
@@ -212,7 +212,7 @@ const ProductCardMain = ({ ...props }) => {
         </VideoWrapper>
       ) : (
         <ImageWrapper>
-          <ImageBox className="hoverImgBox">
+          <ImageBox className="hoverImgBox   ">
             <Link href={isrecipe ? `/recipes/single?id=${slug}` : `/shop/single?id=${slug}`}>
               <a>
                 <LazyImage
@@ -222,6 +222,7 @@ const ProductCardMain = ({ ...props }) => {
                   src={imgUrl}
                   layout="responsive"
                   objectFit="contain"
+                  
                 />
               </a>
             </Link>

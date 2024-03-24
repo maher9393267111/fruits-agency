@@ -59,7 +59,7 @@ const  TopProducts = ({
         borderRadius: 0,
         background: "#fff",
         boxShadow: theme.shadows[2],
-        color: theme.palette.primary.main
+        color: theme.palette.primary.main,
       }
     }}>
         {products?.map(item => <Box py={0.5} key={item.id}>

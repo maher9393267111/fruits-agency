@@ -25,7 +25,7 @@ const AllProducts = ({
 
       <Grid container spacing={3}>
         {products.map(item => <Grid key={item.id} item md={4} sm={6} xs={12}>
-            <ProductCard13 id={item.id} slug={item.slug} title={item.title} price={item.price} off={item.discount} rating={item.rating} imgUrl={item.thumbnail} />
+            <ProductCard13  id={item.id} slug={item.slug} title={item.title} price={item.price} off={item.discount} rating={item.rating} imgUrl={item.thumbnail} />
           </Grid>)}
       </Grid>
 

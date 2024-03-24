@@ -10,34 +10,30 @@ import { db } from "functions/firebase";
 import { getDocuments, getDocumentsOrder } from "functions/firebase/getData";
 import Loader from "components/admin/common/Loader";
 import AboutSectionHome from "components/ProjectComponents/AboutSectionHome";
+import Footer from "../src/components/ProjectComponents/footer";
 
 import api from "utils/__api__/grocery3-shop";
-import { Box, styled, useTheme,Container } from "@mui/material";
+import { Box, styled, useTheme, Container } from "@mui/material";
 import { H1 } from "components/Typography";
 
 export default function Home(props) {
+  // styled components
+  const TitleBox = styled(Box)(({ theme }) => ({
+    textAlign: "center",
+    "& h1": {
+      fontSize: 40,
+      fontWeight: 600,
+      marginBottom: "10px",
+    },
+    "& div": {
+      width: 200,
+      height: "2px",
+      margin: "auto",
+      background: theme.palette.primary.main,
+    },
+  }));
 
-
-    // styled components
-const TitleBox = styled(Box)(({
-  theme
-}) => ({
-  textAlign: "center",
-  "& h1": {
-    fontSize: 40,
-    fontWeight: 600,
-    marginBottom: "10px"
-  },
-  "& div": {
-    width: 200,
-    height: "2px",
-    margin: "auto",
-    background: theme.palette.primary.main
-  }
-}));
-
-
-// ---------------------------------------------------------
+  // ---------------------------------------------------------
 
   console.log("Products");
 
@@ -78,8 +74,7 @@ const TitleBox = styled(Box)(({
     getMedia();
   }, []);
 
-
-  const {t} = useTranslation("common")
+  const { t } = useTranslation("common");
 
   return (
     <MainLayout>
@@ -97,50 +92,39 @@ const TitleBox = styled(Box)(({
               mb: 3,
             }}
           >
+            <AboutSectionHome />
+            <TitleBox my={2}>
+              <H1>{t("homeproductsslider")}</H1>
 
-          <AboutSectionHome />
-          <TitleBox my={2}>
-        
-        <H1>{t('homeproductsslider')}</H1>
-        
-        <Box />
-      </TitleBox>
-            
+              <Box />
+            </TitleBox>
+
             <HomeProductsSlider
               isorderpage={false}
               products={products}
               // {props.topSailedProducts}
             />
-<TitleBox my={2}>
-        <H1>{t('homeproductsslider2')}</H1>
-        <Box />
-      </TitleBox>
+            <TitleBox my={2}>
+              <H1>{t("homeproductsslider2")}</H1>
+              <Box />
+            </TitleBox>
 
-<HomeOffer offers={props.offerCards} />
+            <HomeOffer offers={props.offerCards} />
 
+            <div className=" my-10">
+              <TitleBox my={2}>
+                <H1>{t("homeproductsslider1")}</H1>
 
-<div className=" my-10">
-<TitleBox my={2}>
-        
-        <H1>{t('homeproductsslider1')}</H1>
-        
-        <Box />
-      </TitleBox>
-<HomeProductsSlider
-              ismedia={true}
-              isorderpage={false}
-              products={media}
+                <Box />
+              </TitleBox>
+              <HomeProductsSlider
+                ismedia={true}
+                isorderpage={false}
+                products={media}
+              />
+            </div>
 
-            />
-
-            
-
-</div>
-
-
-
-
-          
+            {/* <Footer /> */}
           </Container>
         </div>
       )}

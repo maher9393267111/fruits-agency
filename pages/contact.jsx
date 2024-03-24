@@ -5,9 +5,9 @@ import { FlexRowCenter } from "components/flex-box";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 const ContactPage = () => {
   return (
-    <div className="w-fit">
+    <div className="">
     <MainLayout >
-      <div className=" my-20 !min-w-full ">
+      <div className="">
         <FlexRowCenter flexDirection="column" minHeight="80vh" >
           <SEO title="Contact" />
           <ContactForm />

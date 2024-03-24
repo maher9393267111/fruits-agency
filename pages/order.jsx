@@ -43,7 +43,7 @@ export default function Order() {
 
 
 
-
+  const {t} = useTranslation("common")
 
 
 
@@ -59,7 +59,7 @@ export default function Order() {
         <Grid container mb={-0.5} spacing={3}>
           <Grid item md={9} sm={12} xs={12}>
             {/* OUR ALL PRODUCTS AREA */}
-            <AllProducts isorderpage={true} products={products} />
+            <AllProducts isorderpage={true} products={products} title={t('navbar.orders')}/>
           </Grid>
 
           <Grid item md={3} sm={12} xs={12}>

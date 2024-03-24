@@ -61,6 +61,7 @@ const ProductTable = ({ products }) => {
               className="  relative  w-24 h-24 object-cover object-center rounded-full"
               src={record.images[0] || "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.shutterstock.com%2Fimage-vector%2Fui-image-placeholder-wireframes-apps-websites-1037719204&psig=AOvVaw3xXvCKTHrw-IBTjVGKSgkS&ust=1710302536185000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCNCqucvr7YQDFQAAAAAdAAAAABAE"}
               alt=""
+
             />
 
 

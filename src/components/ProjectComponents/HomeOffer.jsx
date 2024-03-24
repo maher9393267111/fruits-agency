@@ -3,6 +3,9 @@ import { useRouter } from "next/router";
 import { Box, Button, Card, Grid, styled } from "@mui/material";
 import LazyImage from "components/LazyImage";
 import { H3, Paragraph } from "components/Typography";
+import { useTranslation } from "react-i18next";
+
+
 // styled components
 const StyledCard = styled(Card)(({
   theme
@@ -25,25 +28,34 @@ const StyledCard = styled(Card)(({
 
 // ============================================================
 
-const HomeOffer = ({
-  offers
-}) => {
+const HomeOffer = () => {
   const router = useRouter();
+
+
+  const {t} = useTranslation("common")
+
+  const recipesCardHomeSlider= t('recipesCardHomeSlider', { returnObjects: true }) 
+  console.log("recipesCardHome" ,recipesCardHomeSlider)
+
+
   return <Grid container spacing={3}>
-      {offers.map((item, ind) => <Grid key={ind} item md={6} sm={12} xs={12}>
-          <Link href="/sale-page-1">
+     {/* //lg={4} */}
+      {recipesCardHomeSlider.map((item, ind) => <Grid key={ind} item md={6} sm={12} xs={12} >
+          <Link href="/recipes">
             <a>
               <StyledCard>
                 <Box width="60%">
-                  <Paragraph fontWeight={600}>{item.title}</Paragraph>
-                  <H3 fontSize={25} lineHeight={1.35}>
-                    {item.discountOffer}
+                <H3 fontSize={20} lineHeight={1.35}>
+                    {item.title}
                   </H3>
+                  <Paragraph className='!my-2 !justify-normal' fontWeight={600}>{item.subtitle}</Paragraph>
+
                   <Button sx={{
                 mt: 2
-              }} color="primary" variant="outlined" onClick={() => router.push("/sale-page-1")}>
+              }} color="primary" variant="outlined" onClick={() => router.push("/recipes")}>
                     {item.buttonText}
                   </Button>
+                  
                 </Box>
 
                 <Box width="40%">
