@@ -130,18 +130,11 @@ const ContactForm = () => {
       validationSchema: formSchema,
     });
   return (
-<<<<<<< HEAD
-    <div className=" pb-4 -m-20 relative">
-      <img src="/assets/images/sweetimages/sugarcane Contact us.jpg" className="w-full h-full  object-cover opacity-100 absolute" alt="img" />
-      <H5 className="flex justify-center my-2 py-6 text-white relative text-center  flex-wrap m-auto w-[90%] sm:w-[55%]">{t("contactus.p1")}</H5>
-      <Wrapper elevation={3} className=' m-auto    opacity-90'>
-=======
     <div className="w-full mx-auto">
       <img src="/assets/images/sweetimages/sugarcane Contact us.jpg" className="w-full  max-h-max h-full !object-cover mx-auto opacity-100 absolute" alt="img" />
 
       <H4 className="flex justify-center my-2 text-white relative text-center  flex-wrap m-auto w-[90%] sm:w-[55%]">{t("contactus.p1")}</H4>
       <Wrapper elevation={3} className=' m-auto   opacity-90'>
->>>>>>> 72fd7120b7afb9124361209c5a2a6163d3a7ca02
         <form onSubmit={handleSubmit}>
           <BazaarImage
             src="/assets/images/sweetimages/sweetsips-final-logo.png"
