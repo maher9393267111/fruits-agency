@@ -47,7 +47,7 @@ const TopbarWrapper = styled(Box, {
   [theme.breakpoints.down("sm")]: {
     height: expand ? 80 : layoutConstant.topbarHeight,
     "& .topbarRight": {
-      display: expand ? "flex" : "none",
+      display: expand ? "flex" : "flex",
       paddingBottom: 5
     },
     "& .expand": {
@@ -154,9 +154,12 @@ const Topbar = ({
             id,
             Icon,
             url
-          }) => <Link href={url} key={id}>
-                <a style={{
-              lineHeight: 0
+          }) => <Link href={url}  key={id}>
+                <a 
+                target= "_blank"
+                rel="noreferrer"
+                style={{
+                lineHeight: 0
             }}>
                   <Icon sx={{
                 fontSize: 16
@@ -171,11 +174,13 @@ const Topbar = ({
 const socialLinks = [{
   id: 1,
   Icon: FaTiktok,
-  url: "https://www.tiktok.com/@sweetsips24"
+  url: "https://www.tiktok.com/@sweetsips24",
+
 }, {
   id: 2,
   Icon: Facebook,
-  url: "https://www.facebook.com/profile.php?id=61556662798449"
+  url: "https://www.facebook.com/profile.php?id=61556662798449",
+
 }];
 
 const languageList = [{

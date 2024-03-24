@@ -92,7 +92,7 @@ const HoverButtonBox = styled(Box)({
 });
 const ImageBox = styled(Box)({
   opacity: 1,
-  padding: "44px 40px",
+  // padding: "44px 40px",
   background: "#F5F5F5",
   transition: "all .3s ease",
 });
@@ -192,17 +192,17 @@ const ProductCardMain = ({ ...props }) => {
 
 
   return (
-    <StyledBazaarCard>
+    <StyledBazaarCard >
       {/* {ismedia ? 'meeee' :"nooo"} */}
       {ismedia ? (
-        <VideoWrapper>
+        <VideoWrapper >
           <ImageBox className="hoverImgBox">
             <a>
               <ReactPlayer
                 className="!rounded-2xl "
                 controls
                 width="auto"
-                //  height="500px"
+                height="330px"
                 playing={false}
                 muted={true}
                 url={video}
@@ -212,7 +212,7 @@ const ProductCardMain = ({ ...props }) => {
         </VideoWrapper>
       ) : (
         <ImageWrapper>
-          <ImageBox className="hoverImgBox">
+          <ImageBox className="hoverImgBox   ">
             <Link href={isrecipe ? `/recipes/single?id=${slug}` : `/shop/single?id=${slug}`}>
               <a>
                 <LazyImage
@@ -222,6 +222,7 @@ const ProductCardMain = ({ ...props }) => {
                   src={imgUrl}
                   layout="responsive"
                   objectFit="contain"
+                  
                 />
               </a>
             </Link>
@@ -283,9 +284,9 @@ const ProductCardMain = ({ ...props }) => {
         </ImageWrapper>
       )}
 
-      <ContentWrapper>
+      <ContentWrapper >
         {ismedia ?
-        <H3 mb={1} title={title} fontSize="14px" fontWeight="600" className="title" color="text.secondary">
+        <H3 mb={1} title={title} fontSize="14px" fontWeight="600" className="title " color="text.secondary">
             {title}
           </H3>
           :

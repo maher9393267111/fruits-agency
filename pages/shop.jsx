@@ -32,6 +32,11 @@ export default function Shop() {
     getProducts();
   }, []);
 
+
+
+  const {t} = useTranslation("common")
+
+
   return (
     <MainLayout>
       <Container
@@ -40,9 +45,8 @@ export default function Shop() {
         }}
       >
         {/* OUR ALL PRODUCTS AREA */}
-
      
-        <AllProducts products={products} />
+        <AllProducts  products={products} title={t('products')}/>
       </Container>
     </MainLayout>
   );

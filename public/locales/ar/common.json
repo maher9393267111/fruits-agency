@@ -74,7 +74,7 @@
   },
 
   "aboutsectionhome":{
-    "title":"SweetSips ( حول سويت سيبس) ",
+    "title":"حول سويت سيبس",
     "p1":"مرحبًا في عالم (SweetSips)، حيث يلتقي الطعم الأصيل بالجودة العالية. نحن مزودكم المثالي لمنتجات قصب السكر الطازج والنقي وماكينات عصير قصب السكر المتقدمة. نعتز بتقديم المكونات الطبيعية والمنعشة لتجار العصائر، الكافيهات، عربات الطعام المتنقلة والسوبر ماركت ; نؤمن بأن كل رشفة من عصير قصب السكر يجب أن تكون تجربة فريدة وممتعة.",
     "moredetails":"المزيد من التفاصيل"
   },
@@ -82,7 +82,7 @@
   "about":{
     "p2":"'عشر فوائد مذهلة لعصير قصب السكر'",
     "p3":" عصير قصب السكر له العديد من الفوائد الصحية التي تجعله مشروبًا محبوبًا في العديد من الثقافات حول العالم.",
-    "p4":"إليك بعض من فوائده الرئيسية:",
+    "p4":"إليك بعض من فوائده الرئيسية",
     "p5":"من المهم الإشارة إلى أن استهلاك عصير قصب السكر يجب أن يكون ضمن نظام غذائي متوازن وبكميات معتدلة، خاصة للأشخاص الذين لديهم حالات صحية معينة مثل مرض السكري."
   },
    "aboutus":[{ 
@@ -121,16 +121,6 @@
 
  
   "slider": [
-    { 
-      "welcome":"مرحبا بكم في SweetSips",
-      "title":"الانتعاش مع كل رشفة",
-      "imgUrl":"/assets/images/sweetimages/Home-Slide-show-1.png",
-      "description":null,
-      "buttonText":"اطلب الان",
-      "buttonLink":"/order",
-      "buttonText1":"كن شريكا",
-      "buttonLink1":"/partner"
-    },
     {
       "welcome":"مرحبا بكم في SweetSips",
       "title":"رشفة واحدة من العصير الطازج تحتوي على جميع الفيتامينات الضرورية",
@@ -140,14 +130,54 @@
       "buttonLink":"/order",
       "buttonText1":"كن شريكا",
       "buttonLink1":"/partner"
-     }
+     },
+    { 
+      "welcome":"مرحبا بكم في SweetSips",
+      "title":"الانتعاش مع كل رشفة",
+      "imgUrl":"/assets/images/sweetimages/Home-Slide-show-1.png",
+      "description":null,
+      "buttonText":"اطلب الان",
+      "buttonLink":"/order",
+      "buttonText1":"كن شريكا",
+      "buttonLink1":"/partner"
+    }
   ],
   
 
 
 "homeproductsslider":"أعلى المنتجات مبيعا",
-"homeproductsslider1":"وصفاتنا"
+"homeproductsslider1":"الميديا",
+"homeproductsslider2":"الوصفات",
 
-
-  }
+ 
   
+
+  
+"recipesCardHomeSlider": [{
+  "id": 1,
+  "title": "قصب السكر مع الزنجبيل",
+  "subtitle": "المكونات هي: أعواد قصب السكر وجذر الزنجبيل الطازج",
+  "imgUrl": "/assets/images/sweetimages/Sugarcane with ginger.png",
+  "shopUrl": "/recipes",
+  "bgColor": "#F6FFE5",
+  "buttonText":"المزيد من التفاصيل"
+}, {
+  "id": 2,
+  "title": "قصب السكر بالليمون",
+  "subtitle": "المكونات هي: أعواد قصب السكر والليمون الطازج",
+  "imgUrl": "/assets/images/sweetimages/Sugarcane with lemon.png",
+  "shopUrl": "/recipes",
+  "bgColor": "#FFF8E5",
+  "buttonText":"المزيد من التفاصيل"
+}, {
+  "id": 3,
+  "title": "قصب السكر مع الفراولة",
+  "subtitle":"المكونات هي: أعواد قصب السكر والفراولة الطازجة",
+  "imgUrl": "/assets/images/sweetimages/sugarcane with strawberry.png",
+  "shopUrl": "/recipes",
+  "bgColor": "#F6FFE5",
+  "buttonText":"المزيد من التفاصيل"
+}]
+
+
+}

@@ -207,7 +207,7 @@ export const discountCardList = [{
   bgColor: "#FFF8E5"
 }, {
   id: 3,
-  title: "25% Special Off Today Only for Vegetables",
+  title: "25% Special Off Today Only for Vegetables111",
   subtitle: "Till 10 Sept, 2021",
   imgUrl: `/assets/images/products/kisspng-organic-food-leaf-vegetable-fruit-rich-vegetables-5aa9f4d026ae09 1.png`,
   shopUrl: "/",

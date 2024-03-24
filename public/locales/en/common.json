@@ -84,7 +84,7 @@
   "about":{
   "p2":"'Ten amazing benefits of sugarcane juice'",
   "p3":" Sugarcane juice has many health benefits that make it a beloved beverage in many cultures around the world.",
-  "p4":"Here are some of its main benefits:",
+  "p4":"Here are some of its main benefits",
   "p5":"It is important to note that consumption of sugarcane juice should be part of a balanced diet and in moderate quantities, especially for people who have certain health conditions such as diabetes."
 },
 
@@ -118,16 +118,7 @@
 
 
 "slider": [
-  { 
-    "welcome":"Welcome To SweetSips",
-    "title":"The Freshness With Each Sip",
-    "imgUrl":"/assets/images/sweetimages/Home-Slide-show-1.png",
-    "description":null,
-    "buttonText":"Order Now",
-    "buttonLink":"/order",
-    "buttonText1":"Be a partner",
-    "buttonLink1":"/partner"
-  },
+
   {
     "welcome":"Welcome To SweetSips",
     "title": "A single sip of fresh poured juice contains all necessary vitamins",
@@ -137,13 +128,54 @@
     "buttonLink":"/order",
     "buttonText1":"Be a partner",
     "buttonLink1":"/partner"
-   }
+   },
+  { 
+    "welcome":"Welcome To SweetSips",
+    "title":"The Freshness With Each Sip",
+    "imgUrl":"/assets/images/sweetimages/Home-Slide-show-1.png",
+    "description":null,
+    "buttonText":"Order Now",
+    "buttonLink":"/order",
+    "buttonText1":"Be a partner",
+    "buttonLink1":"/partner"
+  }
+
 ],
   
 
 
 "homeproductsslider":"Top Saled Products",
-"homeproductsslider1":"Our Recipes"
+"homeproductsslider1":"Media",
+"homeproductsslider2":"Recipes",
 
-  }
+
+
   
+"recipesCardHomeSlider": [{
+  "id": 1,
+  "title": "Sugarcane with ginger",
+  "subtitle": "The components are:Sugarcane sticks & Fresh ginger root",
+  "imgUrl": "/assets/images/sweetimages/Sugarcane with ginger.png",
+  "shopUrl": "/recipes",
+  "bgColor": "#F6FFE5",
+  "buttonText":"More details"
+}, {
+  "id": 2,
+  "title": "Sugarcane with lemon",
+  "subtitle":"The components are:Sugarcane sticks & Fresh lemon",
+  "imgUrl": "/assets/images/sweetimages/Sugarcane with lemon.png",
+  "shopUrl": "/recipes",
+  "bgColor": "#FFF8E5",
+  "buttonText":"More details"
+}, {
+  "id": 3,
+  "title": "Sugarcane with strawberries",
+  "subtitle": "The components are:Sugarcane sticks & Fresh strawberry",
+  "imgUrl": "/assets/images/sweetimages/sugarcane with strawberry.png",
+  "shopUrl": "/recipes",
+  "bgColor": "#F6FFE5",
+  "buttonText":"More details"
+  }]
+
+
+}

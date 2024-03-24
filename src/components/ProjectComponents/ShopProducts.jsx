@@ -34,23 +34,29 @@ const ShopProducts = ({
   products,
   isorderpage = false,
   isrecipe= false,
-  ismedia
+  ismedia,
+  title
 }) => {
 
   const {locale} = useRouter()
 
+
+  
+
   const {t} = useTranslation("common")
 
-  const [page,setPage]= useState("/recipes");
 
   return <Box>
-      <TitleBox my={4}>
-        { page === "/recipes" ? 
-        <H1>{t('products')}</H1>
+   <TitleBox my={4}>
+
+<H1>
+  {title}
+</H1>
         
-          :
-          <H1>{t('homeproductsslider1')}</H1>
-        }
+
+        
+      
+
         <Box />
       </TitleBox>
 

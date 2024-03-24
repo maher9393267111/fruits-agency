@@ -44,47 +44,36 @@ const TopProducts = ({ products, isorderpage }) => {
     else if (width < 950) setVisibleSlides(3);
     else setVisibleSlides(3);
   }, [width]);
-  return (
-    <Box>
-      {products && products?.length > 0 && (
-        <Carousel
-          infinite={true}
-          visibleSlides={visibleSlides}
-          totalSlides={products.length}
-          sx={{
-            "& #backArrowButton, #backForwardButton": {
-              width: 40,
-              height: 40,
-              borderRadius: 0,
-              background: "#fff",
-              boxShadow: theme.shadows[2],
-              color: theme.palette.primary.main,
-            },
-          }}
-        >
-          {products?.map((item) => (
-            <Box py={0.5} key={item.id}>
-              <ProductCard
-                ismedia={item.ismedia}
-                video={item?.video || item?.videourl}
-                isorderpage={isorderpage}
-                id={item.id}
-                slug={item.id}
-                title={
-                  locale === "en"
-                    ? item.title
-                    : locale === "ar"
-                    ? item?.titlear
-                    : item?.titletr
-                }
-                price={22}
-                imgUrl={item?.images[0]}
-              />
-            </Box>
-          ))}
-        </Carousel>
-      )}
-    </Box>
-  );
+  return <Box>
+
+
+
+      {(products && products?.length > 0) &&
+
+      <Carousel infinite={true} visibleSlides={visibleSlides} totalSlides={products.length} sx={{
+      "& #backArrowButton, #backForwardButton": {
+        width: 40,
+        height: 40,
+        borderRadius: 0,
+        background: "#fff",
+        boxShadow: theme.shadows[2],
+        color: theme.palette.primary.main,
+      }
+    }}>
+        {products?.map(item => <Box py={0.5} key={item.id}>
+            <ProductCard 
+             ismedia={item.ismedia}
+             video={item?.video || item?.videourl}  
+            
+            isorderpage={ isorderpage} id={item.id} slug={item.id} 
+            title={ locale === 'en' ?  item.title : locale === 'ar' ? item?.titlear : item?.titletr}
+            
+            price={22} imgUrl={item?.images[0]} />
+          </Box>)}
+      </Carousel>
+}
+
+
+    </Box>;
 };
 export default TopProducts;

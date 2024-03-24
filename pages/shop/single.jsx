@@ -98,8 +98,8 @@ export default function ProductSingle({}) {
                   {product?.images && product?.images[0] && (
                     <LazyImage
                       alt={product?.title}
-                      width={300}
-                      height={300}
+                      width={500}
+                      height={500}
                       loading="eager"
                       objectFit="contain"
                       src={product?.images && product?.images[selectedImage]}

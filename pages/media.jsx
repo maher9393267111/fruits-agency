@@ -31,6 +31,9 @@ export default function Media() {
     getProducts();
   }, []);
 
+
+  const {t} = useTranslation("common")
+
   return (
     <MainLayout>
       <Container
@@ -39,7 +42,7 @@ export default function Media() {
         }}
       >
         {/* OUR ALL PRODUCTS AREA */}
-        <AllProducts products={products} />
+        <AllProducts products={products} title={t('navbar.media')} />
       </Container>
     </MainLayout>
   );

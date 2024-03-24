@@ -10,6 +10,7 @@ import {
 getDocumentsOrder,
 } from "../../src/functions/firebase/getData";
 import { orderBy, where } from "firebase/firestore";
+import { t } from "i18next";
 export default function Recipes() {
   const [products, setProducts] = useState([]);
   const [loacding, setLoading] = useState(true);
@@ -31,6 +32,8 @@ export default function Recipes() {
     getProducts();
   }, []);
 
+  const {t} = useTranslation("common")
+
   return (
     <MainLayout>
       <Container
@@ -39,7 +42,7 @@ export default function Recipes() {
         }}
       >
         {/* OUR ALL PRODUCTS AREA */}
-        <AllProducts isrecipe={true} products={products} />
+        <AllProducts isrecipe={true} products={products} title={t('navbar.recipes')} />
       </Container>
     </MainLayout>
   );

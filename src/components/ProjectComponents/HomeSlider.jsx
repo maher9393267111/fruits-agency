@@ -98,7 +98,7 @@ const HomeSlider = ({ mainCarouselData }) => {
       >
         {/* mainCarouselData */}
         {slider?.map((item, ind) => (
-          <Container key={ind}>
+          <Container key={ind} >
             <StyledGrid container>
               <GridItemOne item md={6} sm={6} xs={12}>
                 <Box pt={6}>
@@ -120,23 +120,26 @@ const HomeSlider = ({ mainCarouselData }) => {
 
               <GridItemTwo item md={6} sm={6} xs={12}>
                 <TextBox>
-                  <H1 maxWidth={400}>{item.title}</H1>
+                 
+                  <H1 className=' !my-6 md:!mb-[160px] text-green-500' maxWidth={400}>{item.welcome}</H1>
+                  
+                  <H2 maxWidth={370} className='justify-center m-auto'>{item.title}</H2>
+                
                 </TextBox>
 
-                <div className="flex gap-2 lg:justify-center">
-                  <Link href={"/shop"}>
-                    <StyledButton
-                      className=" bg-red-500 mx-2"
-                      variant="contained"
-                      color="primary"
-                      sx={{
-                        px: "30px",
-                        py: "6px",
-                      }}
-                    >
-                      {t("navbar.shop")}
-                    </StyledButton>
-                  </Link>
+                <div className="flex gap-6 mb-5 lg:justify-center m-auto">
+                  <StyledButton 
+                    onClick={() => router.push(item.buttonLink)}
+                    className=" bg-red-500 mx-2"
+                    variant="contained"
+                    color="primary"
+                    sx={{
+                      px: "30px",
+                      py: "6px",
+                    }}
+                  >
+                    {item.buttonText}
+                  </StyledButton>
 
                   <Link href={"/order"}>
                     <StyledButton

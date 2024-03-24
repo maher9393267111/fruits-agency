@@ -39,7 +39,7 @@ export default function Navbar() {
   
   return (
     <>
-      <nav className="  relative flex flex-wrap items-center justify-between px-2 py-3 bg-emerald-500">
+      <nav className="  relative flex flex-wrap items-center justify-between px-2 py-3 bg-emerald-500 w-full">
         <div className="container px-4 mx-auto flex flex-wrap justify-between">
           <div className="w-full flex-grow  relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
 
@@ -52,7 +52,7 @@ export default function Navbar() {
 })}  */}
             <Link href="/">
                 <a className="font-bold leading-relaxed inline-flex items-center mr-4 py-2 whitespace-nowrap uppercase text-white">
-                  <img className="w-18 logo object-cover h-14 mx-3" src="/assets/images/sweetimages/sweetsips-final-logo White.png" alt="" />
+                  <img className="w-24 logo object-cover h-14 mx-3" src="/assets/images/sweetimages/sweetsips-final-logo White.png" alt="" />
                   {/* <Icon icon={spaIcon} className=" logo text-4xl mr-2"/> */}
                   <span className="text-base"></span>
                 </a>
@@ -124,7 +124,7 @@ export default function Navbar() {
               <li className="nav-item">
                 <Link href="/partner">  
                 <a className="px-3 py-2 flex items-center text-sm uppercase font-bold leading-snug text-white hover:opacity-75">
-                  <Icon icon={humanMaleHeight} className="text-lg leading-lg text-white opacity-75"/>  
+                  <Icon icon="eos-icons:system-image-outlined"  className="text-lg leading-lg text-white opacity-75"/>  
                   <span className="ml-2"> {t("navbar.partner")}  </span>
                 </a>
                 </Link>
@@ -143,7 +143,7 @@ export default function Navbar() {
               <li className="nav-item">
                 <Link href="/about">
                 <a className="px-3 py-2 flex items-center text-sm uppercase font-bold leading-snug text-white hover:opacity-75">   
-                  <Icon  icon="eos-icons:system-image-outlined" className="text-lg leading-lg text-white opacity-75"/>  
+                  <Icon icon={humanMaleHeight}  className="text-lg leading-lg text-white opacity-75"/>  
                   <span className="ml-2"> {t("navbar.about")}  </span>
                 </a>
                 </Link>  
